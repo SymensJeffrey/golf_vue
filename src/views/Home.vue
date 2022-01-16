@@ -10,10 +10,12 @@
         <div class="col-6">
           <h2>Start a Tournament</h2>
           <p>Starting a tournament allows you to generate a unique code so you and your friends can track there scores and will allow everyone to see eachother scores. If you have a code already, hit Start a Scorecard</p>
+          <button v-on:click="createTournament()">Start</button>
         </div>
         <div class="col-6">
           <h2> Start a Scorecard</h2>
           <p>Starting a Scorecard will allow you to enter your scores and update them throughout your round. Everyone with the same tournamnet code will be able to see your scores.(Note:you will need a unique code to sync with the tournament to be able to see all your friends scores)</p>
+          <button>Start</button>
         </div>
       </div>
     </div>
@@ -23,10 +25,12 @@
 <style></style>
 
 <script>
+  import axios from "axios"
   export default {
     data: function () {
       return {
         message: "Welcome to Scoreboard",
+        newTournamentParams: {},
       };
     },
     created: function () {},
@@ -44,6 +48,16 @@
         return false;
       }      
       },
+      createTournament () {
+        axios.post("/tournaments", this.newTournamentParams).then((response) => {
+          console.log("tournamnets create", response);
+          this.tournamnets.push(response.data);
+          this.newTournamentParams = {};
+        })
+        .catch((error) => {
+          console.log("tournamnets create error", error.response);
+        });
+      }
     },
   };
 </script>
