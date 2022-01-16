@@ -5,11 +5,17 @@
       <button v-on:click="pushToSignup">Signup</button>
       <button v-on:click="pushToLogin">Login</button>
     </div>
-    <div v-if="isLoggedIn()">
-      <h2>Start a Tournament</h2>
-      <p>Starting a tournament allows you to generate a unique code so you and your friends can track there scores and will allow everyone to see eachother scores. If you have a code already, hit Start a Scorecard</p>
-      <h2> Start a Scorecard</h2>
-      <p>Starting a Scorecard will allow you to enter your scores and update them throughout your round. Note:you will need a unique code to sync with the tournament to be able to see all your friends scores</p>
+    <div class="container" v-if="isLoggedIn()">
+      <div class="row">
+        <div class="col-6">
+          <h2>Start a Tournament</h2>
+          <p>Starting a tournament allows you to generate a unique code so you and your friends can track there scores and will allow everyone to see eachother scores. If you have a code already, hit Start a Scorecard</p>
+        </div>
+        <div class="col-6">
+          <h2> Start a Scorecard</h2>
+          <p>Starting a Scorecard will allow you to enter your scores and update them throughout your round. Everyone with the same tournamnet code will be able to see your scores.(Note:you will need a unique code to sync with the tournament to be able to see all your friends scores)</p>
+        </div>
+      </div>
     </div>
   </div>
 </template>
