@@ -22,7 +22,7 @@
       };
     },
     created: function () {
-        this.tournamentIndex();
+        this.tournamentsIndex();
     },
     methods: {
         tournamentsIndex () {
