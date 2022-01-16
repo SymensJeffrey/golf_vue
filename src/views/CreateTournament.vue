@@ -1,11 +1,11 @@
 <template>
   <div class="home">
     <h1>{{ message }}</h1>
+    <br>
+    <br>
     <div v-for="tournament in tournaments" v-bind:key="tournament.id">
-        {{tournament.id}}
-        {{tournament.user_id}}
-        {{tournament.token}}
-        {{tournament.status}}
+        <p>Your tournament code is:</p>
+        <p>{{tournament.token}}</p>
     </div>
   </div>
 </template>
