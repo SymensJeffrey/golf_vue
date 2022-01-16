@@ -57,6 +57,7 @@
         .catch((error) => {
           console.log("tournamnets create error", error.response);
         });
+        this.$router.push("/createTournament");
       }
     },
   };
