@@ -1,12 +1,6 @@
 <template>
   <div class="home">
     <h1>{{ message }}</h1>
-    <br>
-    <br>
-    <div v-for="tournament in tournaments" v-bind:key="tournament.id">
-        <p>Your tournament code is:</p>
-        <p>{{tournament.token}}</p>
-    </div>
   </div>
 </template>
 
@@ -17,7 +11,7 @@
   export default {
     data: function () {
       return {
-        message: "Tournament Created!",
+        message: "Create your Tournament",
         tournaments: []
       };
     },

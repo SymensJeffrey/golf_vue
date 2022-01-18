@@ -10,7 +10,7 @@
         <div class="col-6">
           <h2>Start a Tournament</h2>
           <p>Starting a tournament allows you to generate a unique code so you and your friends can track there scores and will allow everyone to see eachother scores. If you have a code already, hit Start a Scorecard</p>
-          <button v-on:click="createTournament()">Start</button>
+          <button v-on:click="pushToCreateTournament()">Start</button>
         </div>
         <div class="col-6">
           <h2> Start a Scorecard</h2>
@@ -25,7 +25,7 @@
 <style></style>
 
 <script>
-  import axios from "axios"
+  // import axios from "axios"
   export default {
     data: function () {
       return {
@@ -48,15 +48,7 @@
         return false;
       }      
       },
-      createTournament () {
-        axios.post("/tournaments", this.newTournamentParams).then((response) => {
-          console.log("tournamnets create", response);
-          this.tournamnets.push(response.data);
-          this.newTournamentParams = {};
-        })
-        .catch((error) => {
-          console.log("tournamnets create error", error.response);
-        });
+      pushToCreateTournament () {
         this.$router.push("/createTournament");
       }
     },
