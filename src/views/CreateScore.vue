@@ -10,6 +10,7 @@
         <p>
         Token: <input>
         </p>
+        <button>Create</button>
     </div>
   </div>
 </template>
