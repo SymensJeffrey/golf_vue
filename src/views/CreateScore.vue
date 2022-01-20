@@ -1,8 +1,15 @@
 <template>
   <div class="home">
     <h1>{{ message }}</h1>
+    <br>
+    <br>
     <div>
-        
+        <p>
+        Name: <input>
+        </p>
+        <p>
+        Token: <input>
+        </p>
     </div>
   </div>
 </template>
