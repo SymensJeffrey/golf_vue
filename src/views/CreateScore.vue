@@ -5,12 +5,12 @@
     <br>
     <div>
         <p>
-        Name: <input>
+        Name: <input type="text" v-model="newScoreParams.name">
         </p>
         <p>
-        Token: <input>
+        Token: <input type="text" v-model="newScoreParams.token">
         </p>
-        <button>Create</button>
+        <button v-on:click="scoresCreate()">Create</button>
     </div>
   </div>
 </template>
@@ -23,19 +23,21 @@
     data: function () {
       return {
         message: "Create your Scorecard",
+        newScoreParams: {},
+        errors: []
       };
     },
     created: function () {},
     methods: {
         scoresCreate () {
-        axios.post("/scores").then((response) => {
+        axios.post("/scores", this.newScoreParams).then((response) => {
           console.log("scores create", response);
           this.scores.push(response.data);
         })
         .catch((error) => {
           console.log("scores create error", error.response);
         });
-      },
+        },
     },
   };
 </script>
