@@ -15,7 +15,7 @@
         <div class="col-6">
           <h2> Start a Scorecard</h2>
           <p>Starting a Scorecard will allow you to enter your scores and update them throughout your round. Everyone with the same tournamnet code will be able to see your scores.(Note:you will need a unique code to sync with the tournament to be able to see all your friends scores)</p>
-          <button>Start</button>
+          <button v-on:click="pushToCreateScorecard()">Start</button>
         </div>
       </div>
     </div>
@@ -50,6 +50,9 @@
       },
       pushToCreateTournament () {
         this.$router.push("/createTournament");
+      },
+      pushToCreateScorecard () {
+        this.$router.push("/createScore")
       }
     },
   };

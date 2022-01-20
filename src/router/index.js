@@ -5,7 +5,8 @@ import About from "../views/About.vue";
 import Signup from "../views/Signup.vue";
 import Login from "../views/Login.vue";
 import Logout from "../views/Logout.vue";
-import CreateTournament from "../views/CreateTournament.vue"
+import CreateTournament from "../views/CreateTournament.vue";
+import CreateScore from "../views/CreateScore.vue";
 
 Vue.use(VueRouter);
 
@@ -16,6 +17,7 @@ const routes = [
   { path: "/login", name: "login", component: Login },
   { path: "/logout", name: "logout", component: Logout },
   { path: "/createTournament", name: "createTournament", component: CreateTournament },
+  { path: "/createScore", name: "createScore", component: CreateScore },
 ];
 
 const router = new VueRouter({
