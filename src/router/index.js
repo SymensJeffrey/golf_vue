@@ -7,7 +7,7 @@ import Login from "../views/Login.vue";
 import Logout from "../views/Logout.vue";
 import CreateTournament from "../views/CreateTournament.vue";
 import CreateScore from "../views/CreateScore.vue";
-import IndexScores from "../views/IndexScores"
+import IndexScores from "../views/IndexScores.vue";
 
 Vue.use(VueRouter);
 
