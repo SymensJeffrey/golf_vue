@@ -4,6 +4,7 @@
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link> | 
       <router-link v-if="isLoggedIn()" to="/indexScores">Scorecards</router-link> |
+      <router-link v-if="isLoggedIn()" to="/indexTournaments">Leaderboard</router-link> |
       <router-link v-if="isLoggedIn()" to="/logout">Logout</router-link>
     </div>
     <router-view />
