@@ -4,6 +4,7 @@
     <div>
       {{ tournament }}
     </div>
+    <button v-on:click="pushBackToScore()">Return to Scorecard</button>
   </div>
 </template>
 
@@ -24,6 +25,10 @@
         this.tournament = response.data;
       });
     },
-    methods: {},
+    methods: {
+      pushBackToScore() {
+        this.$router.go(-1)
+      }
+    },
   };
 </script>
