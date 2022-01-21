@@ -3,6 +3,7 @@
     <h1>{{ message }}</h1>
     <div v-for="score in scores" v-bind:key="score.id">
       {{ score }}
+      <button v-on:click="tournamentShow(score)">View Leaderboard</button>
     </div>
   </div>
 </template>
@@ -27,6 +28,11 @@
           console.log("scores index", response);
           this.scores = response.data;
         });
+      },
+      tournamentShow(score) {
+        this.$router.push({
+          path: `/tournament/${score.tournament_id}`, 
+        })
       },
     },
   };
