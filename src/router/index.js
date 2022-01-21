@@ -18,9 +18,9 @@ const routes = [
   { path: "/signup", name: "Signup", component: Signup },
   { path: "/login", name: "login", component: Login },
   { path: "/logout", name: "logout", component: Logout },
-  { path: "/createTournament", name: "createTournament", component: CreateTournament },
-  { path: "/createScore", name: "createScore", component: CreateScore },
-  { path: "/indexScores", name: "indexScores", component: IndexScores },
+  { path: "/tournament/new", name: "createTournament", component: CreateTournament },
+  { path: "/score/new", name: "createScore", component: CreateScore },
+  { path: "/scores", name: "indexScores", component: IndexScores },
   { path: "/tournament/:id", name: "showtournaments", component: ShowTournaments },
 ];
 

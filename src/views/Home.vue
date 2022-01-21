@@ -49,10 +49,10 @@
       }      
       },
       pushToCreateTournament () {
-        this.$router.push("/createTournament");
+        this.$router.push("/Tournament/new");
       },
       pushToCreateScorecard () {
-        this.$router.push("/createScore")
+        this.$router.push("/score/new")
       }
     },
   };
