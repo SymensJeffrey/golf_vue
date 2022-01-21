@@ -1,8 +1,8 @@
 <template>
   <div class="home">
     <h1>{{ message }}</h1>
-    <div v-for="tournament in tournaments" v-bind:key="tournament.id">
-        {{ tournament }}
+    <div>
+      {{ tournament }}
     </div>
   </div>
 </template>
@@ -15,19 +15,15 @@
     data: function () {
       return {
         message: "Leaderboard",
-        tournaments: [],
+        tournament: {}
       };
     },
     created: function () {
-        this.tournamentsShow();
+      axios.get("/tournaments/" + this.$route.params.id).then((response) => {
+        console.log("tournaments show", response);
+        this.tournament = response.data;
+      });
     },
-    methods: {
-        tournamentsShow() {
-        axios.get("/tournaments/:id").then((response) => {
-          console.log("tournaments show", response);
-          this.tournaments = response.data;
-        });
-      },
-    },
+    methods: {},
   };
 </script>
