@@ -7,6 +7,7 @@ import Login from "../views/Login.vue";
 import Logout from "../views/Logout.vue";
 import CreateTournament from "../views/CreateTournament.vue";
 import CreateScore from "../views/CreateScore.vue";
+import IndexScores from "../views/IndexScores"
 
 Vue.use(VueRouter);
 
@@ -18,6 +19,7 @@ const routes = [
   { path: "/logout", name: "logout", component: Logout },
   { path: "/createTournament", name: "createTournament", component: CreateTournament },
   { path: "/createScore", name: "createScore", component: CreateScore },
+  { path: "/indexScores", name: "indexScores", component: IndexScores },
 ];
 
 const router = new VueRouter({
