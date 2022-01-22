@@ -141,7 +141,9 @@
         </div>
       </div>
       <br>
+      <button>Add Score</button>
       <button v-on:click="tournamentShow(score)">View Leaderboard</button>
+      <button>Delete Scorecard</button>
     </div>
   </div>
 </template>
