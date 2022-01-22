@@ -141,10 +141,15 @@
         </div>
       </div>
       <br>
-      <button>Add Score</button>
+      <button v-on:click="scoreUpdateModal(score)">Add Score</button>
       <button v-on:click="tournamentShow(score)">View Leaderboard</button>
       <button>Delete Scorecard</button>
     </div>
+    <dialog id="score-update">
+        <form method="dialog">
+          <h2>Add Score</h2>
+        </form>
+    </dialog>
   </div>
 </template>
 
@@ -172,6 +177,7 @@
       return {
         message: "Active Scorecards",
         scores: [],
+        currentScore: {},
       };
     },
     created: function () {
@@ -189,6 +195,10 @@
           path: `/tournament/${score.tournament_id}`, 
         })
       },
+      scoreUpdateModal: function(score) {
+        this.currentScore = score;
+        document.querySelector("#score-update").showModal();
+      }
     },
   };
 </script>
