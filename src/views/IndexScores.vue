@@ -155,6 +155,11 @@
   border-bottom-width: 0px;
   border-top-width: 0px;
 }
+.col-1{
+  resize: none;
+  overflow: scroll;
+  width: 100px;
+}
 </style>
 
 <script>
