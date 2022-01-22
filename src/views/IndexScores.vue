@@ -146,7 +146,18 @@
   </div>
 </template>
 
-<style></style>
+<style>
+.col{
+  border-style: solid;
+  border-width: 1px;
+  width: 15px;
+  text-align: center;
+}
+.row{
+  resize: none;
+  overflow: scroll;
+}
+</style>
 
 <script>
   import axios from 'axios'
