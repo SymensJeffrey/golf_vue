@@ -148,6 +148,31 @@
     <dialog id="score-update">
         <form method="dialog">
           <h2>Add Score</h2>
+          <label for="hole">Hole: </label>
+          <select name="holes" id="hole">
+            <option value="hole1">Hole 1</option>
+            <option value="hole2">Hole 2</option>
+            <option value="hole3">Hole 3</option>
+            <option value="hole4">Hole 4</option>
+            <option value="hole5">Hole 5</option>
+            <option value="hole6">Hole 6</option>
+            <option value="hole7">Hole 7</option>
+            <option value="hole8">Hole 8</option>
+            <option value="hole9">Hole 9</option>
+            <option value="hole9">Hole 10</option>
+            <option value="hole10">Hole 11</option>
+            <option value="hole11">Hole 12</option>
+            <option value="hole12">Hole 13</option>
+            <option value="hole13">Hole 14</option>
+            <option value="hole14">Hole 15</option>
+            <option value="hole15">Hole 16</option>
+            <option value="hole16">Hole 17</option>
+            <option value="hole17">Hole 18</option>
+          </select>
+          <p>
+            <input type="number" placeholder="Score">
+          </p>
+          <button>Save</button>
         </form>
     </dialog>
   </div>
