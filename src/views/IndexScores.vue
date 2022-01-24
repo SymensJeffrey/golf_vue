@@ -170,7 +170,9 @@
             <option value="hole17">Hole 18</option>
           </select>
           <p>
+            <button>+</button>
             <input type="number" placeholder="Score">
+            <button>-</button>
           </p>
           <button>Save</button>
         </form>
