@@ -141,10 +141,10 @@
         </div>
       </div>
       <br>
-    </div>
       <button v-on:click="scoreUpdateModal(score)">Add Score</button>
       <button v-on:click="tournamentShow(score)">View Leaderboard</button>
       <button>Delete Scorecard</button>
+    </div>
     <dialog id="score-update">
         <form method="dialog">
           <h2>Add Score</h2>
