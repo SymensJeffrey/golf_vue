@@ -148,30 +148,15 @@
     <dialog id="score-update">
         <form method="dialog">
           <h2>Add Score</h2>
-          <label for="hole">Hole: </label>
-          <select name="holesSelect" id="holesSelect">
-            <option value="score.hole1">Hole 1</option>
-            <option value="score.hole2">Hole 2</option>
-            <option value="score.hole3">Hole 3</option>
-            <option value="score.hole4">Hole 4</option>
-            <option value="score.hole5">Hole 5</option>
-            <option value="score.hole6">Hole 6</option>
-            <option value="score.hole7">Hole 7</option> 
-            <option value="score.hole8">Hole 8</option>
-            <option value="score.hole9">Hole 9</option>
-            <option value="score.hole10">Hole 10</option>
-            <option value="score.hole11">Hole 11</option>
-            <option value="score.hole12">Hole 12</option>
-            <option value="score.hole13">Hole 13</option>
-            <option value="score.hole14">Hole 14</option>
-            <option value="score.hole15">Hole 15</option>
-            <option value="score.hole16">Hole 16</option>
-            <option value="score.hole17">Hole 17</option>
-            <option value="score.hole18">Hole 18</option>
+          <label for="holesSelect">Hole: </label>
+          <select v-model="selected">
+            <option v-for="option in options" v-bind:key="option.value">
+                {{ option.value }}
+            </option>
           </select>
           <p>
             <button>+</button>
-            <input type="number" placeholder="Score" v-model="select">
+            <input type="number" placeholder="Score" v-model="currentScore[selected]">
             <button>-</button>
           </p>
           <button v-on:click="scoreUpdate(currentScore)">Save</button>
@@ -202,6 +187,27 @@
   export default {
     data: function () {
       return {
+        options: [
+          {text: 'Hole 1', value: 'hole1'},
+          {text: 'Hole 2', value: 'hole2'},
+          {text: 'Hole 3', value: 'hole3'},
+          {text: 'Hole 4', value: 'hole4'},
+          {text: 'Hole 5', value: 'hole5'},
+          {text: 'Hole 6', value: 'hole6'},
+          {text: 'Hole 7', value: 'hole7'},
+          {text: 'Hole 8', value: 'hole8'},
+          {text: 'Hole 9', value: 'hole9'},
+          {text: 'Hole 10', value: 'hole10'},
+          {text: 'Hole 11', value: 'hole11'},
+          {text: 'Hole 12', value: 'hole12'},
+          {text: 'Hole 13', value: 'hole13'},
+          {text: 'Hole 14', value: 'hole14'},
+          {text: 'Hole 15', value: 'hole15'},
+          {text: 'Hole 16', value: 'hole16'},
+          {text: 'Hole 17', value: 'hole17'},
+          {text: 'Hole 18', value: 'hole18'}
+        ],
+        selected: '',
         message: "Active Scorecards",
         scores: [],
         currentScore: {},
