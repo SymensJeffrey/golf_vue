@@ -149,32 +149,32 @@
         <form method="dialog">
           <h2>Add Score</h2>
           <label for="hole">Hole: </label>
-          <select name="holes" id="hole">
-            <option value="hole1">Hole 1</option>
-            <option value="hole2">Hole 2</option>
-            <option value="hole3">Hole 3</option>
-            <option value="hole4">Hole 4</option>
-            <option value="hole5">Hole 5</option>
-            <option value="hole6">Hole 6</option>
-            <option value="hole7">Hole 7</option>
-            <option value="hole8">Hole 8</option>
-            <option value="hole9">Hole 9</option>
-            <option value="hole9">Hole 10</option>
-            <option value="hole10">Hole 11</option>
-            <option value="hole11">Hole 12</option>
-            <option value="hole12">Hole 13</option>
-            <option value="hole13">Hole 14</option>
-            <option value="hole14">Hole 15</option>
-            <option value="hole15">Hole 16</option>
-            <option value="hole16">Hole 17</option>
-            <option value="hole17">Hole 18</option>
+          <select name="holesSelect" id="holesSelect">
+            <option value="score.hole1">Hole 1</option>
+            <option value="score.hole2">Hole 2</option>
+            <option value="score.hole3">Hole 3</option>
+            <option value="score.hole4">Hole 4</option>
+            <option value="score.hole5">Hole 5</option>
+            <option value="score.hole6">Hole 6</option>
+            <option value="score.hole7">Hole 7</option> 
+            <option value="score.hole8">Hole 8</option>
+            <option value="score.hole9">Hole 9</option>
+            <option value="score.hole10">Hole 10</option>
+            <option value="score.hole11">Hole 11</option>
+            <option value="score.hole12">Hole 12</option>
+            <option value="score.hole13">Hole 13</option>
+            <option value="score.hole14">Hole 14</option>
+            <option value="score.hole15">Hole 15</option>
+            <option value="score.hole16">Hole 16</option>
+            <option value="score.hole17">Hole 17</option>
+            <option value="score.hole18">Hole 18</option>
           </select>
           <p>
             <button>+</button>
-            <input type="number" placeholder="Score">
+            <input type="number" placeholder="Score" v-model="select">
             <button>-</button>
           </p>
-          <button>Save</button>
+          <button v-on:click="scoreUpdate(currentScore)">Save</button>
         </form>
     </dialog>
   </div>
@@ -225,7 +225,17 @@
       scoreUpdateModal: function(score) {
         this.currentScore = score;
         document.querySelector("#score-update").showModal();
-      }
+      },
+      scoreUpdate: function (score) {
+        var editScoreParams = score;
+        axios.patch("/scores/" + score.id, editScoreParams).then((response) => {
+          console.log("scores update", response);
+          this.currentScore = {};
+        })
+        .catch((error) => {
+          console.log("scores update error", error.response);
+        });
+      },
     },
   };
 </script>
