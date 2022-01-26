@@ -159,9 +159,9 @@
               </option>
             </select>
             <p>
-              <button v-on:click.prevent="Default()" v-on:click="currentScore[selected] += 1"> - </button>
+              <button v-on:click.prevent="Default()" v-on:click="currentScore[selected] -= 1"> - </button>
               <input type="number" placeholder="Score" v-model="currentScore[selected]">
-              <button v-on:click.prevent="Default()" v-on:click="currentScore[selected] -= 1"> + </button>
+              <button v-on:click.prevent="Default()" v-on:click="currentScore[selected] += 1"> + </button>
             </p>
             <button v-on:click="scoreUpdate(currentScore)">Save</button>
           </div>
