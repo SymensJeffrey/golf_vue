@@ -160,7 +160,7 @@
             </select>
             <p>
               <button v-on:click.prevent="Default()" v-on:click="currentScore[selected] -= 1"> - </button>
-              <input type="number" placeholder="Score" v-model="currentScore[selected]">
+              <input class="score-input" type="number" placeholder="Score" v-model="currentScore[selected]">
               <button v-on:click.prevent="Default()" v-on:click="currentScore[selected] += 1"> + </button>
             </p>
             <button v-on:click="scoreUpdate(currentScore)">Save</button>
@@ -194,6 +194,17 @@
 }
 .margin-top{
   margin-top: 8%;
+}
+label{
+  margin-right: 3px;
+}
+.score-input{
+  width: 30%;
+  margin: 10px;
+  
+}
+input[type="number"]{ 
+  text-align: center;
 }
 </style>
 
