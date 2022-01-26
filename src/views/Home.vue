@@ -1,10 +1,12 @@
 <template>
   <div class="home">
     <h1>{{ message }}</h1>
+    <!-- Signup and login buttons (Only shows if not logged in) -->
     <div v-if="!isLoggedIn()">
       <button v-on:click="pushToSignup">Signup</button>
       <button v-on:click="pushToLogin">Login</button>
     </div>
+    <!-- Create Tournament and Create Scorecard (only shows if logged in) -->
     <div class="container" v-if="isLoggedIn()">
       <div class="row">
         <div class="col-6">
