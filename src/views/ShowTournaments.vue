@@ -72,73 +72,8 @@
             Out
           </div>
         </div>
-        <div class="col-1">
-          <div class="row justify-content-center border border-secondary">
-            {{ tournament.scores[1].name }}
-          </div>
-          <div class="row justify-content-center border border-secondary">
-            {{ tournament.scores[1].hole1 }}
-          </div>
-          <div class="row justify-content-center border border-secondary">
-            {{ tournament.scores[1].hole2 }}
-          </div>
-          <div class="row justify-content-center border border-secondary">
-            {{ tournament.scores[1].hole3 }}
-          </div>
-          <div class="row justify-content-center border border-secondary">
-            {{ tournament.scores[1].hole4 }}
-          </div>
-          <div class="row justify-content-center border border-secondary">
-            {{ tournament.scores[1].hole5 }}
-          </div>
-          <div class="row justify-content-center border border-secondary">
-            {{ tournament.scores[1].hole6 }}
-          </div>
-          <div class="row justify-content-center border border-secondary">
-            {{ tournament.scores[1].hole7 }}
-          </div>
-          <div class="row justify-content-center border border-secondary">
-            {{ tournament.scores[1].hole8 }}
-          </div>
-          <div class="row justify-content-center border border-secondary">
-            {{ tournament.scores[1].hole9 }}
-          </div>
-          <div class="row justify-content-center border border-secondary">
-            {{ tournament.scores[1].front }}
-          </div>
-          <div class="row justify-content-center border border-secondary">
-            {{ tournament.scores[1].hole10 }}
-          </div>
-          <div class="row justify-content-center border border-secondary">
-            {{ tournament.scores[1].hole11 }}
-          </div>
-          <div class="row justify-content-center border border-secondary">
-            {{ tournament.scores[1].hole12 }}
-          </div>
-          <div class="row justify-content-center border border-secondary">
-            {{ tournament.scores[1].hole13 }}
-          </div>
-          <div class="row justify-content-center border border-secondary">
-            {{ tournament.scores[1].hole14 }}
-          </div>
-          <div class="row justify-content-center border border-secondary">
-            {{ tournament.scores[1].hole15 }}
-          </div>
-          <div class="row justify-content-center border border-secondary">
-            {{ tournament.scores[1].hole16 }}
-          </div>
-          <div class="row justify-content-center border border-secondary">
-            {{ tournament.scores[1].hole17 }}
-          </div>
-          <div class="row justify-content-center border border-secondary">
-            {{ tournament.scores[1].hole18 }}
-          </div>
-          <div class="row justify-content-center border border-secondary">
-            {{ tournament.scores[1].back }}
-          </div>
-          <div class="row justify-content-center border border-secondary">
-            {{ tournament.scores[1].total }}
-          </div>
+        <div class="col-1" v-for="score in tournament.scores" v-bind:key="score.id">
+          {{score}}
         </div>
     </div>
     <button v-on:click="pushBackToScore()">Return to Scorecard</button>
