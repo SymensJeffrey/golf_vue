@@ -3,7 +3,9 @@
     <h1>{{ message }}</h1>
     <div>
     </div>
+    <!-- Scorecard -->
     <div class="row justify-content-center no-border">
+        <!-- Hole list -->
         <div class="col-1">
           <div class="row justify-content-center border border-secondary">
             Name
@@ -72,6 +74,7 @@
             Out
           </div>
         </div>
+        <!-- Array of Scores in the tournament -->
         <div class="col-1" v-for="score in tournament.scores" v-bind:key="score.id">
           <div class="row justify-content-center border border-secondary">
             {{ score.name }}
@@ -137,7 +140,7 @@
             {{  score.back  }}
           </div>
           <div class="row justify-content-center border border-secondary">
-            {{  score.out }}
+            {{  score.total }}
           </div>
         </div>
     </div>
