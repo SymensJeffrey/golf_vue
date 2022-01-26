@@ -73,7 +73,72 @@
           </div>
         </div>
         <div class="col-1" v-for="score in tournament.scores" v-bind:key="score.id">
-          {{score}}
+          <div class="row justify-content-center border border-secondary">
+            {{ score.name }}
+          </div>
+          <div class="row justify-content-center border border-secondary">
+            {{  score.hole1  }}
+          </div>
+          <div class="row justify-content-center border border-secondary">
+            {{  score.hole2  }}
+          </div>
+          <div class="row justify-content-center border border-secondary">
+            {{  score.hole3  }}
+          </div>
+          <div class="row justify-content-center border border-secondary">
+            {{  score.hole4  }}
+          </div>
+          <div class="row justify-content-center border border-secondary">
+            {{  score.hole5  }}
+          </div>
+          <div class="row justify-content-center border border-secondary">
+            {{  score.hole6  }}
+          </div>
+          <div class="row justify-content-center border border-secondary">
+            {{  score.hole7  }}
+          </div>
+          <div class="row justify-content-center border border-secondary">
+            {{  score.hole8  }}
+          </div>
+          <div class="row justify-content-center border border-secondary">
+            {{  score.hole9  }}
+          </div>
+          <div class="row justify-content-center border border-secondary">
+            {{  score.front  }}
+          </div>
+          <div class="row justify-content-center border border-secondary">
+            {{  score.hole10  }}
+          </div>
+          <div class="row justify-content-center border border-secondary">
+            {{  score.hole11  }}
+          </div>
+          <div class="row justify-content-center border border-secondary">
+            {{  score.hole12  }}
+          </div>
+          <div class="row justify-content-center border border-secondary">
+            {{  score.hole13  }}
+          </div>
+          <div class="row justify-content-center border border-secondary">
+            {{  score.hole14  }}
+          </div>
+          <div class="row justify-content-center border border-secondary">
+            {{  score.hole15  }}
+          </div>
+          <div class="row justify-content-center border border-secondary">
+            {{  score.hole16  }}
+          </div>
+          <div class="row justify-content-center border border-secondary">
+            {{  score.hole17  }}
+          </div>
+          <div class="row justify-content-center border border-secondary">
+            {{  score.hole18  }}
+          </div>
+          <div class="row justify-content-center border border-secondary">
+            {{  score.back  }}
+          </div>
+          <div class="row justify-content-center border border-secondary">
+            {{  score.out }}
+          </div>
         </div>
     </div>
     <button v-on:click="pushBackToScore()">Return to Scorecard</button>
