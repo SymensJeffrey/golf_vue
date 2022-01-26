@@ -5,7 +5,7 @@
       <div class="row justify-content-center no-border">
         <div class="col-1">
           <div class="row justify-content-center border border-secondary">
-            Name
+            Hole
           </div>
           <div class="row justify-content-center border border-secondary">
             1
