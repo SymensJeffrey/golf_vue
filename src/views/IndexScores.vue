@@ -147,19 +147,24 @@
     </div>
     <dialog id="score-update">
         <form method="dialog">
-          <h2>Add Score</h2>
-          <label for="holesSelect">Hole: </label>
-          <select v-model="selected">
-            <option v-for="option in options" v-bind:key="option.value">
-                {{ option.value }}
-            </option>
-          </select>
-          <p>
-            <button>+</button>
-            <input type="number" placeholder="Score" v-model="currentScore[selected]">
-            <button>-</button>
-          </p>
-          <button v-on:click="scoreUpdate(currentScore)">Save</button>
+          <div>
+            <button id="close-button"> x </button>
+          </div>
+          <div class="container">
+            <h2 class="margin-top">Add Score</h2>
+            <label for="holesSelect">Hole: </label>
+            <select v-model="selected">
+              <option v-for="option in options" v-bind:key="option.value">
+                  {{ option.value }}
+              </option>
+            </select>
+            <p>
+              <button v-on:click.prevent="Default()" v-on:click="currentScore[selected] += 1"> - </button>
+              <input type="number" placeholder="Score" v-model="currentScore[selected]">
+              <button v-on:click.prevent="Default()" v-on:click="currentScore[selected] -= 1"> + </button>
+            </p>
+            <button v-on:click="scoreUpdate(currentScore)">Save</button>
+          </div>
         </form>
     </dialog>
   </div>
@@ -179,6 +184,16 @@
   resize: none;
   overflow: scroll;
   width: 100px;
+}
+#close-button{
+  margin-right: 95%;
+}
+#score-update{
+  width: 450px;
+  height: 300px;
+}
+.margin-top{
+  margin-top: 8%;
 }
 </style>
 
@@ -241,6 +256,8 @@
         .catch((error) => {
           console.log("scores update error", error.response);
         });
+      },
+      Default: function () {
       },
     },
   };
