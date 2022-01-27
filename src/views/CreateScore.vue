@@ -4,6 +4,9 @@
     <br>
     <br>
     <div>
+      <ul>
+        <li v-for="error in errors" v-bind:key="error">{{ error }}</li>
+      </ul>
         <p>
         Name: <input type="text" v-model="newScoreParams.name">
         </p>
@@ -37,6 +40,7 @@
         .catch((error) => {
           console.log("scores create error", error.response);
         });
+        this.$router.push("/scores")
         },
     },
   };
