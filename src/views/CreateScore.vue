@@ -34,13 +34,14 @@
     methods: {
         scoresCreate () {
         axios.post("/scores", this.newScoreParams).then((response) => {
+          this.$router.push("/scores")
           console.log("scores create", response);
           this.scores.push(response.data);
         })
         .catch((error) => {
-          console.log("scores create error", error.response);
-        });
-        this.$router.push("/scores")
+            console.log(error.response);
+            this.errors = ["Invalid token"];
+          });
         },
     },
   };
