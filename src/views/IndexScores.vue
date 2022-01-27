@@ -206,6 +206,11 @@ label{
 input[type="number"]{ 
   text-align: center;
 }
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
 </style>
 
 <script>
@@ -267,6 +272,7 @@ input[type="number"]{
         .catch((error) => {
           console.log("scores update error", error.response);
         });
+        window.location.reload();
       },
       Default: function () {
       },
