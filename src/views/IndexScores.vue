@@ -143,7 +143,7 @@
       <br>
       <button v-on:click="scoreUpdateModal(score)">Add Score</button>
       <button v-on:click="tournamentShow(score)">View Leaderboard</button>
-      <button>Delete Scorecard</button>
+      <button v-on:click="scoreDestroy(score)">Delete Scorecard</button>
     </div>
     <dialog id="score-update">
         <form method="dialog">
@@ -275,6 +275,14 @@ input::-webkit-inner-spin-button {
         window.location.reload();
       },
       Default: function () {
+      },
+      // Note: This does not delete it just changes it to inactive
+      scoreDestroy: function (score) {
+        var editScoreParams = {status: "inactive"}
+        axios.patch("/scores/" + score.id, editScoreParams).then((response) => {
+          console.log("scores destroy", response);
+        });
+        window.location.reload();
       },
     },
   };
