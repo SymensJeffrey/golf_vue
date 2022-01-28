@@ -286,14 +286,12 @@ input::-webkit-inner-spin-button {
       },
       Default: function () {
       },
-      // Note: This does not delete the score just changes it to inactive (might want a profile page later with past scores)
       scoreDestroy: function (score) {
-        var editScoreParams = {status: "inactive"}
-        axios.patch("/scores/" + score.id, editScoreParams).then((response) => {
+        axios.delete("/scores/" + score.id).then((response) => {
           console.log("scores destroy", response);
-          this.currentScore = {};
+          var index = this.scores.indexOf(score);
+          this.scores.splice(index, 1);
         });
-        window.location.reload();
       },
       scoreDestroyModal: function(score) {
         this.currentScore = score;
