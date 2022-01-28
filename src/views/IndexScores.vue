@@ -143,7 +143,7 @@
       <br>
       <button v-on:click="scoreUpdateModal(score)">Add Score</button>
       <button v-on:click="tournamentShow(score)">View Leaderboard</button>
-      <button v-on:click="scoreDestroy(score)">Delete Scorecard</button>
+      <button v-on:click="scoreDestroyModal(score)">Delete Scorecard</button>
     </div>
     <dialog id="score-update">
         <form method="dialog">
@@ -166,6 +166,16 @@
             <button v-on:click="scoreUpdate(currentScore)">Save</button>
           </div>
         </form>
+    </dialog>
+    <dialog id="score-destroy">
+      <form method="dialog">
+        <div>
+          <h6> Are you sure you want to delete this scorecard?</h6>
+          <br>
+          <button v-on:click="scoreDestroy(currentScore)"> Yes </button>
+          <button> No </button>
+        </div>
+      </form>
     </dialog>
   </div>
 </template>
@@ -276,14 +286,19 @@ input::-webkit-inner-spin-button {
       },
       Default: function () {
       },
-      // Note: This does not delete it just changes it to inactive
+      // Note: This does not delete the score just changes it to inactive (might want a profile page later with past scores)
       scoreDestroy: function (score) {
         var editScoreParams = {status: "inactive"}
         axios.patch("/scores/" + score.id, editScoreParams).then((response) => {
           console.log("scores destroy", response);
+          this.currentScore = {};
         });
         window.location.reload();
       },
+      scoreDestroyModal: function(score) {
+        this.currentScore = score;
+        document.querySelector("#score-destroy").showModal();
+      }
     },
   };
 </script>
