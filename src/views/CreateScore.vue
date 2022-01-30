@@ -25,7 +25,7 @@
   export default {
     data: function () {
       return {
-        message: "Create your Scorecard",
+        message: "Create Scorecard",
         newScoreParams: {},
         errors: []
       };
