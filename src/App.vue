@@ -1,13 +1,12 @@
 <template>
   <div id="app">
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <div class="container-fluid">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light" v-bind:class=" { 'navbarOpen': show }">
         <a class="navbar-brand" href="/">Scoreboard</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" @click.stop="toggleNavbar()">
+            <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav">
+        <div class="collapse navbar-collapse" id="navbarSupportedContent" v-bind:class="{ 'show': show }">
+          <ul class="navbar-nav mr-auto">
             <li class="nav-item">
               <a class="nav-link active" aria-current="page" href="/">Home</a>
             </li>
@@ -19,7 +18,6 @@
             </li>
           </ul>
         </div>
-      </div>
     </nav>
     <router-view />
   </div>
@@ -38,7 +36,9 @@
 <script>
   export default {
     data: function () {
-      return {};
+      return {
+        show: ""
+      };
     },
     created: function () {},
     methods: {
@@ -48,6 +48,9 @@
       } else {
         return false;
       }      
+      },
+      toggleNavbar() {
+        this.show = !this.show
       },
     },
   };
