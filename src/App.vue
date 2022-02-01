@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <nav class="navbar navbar-expand-lg navbar-light bg-light" v-bind:class=" { 'navbarOpen': show }">
+      <div class="container">
         <a class="navbar-brand" href="/">Scoreboard</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" @click.stop="toggleNavbar()">
             <span class="navbar-toggler-icon"></span>
@@ -18,6 +19,7 @@
             </li>
           </ul>
         </div>
+      </div>
     </nav>
     <router-view />
   </div>
