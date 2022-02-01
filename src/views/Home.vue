@@ -7,19 +7,16 @@
               <h2 class="masthead-subheading mb-0">Live Golf Score Tracking</h2>
               <a class="btn btn-primary btn-xl rounded-pill mt-5" href="#scroll">Learn More</a>
           </div>
+          <div v-if="!isLoggedIn()">
+            <button class="btn btn-primary btn-l rounded-pill mt-5" v-on:click="pushToSignup">Signup</button>
+            <button class="btn btn-primary btn-l rounded-pill mt-5" v-on:click="pushToLogin">Login</button>
+          </div>
       </div>
       <div class="bg-circle-1 bg-circle"></div>
       <div class="bg-circle-2 bg-circle"></div>
       <div class="bg-circle-3 bg-circle"></div>
       <div class="bg-circle-4 bg-circle"></div>
     </header>
-    <!-- Signup and login buttons (Only shows if not logged in) -->
-    <div v-if="!isLoggedIn()">
-      <h2> How Scoreboard Works </h2>
-      <p> Scoreboard is a place that allows you and your friends to log scores so they are visible to everyone. You can create a tournament and generate a unique code that you can give to people in your tournament. Then you can generate a scorecard and track your score as you go and check the leaderboard to see everyone elses scores. Get out there and hit em straight!</p>
-      <button v-on:click="pushToSignup">Signup</button>
-      <button v-on:click="pushToLogin">Login</button>
-    </div>
     <section id="scroll">
       <div class="container px-5">
         <div class="row gx-5 align-items-center">
