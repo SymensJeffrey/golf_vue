@@ -69,7 +69,7 @@
   </div>
 </template>
 
-<style>
+<style scoped>
 .bottom-margin{
   margin-bottom: 60px;
 }
