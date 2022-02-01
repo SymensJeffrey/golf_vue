@@ -28,7 +28,7 @@
               <h2 class="display-4">Start a Scorecard</h2>
               <p>Starting a Scorecard will allow you to enter your scores and update them throughout your round. Everyone with the same tournament code will be able to see your scores. (Note: you will need a unique code to sync with the tournament to be able to see all your friends scores)</p>
             </div>
-            <button v-on:click="pushToCreateScorecard()">Start</button>
+            <button v-if="isLoggedIn()" v-on:click="pushToCreateScorecard()">Start</button>
           </div>
         </div>
       </div>
@@ -45,7 +45,7 @@
               <h2 class="display-4">Start a Tournament</h2>
               <p>Starting a tournament allows you to generate a unique code so you and your friends can track there scores and will allow everyone to see each other scores. If you have a code already, hit Start a Scorecard</p>
             </div>
-            <button v-on:click="pushToCreateTournament()">Start</button>
+            <button v-if="isLoggedIn()" v-on:click="pushToCreateTournament()">Start</button>
           </div>
         </div>
       </div>
