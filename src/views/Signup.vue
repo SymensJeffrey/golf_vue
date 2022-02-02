@@ -1,62 +1,29 @@
 <template>
-  <!-- <div class="signup">
-    <form v-on:submit.prevent="submit()">
-      <h1>Signup</h1>
-      <ul>
-        <li v-for="error in errors" v-bind:key="error">{{ error }}</li>
-      </ul>
-      <div>
-        <label>Name:</label>
-        <input type="text" v-model="newUserParams.name" />
-      </div>
-      <div>
-        <label>Email:</label>
-        <input type="email" v-model="newUserParams.email" />
-      </div>
-      <div>
-        <label>Password:</label>
-        <input type="password" v-model="newUserParams.password" />
-      </div>
-      <div>
-        <label>Password confirmation:</label>
-        <input type="password" v-model="newUserParams.password_confirmation" />
-      </div>
-      <input type="submit" value="Submit" />
-    </form>
-  </div> -->
   <div class="container">
     <div class="signup-content">
       <div class="signup-form">
         <h2 class="form-title">Sign up</h2>
-        <form method="POST" class="register-form" id="register-form">
-          <div class="form-group">
-              <label for="name"><i class="zmdi zmdi-account material-icons-name"></i></label>
-              <input type="text" name="name" id="name" placeholder="Your Name"/>
-          </div>
+        <form v-on:submit.prevent="submit()" class="register-form" id="register-form">
           <div class="form-group">
               <label for="email"><i class="zmdi zmdi-email"></i></label>
-              <input type="email" name="email" id="email" placeholder="Your Email"/>
+              <input v-model="newUserParams.email" type="email" name="email" id="email" placeholder="Your Email"/>
           </div>
           <div class="form-group">
               <label for="pass"><i class="zmdi zmdi-lock"></i></label>
-              <input type="password" name="pass" id="pass" placeholder="Password"/>
+              <input v-model="newUserParams.password" type="password" name="pass" id="pass" placeholder="Password"/>
           </div>
           <div class="form-group">
               <label for="re-pass"><i class="zmdi zmdi-lock-outline"></i></label>
-              <input type="password" name="re_pass" id="re_pass" placeholder="Repeat your password"/>
-          </div>
-          <div class="form-group">
-              <input type="checkbox" name="agree-term" id="agree-term" class="agree-term" />
-              <label for="agree-term" class="label-agree-term"><span><span></span></span>I agree all statements in  <a href="#" class="term-service">Terms of service</a></label>
+              <input v-model="newUserParams.password_confirmation" type="password" name="re_pass" id="re_pass" placeholder="Repeat your password"/>
           </div>
           <div class="form-group form-button">
-              <input type="submit" name="signup" id="signup" class="form-submit" value="Register"/>
+              <input type="submit" id="signup" class="form-submit" value="Submit"/>
           </div>
         </form>
       </div>
       <div class="signup-image">
-        <figure><img src="images/signup-image.jpg" alt="sing up image"></figure>
-        <a href="#" class="signup-image-link">I am already member</a>
+        <figure><img src="../images/signup-image.jpg" alt="sing up image"></figure>
+        <a href="/login" class="signup-image-link">I am already member</a>
       </div>
     </div>
   </div>
@@ -340,7 +307,7 @@ figure {
 
 .form-submit {
   display: inline-block;
-  background: #6dabe4;
+  background: #0c8800;
   color: #fff;
   border-bottom: none;
   width: auto;
@@ -353,7 +320,7 @@ figure {
   margin-top: 25px;
   cursor: pointer; }
   .form-submit:hover {
-    background: #4292dc; }
+    background: #0fb900; }
 
 #signin {
   margin-top: 16px; }
