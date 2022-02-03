@@ -20,35 +20,23 @@
         <div class="signin-content">
           <div class="signin-image">
             <figure><img src="../images/signin-image.jpg" alt="sing up image"></figure>
-            <a href="#" class="signup-image-link">Create an account</a>
+            <a href="/signup" class="signup-image-link">Create an account</a>
           </div>
             <div class="signin-form">
-              <h2 class="form-title">Sign up</h2>
+              <h2 class="form-title">Login</h2>
               <form method="POST" class="register-form" id="login-form" v-on:submit.prevent="submit()">
                 <div class="form-group">
                   <label for="your_name"><i class="zmdi zmdi-account material-icons-name"></i></label>
-                  <input type="text" name="your_name" id="your_name" placeholder="Your Name"/>
+                  <input v-model="newSessionParams.email" type="text" name="your_name" id="your_name" placeholder="Email"/>
                 </div>
                 <div class="form-group">
                   <label for="your_pass"><i class="zmdi zmdi-lock"></i></label>
-                  <input type="password" name="your_pass" id="your_pass" placeholder="Password"/>
-                </div>
-                <div class="form-group">
-                  <input type="checkbox" name="remember-me" id="remember-me" class="agree-term" />
-                  <label for="remember-me" class="label-agree-term"><span><span></span></span>Remember me</label>
+                  <input v-model="newSessionParams.password" type="password" name="your_pass" id="your_pass" placeholder="Password"/>
                 </div>
                 <div class="form-group form-button">
-                  <input type="submit" name="signin" id="signin" class="form-submit" value="Log in"/>
-                </div>
+                  <input type="submit" id="signin" class="form-submit" value="Submit"/>
+                </div> 
               </form>
-              <div class="social-login">
-                  <span class="social-label">Or login with</span>
-                  <ul class="socials">
-                      <li><a href="#"><i class="display-flex-center zmdi zmdi-facebook"></i></a></li>
-                      <li><a href="#"><i class="display-flex-center zmdi zmdi-twitter"></i></a></li>
-                      <li><a href="#"><i class="display-flex-center zmdi zmdi-google"></i></a></li>
-                  </ul>
-              </div>
             </div>
           </div>
       </div>
