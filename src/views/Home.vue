@@ -17,14 +17,16 @@
       <div class="bg-circle-3 bg-circle"></div>
       <div class="bg-circle-4 bg-circle"></div>
     </header>
+    <br>
+    <br>
     <section id="scroll">
       <div class="container px-5">
         <div class="row gx-5 align-items-center">
           <div class="col-lg-6 order-lg-2">
-            <div class="p-5"><img class="img-fluid rounded-circle" src="assets/img/new01.jpg" alt="..." /></div>
+            <div class="p-2"><img class="img-fluid rounded-circle" src="assets/img/new01.jpg" alt="..." /></div>
           </div>
           <div class="col-lg-6 order-lg-1">
-            <div class="p-5">
+            <div class="p-2">
               <h2 class="display-4">Start a Scorecard</h2>
               <p>Starting a Scorecard will allow you to enter your scores and update them throughout your round. Everyone with the same tournament code will be able to see your scores. (Note: you will need a unique code to sync with the tournament to be able to see all your friends scores)</p>
             </div>
@@ -35,13 +37,13 @@
     </section>
     <!-- Content section 2-->
     <section>
-      <div class="container px-5">
+      <div class="container px-2">
         <div class="row gx-5 align-items-center">
           <div class="col-lg-6">
             <div class="p-5"><img class="img-fluid rounded-circle" src="assets/img/new02.jpg" alt="..." /></div>
           </div>
           <div class="col-lg-6">
-            <div class="p-5">
+            <div class="p-2">
               <h2 class="display-4">Start a Tournament</h2>
               <p>Starting a tournament allows you to generate a unique code so you and your friends can track there scores and will allow everyone to see each other scores. If you have a code already, hit Start a Scorecard</p>
             </div>
@@ -55,10 +57,10 @@
       <div class="container px-5">
         <div class="row gx-5 align-items-center">
           <div class="col-lg-6 order-lg-2">
-            <div class="p-5"><img class="img-fluid rounded-circle" src="assets/img/new03.jpg" alt="..." /></div>
+            <div class="p-2"><img class="img-fluid rounded-circle" src="assets/img/new03.jpg" alt="..." /></div>
           </div>
           <div class="col-lg-6 order-lg-1">
-            <div class="p-5">
+            <div class="p-2">
               <h2 class="display-4">How it works</h2>
                 <p>Scoreboard is a place that allows you and your friends to log scores so they are visible to everyone. You can create a tournament and generate a unique code that you can give to people in your tournament. Then you can generate a scorecard and track your score as you go and check the leaderboard to see everyone elses scores. Get out there and hit em straight!</p>
             </div>
