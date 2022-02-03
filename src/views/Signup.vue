@@ -307,7 +307,7 @@ figure {
 
 .form-submit {
   display: inline-block;
-  background: #0c8800;
+  background: #0fb600;
   color: #fff;
   border-bottom: none;
   width: auto;
