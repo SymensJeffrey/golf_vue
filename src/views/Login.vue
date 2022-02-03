@@ -25,6 +25,9 @@
             <div class="signin-form">
               <h2 class="form-title">Login</h2>
               <form method="POST" class="register-form" id="login-form" v-on:submit.prevent="submit()">
+                <ul>
+                  <li v-for="error in errors" v-bind:key="error">{{ error }}</li>
+                </ul>
                 <div class="form-group">
                   <label for="your_name"><i class="zmdi zmdi-account material-icons-name"></i></label>
                   <input v-model="newSessionParams.email" type="text" name="your_name" id="your_name" placeholder="Email"/>
