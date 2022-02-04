@@ -152,8 +152,8 @@
           </div>
           <div class="container">
             <h2 class="margin-top">Add Score</h2>
-            <label for="holesSelect">Hole: </label>
-            <select v-model="selected">
+            <select v-model="selected" class="dropdown">
+              <option value="" disabled selected>Hole</option>
               <option v-for="option in options" v-bind:key="option.value">
                   {{ option.value }}
               </option>
@@ -180,7 +180,11 @@
   </div>
 </template>
 
-<style>
+<style scoped>
+.dropdown{
+  width: 30%;
+  height: 30px;
+}
 .border{
   border-style: solid;
   border-width: 2px;
@@ -210,8 +214,7 @@ label{
 }
 .score-input{
   width: 30%;
-  margin: 10px;
-  
+  margin: 10px; 
 }
 input[type="number"]{ 
   text-align: center;
@@ -220,6 +223,19 @@ input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
+}
+select:required:invalid {
+  color: gray;
+}
+select{
+  text-align: center;
+}
+option[value=""][disabled] {
+  display: none;
+}
+option {
+  color: black;
+  text-align: center;
 }
 </style>
 
