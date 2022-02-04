@@ -172,8 +172,8 @@
         <div>
           <h6> Are you sure you want to delete this scorecard?</h6>
           <br>
-          <button v-on:click="scoreDestroy(currentScore)"> Yes </button>
-          <button> No </button>
+          <button class="btn btn-secondary btn-l rounded-pill mt-2 me-3" v-on:click="scoreDestroy(currentScore)"> Yes </button>
+          <button class="btn btn-secondary btn-l rounded-pill mt-2"> No </button>
         </div>
       </form>
     </dialog>
