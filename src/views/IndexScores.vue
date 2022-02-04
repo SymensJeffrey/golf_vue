@@ -141,9 +141,9 @@
         </div>
       </div>
       <br>
-      <button v-on:click="scoreUpdateModal(score)">Add Score</button>
-      <button v-on:click="tournamentShow(score)">View Leaderboard</button>
-      <button v-on:click="scoreDestroyModal(score)">Delete Scorecard</button>
+      <button class="btn btn-secondary btn-l rounded-pill mt-2 me-3" v-on:click="scoreUpdateModal(score)">Add Score</button>
+      <button class="btn btn-secondary btn-l rounded-pill mt-2 me-3" v-on:click="tournamentShow(score)">View Leaderboard</button>
+      <button class="btn btn-secondary btn-l rounded-pill mt-2" v-on:click="scoreDestroyModal(score)">Delete Scorecard</button>
     </div>
     <dialog id="score-update">
         <form method="dialog">
