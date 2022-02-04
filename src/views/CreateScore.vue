@@ -1,6 +1,6 @@
 <template>
-  <div class="home background-image">
-    <div class="container white-background">
+  <div class="home">
+    <div class="container">
       <br>
       <br>
       <h1>{{ message }}</h1>
@@ -23,15 +23,6 @@
 </template>
 
 <style scoped>
-.white-background{
-  background: white;
-  min-height: 100vh;
-  width: 70%
-}
-.background-image{
-  min-height: 100vh;
-  background-image: url("../images/topography.png")
-}
 </style>
 
 <script>
