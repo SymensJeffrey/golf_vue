@@ -1,19 +1,32 @@
 <template>
-  <div class="home">
-    <h1>{{ message }}</h1>
-    <br>
-    <br>
-    <button v-on:click="tournamentsCreate()">Create</button>
-    <br>
-    <br>
-    <div v-for="tournament in tournaments" v-bind:key="tournament.id">
-      Date: {{tournament.date}} | 
-      Token: {{tournament.token}}
+  <div class="home background-image">
+    <div class="container white-background">
+      <br>
+      <br>
+      <h1>{{ message }}</h1>
+      <br>
+      <button class="btn btn-secondary btn-l rounded-pill mt-5" v-on:click="tournamentsCreate()">Create</button>
+      <br>
+      <br>
+      <div v-for="tournament in tournaments" v-bind:key="tournament.id">
+        Date: {{tournament.date}} | 
+        Token: {{tournament.token}}
+      </div>
     </div>
   </div>
 </template>
 
-<style></style>
+<style>
+.white-background{
+  background: white;
+  min-height: 100vh;
+  width: 70%
+}
+.background-image{
+  min-height: 100vh;
+  background-image: url("../images/topography.png")
+}
+</style>
 
 <script>
     import axios from 'axios'
