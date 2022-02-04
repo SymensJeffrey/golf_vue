@@ -1,5 +1,7 @@
 <template>
   <div class="home">
+    <br>
+    <br>
     <h1>{{ message }}</h1>
     <br>
     <br>
@@ -13,7 +15,7 @@
         <p>
         Token: <input type="text" v-model="newScoreParams.token">
         </p>
-        <button v-on:click="scoresCreate()">Create</button>
+        <button class="btn btn-secondary btn-xl rounded-pill mt-5" v-on:click="scoresCreate()">Create</button>
     </div>
   </div>
 </template>
