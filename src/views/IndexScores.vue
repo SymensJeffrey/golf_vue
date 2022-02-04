@@ -148,7 +148,7 @@
     <dialog id="score-update">
         <form method="dialog">
           <div>
-            <button class="btn btn-secondary btn-l rounded-pill mt-2" id="close-button"> x </button>
+            <button class="btn btn-secondary btn-l rounded-circle mt-2" id="close-button"> x </button>
           </div>
           <div class="container">
             <h2 class="margin-top">Add Score</h2>
@@ -159,9 +159,9 @@
               </option>
             </select>
             <p>
-              <button class="btn btn-secondary btn-l rounded-pill mt-2" v-on:click.prevent="Default()" v-on:click="currentScore[selected] -= 1"> - </button>
+              <button class="btn btn-secondary btn-s rounded-2" v-on:click.prevent="Default()" v-on:click="currentScore[selected] -= 1"> - </button>
               <input class="score-input" type="number" placeholder="Score" v-model="currentScore[selected]">
-              <button class="btn btn-secondary btn-l rounded-pill mt-2" v-on:click.prevent="Default()" v-on:click="currentScore[selected] += 1"> + </button>
+              <button class="btn btn-secondary btn-s rounded-2" v-on:click.prevent="Default()" v-on:click="currentScore[selected] += 1"> + </button>
             </p>
             <button class="btn btn-secondary btn-l rounded-pill mt-2" v-on:click="scoreUpdate(currentScore)">Save</button>
           </div>
