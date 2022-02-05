@@ -8,7 +8,7 @@
               <a class="btn btn-primary btn-xl rounded-pill mt-5" href="#scroll">Learn More</a>
           </div>
           <div v-if="!isLoggedIn()">
-            <button class="btn btn-primary btn-l rounded-pill mt-5" v-on:click="pushToSignup">Signup</button>
+            <button class="btn btn-primary btn-l rounded-pill mt-5 me-3" v-on:click="pushToSignup">Signup</button>
             <button class="btn btn-primary btn-l rounded-pill mt-5" v-on:click="pushToLogin">Login</button>
           </div>
       </div>
