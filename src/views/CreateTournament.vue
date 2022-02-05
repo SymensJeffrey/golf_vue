@@ -9,7 +9,7 @@
       <br>
       <br>
       <div class=" container">
-        <div class="card w-50 margin" v-for="tournament in tournaments" v-bind:key="tournament.id">
+        <div class="card margin shadow-lg p-3 mb-5 bg-white rounded" v-for="tournament in tournaments" v-bind:key="tournament.id">
           <div class="card-body">
             <h5 class="card-title">Date: {{tournament.date}}</h5>
             <p class="card-text">Token: {{tournament.token}}</p>
@@ -23,8 +23,10 @@
 
 <style>
 .margin{
- left: 24.5%;
  margin-bottom: 40px;
+}
+.card{
+  width: 275px;
 }
 </style>
 
