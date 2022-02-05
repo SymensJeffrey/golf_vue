@@ -8,11 +8,13 @@
       <br>
       <br>
       <br>
-      <div class="card w-50 center" v-for="tournament in tournaments" v-bind:key="tournament.id">
-        <div class="card-body">
-          <h5 class="card-title">Date: {{tournament.date}}</h5>
-          <p class="card-text">Token: {{tournament.token}}</p>
-          <a href="#" class="btn btn-secondary">Button</a>
+      <div class=" container">
+        <div class="card w-50 margin" v-for="tournament in tournaments" v-bind:key="tournament.id">
+          <div class="card-body">
+            <h5 class="card-title">Date: {{tournament.date}}</h5>
+            <p class="card-text">Token: {{tournament.token}}</p>
+            <a href="#" class="btn btn-secondary">Button</a>
+          </div>
         </div>
       </div>
     </div>
@@ -20,6 +22,10 @@
 </template>
 
 <style>
+.margin{
+ left: 24.5%;
+ margin-bottom: 40px;
+}
 </style>
 
 <script>
