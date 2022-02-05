@@ -4,13 +4,16 @@
       <br>
       <br>
       <h1>{{ message }}</h1>
-      <br>
       <button class="btn btn-secondary btn-l rounded-pill mt-5" v-on:click="tournamentsCreate()">Create</button>
       <br>
       <br>
-      <div v-for="tournament in tournaments" v-bind:key="tournament.id">
-        Date: {{tournament.date}} | 
-        Token: {{tournament.token}}
+      <br>
+      <div class="card w-50 center" v-for="tournament in tournaments" v-bind:key="tournament.id">
+        <div class="card-body">
+          <h5 class="card-title">Date: {{tournament.date}}</h5>
+          <p class="card-text">Token: {{tournament.token}}</p>
+          <a href="#" class="btn btn-secondary">Button</a>
+        </div>
       </div>
     </div>
   </div>
