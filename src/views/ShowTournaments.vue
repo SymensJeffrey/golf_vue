@@ -149,7 +149,13 @@
   </div>
 </template>
 
-<style></style>
+<style scoped>
+.col-1{
+  resize: none;
+  overflow: scroll;
+  width: 100px;
+}
+</style>
 
 <script>
     import axios from 'axios'
