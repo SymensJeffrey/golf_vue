@@ -13,9 +13,20 @@
           <div class="card-body">
             <h5 class="card-title">Date: {{tournament.date}}</h5>
             <p class="card-text">Token: {{tournament.token}}</p>
-            <a href="#" class="btn btn-secondary">Button</a>
+            <button class="btn btn-secondary btn-l rounded-pill mt-2" v-on:click="tournamentDestroyModal(tournament)">Delete</button>
           </div>
         </div>
+        <dialog id="tournament-delete">
+          <form method="dialog">
+            <div>
+              <h6> Are you sure you want to delete this tournament?</h6>
+              <p class="italic">If you delete this tournament all the scores will be removed as well</p>
+              <br>
+              <button class="btn btn-secondary btn-l rounded-pill mt-2 me-3" v-on:click="tournamentDestroy(currentTournament)"> Yes </button>
+              <button class="btn btn-secondary btn-l rounded-pill mt-2"> No </button>
+            </div>
+          </form>
+        </dialog>
       </div>
     </div>
   </div>
@@ -28,6 +39,12 @@
 .card{
   width: 275px;
 }
+#tournament-delete{
+  height: 180px;
+}
+.italic{
+  font-style: italic;
+}
 </style>
 
 <script>
@@ -36,7 +53,8 @@
     data: function () {
       return {
         message: "Create your Tournament",
-        tournaments: []
+        tournaments: [],
+        currentTournament: {},
       };
     },
     created: function () {
@@ -57,7 +75,20 @@
         .catch((error) => {
           console.log("tournaments create error", error.response);
         });
-      }
+      },
+      tournamentDestroy: function (tournament) {
+        axios.delete("/tournaments/" + tournament.id).then((response) => {
+          console.log("tournaments destroy", response);
+          var index = this.tournaments.indexOf(tournament);
+          this.tournaments.splice(index, 1);
+        });
+      },
+      tournamentDestroyModal: function(tournament) {
+        this.currentTournament = tournament;
+        document.querySelector("#tournament-delete").showModal();
+      },
+      Default: function () {
+      },
     },
   };
 </script>
