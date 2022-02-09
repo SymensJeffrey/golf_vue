@@ -6,8 +6,7 @@ import vSelect from 'vue-select'
 
 Vue.component('v-select', vSelect)
 
-axios.defaults.baseURL =
-  process.env.NODE_ENV === "development" ? "http://localhost:3000" : "https://floating-gorge-45468.herokuapp.com";
+axios.defaults.baseURL = "https://floating-gorge-45468.herokuapp.com";
 
 var jwt = localStorage.getItem("jwt");
 if (jwt) {
