@@ -1,5 +1,7 @@
 <template>
   <div class="home">
+    <br>
+    <br>
     <h1>{{ message }}</h1>
     <div v-for="score in scores" v-bind:key="score.id">
       <div class="row justify-content-center no-border">
