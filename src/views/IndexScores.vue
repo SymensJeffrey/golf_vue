@@ -3,13 +3,11 @@
     <br>
     <br>
     <h1>{{ message }}</h1>
-    <br>
-    <br>
     <div v-if="scores.length == 0">
       <h5> You have no active scorecards</h5>
       <a href="/score/new">Create Scorecard</a>
     </div>
-    <div v-for="score in scores" v-bind:key="score.id">
+    <div class="my-5" v-for="score in scores" v-bind:key="score.id">
       <div class="row justify-content-center no-border">
         <div class="col-1">
           <div class="row justify-content-center border border-dark">
