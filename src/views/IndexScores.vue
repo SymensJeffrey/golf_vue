@@ -8,6 +8,7 @@
       <a href="/score/new">Create Scorecard</a>
     </div>
     <div class="my-5" v-for="score in scores" v-bind:key="score.id">
+      <h6>Tournament: {{score.token}}</h6>
       <div class="row justify-content-center no-border">
         <div class="col-1">
           <div class="row justify-content-center border border-dark">
