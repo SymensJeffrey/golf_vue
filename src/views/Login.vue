@@ -23,7 +23,6 @@
                 </div>
                 <div class="form-group form-button">
                   <input type="submit" id="signup" class="form-submit" value="Submit"/>
-                  <!-- <button class="btn btn-secondary btn-xl rounded-pill mt-5" v-on:click="submit()">Submit</button> -->
                 </div> 
               </form>
             </div>
