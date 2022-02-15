@@ -17,8 +17,8 @@
               <input v-model="newUserParams.password_confirmation" type="password" name="re_pass" id="re_pass" placeholder="Repeat your password"/>
           </div>
           <div class="form-group form-button">
-              <!-- <input v-on:click="submit()" type="submit" id="signup" class="form-submit" value="Submit"/> -->
-              <button class="btn btn-secondary btn-xl rounded-pill mt-5" v-on:click="submit()">Submit</button>
+              <input type="submit" id="signup" class="form-submit" value="Submit"/>
+              <!-- <button class="btn btn-secondary btn-xl rounded-pill mt-5" v-on:click="submit()">Submit</button> -->
           </div>
         </form>
       </div>
