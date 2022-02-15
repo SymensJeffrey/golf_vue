@@ -9,6 +9,7 @@
       <br>
       <br>
       <div class=" container">
+        <h2 class="mb-5"> Active Tournaments </h2>
         <div class="card margin-bottom shadow-lg p-3 mb-5 bg-white rounded" v-for="tournament in tournaments" v-bind:key="tournament.id">
           <div class="card-body">
             <h5 class="card-title">Date: {{tournament.date}}</h5>
