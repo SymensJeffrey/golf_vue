@@ -1,4 +1,5 @@
 # golf_vue
+To view this project go to https://golfscoreboard.netlify.app/
 
 ## Project setup
 ```
