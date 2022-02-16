@@ -10,11 +10,13 @@
       <br>
       <div class=" container">
         <h2 class="mb-5"> Active Tournaments </h2>
-        <div class="card margin-bottom shadow-lg p-3 mb-5 bg-white rounded" v-for="tournament in tournaments" v-bind:key="tournament.id">
-          <div class="card-body">
-            <h5 class="card-title">Date: {{tournament.date}}</h5>
-            <p class="card-text">Token: {{tournament.token}}</p>
-            <button class="btn btn-secondary btn-l rounded-pill mt-2" v-on:click="tournamentDestroyModal(tournament)">Delete</button>
+        <div class="center-cards">
+          <div class="card margin-bottom shadow-lg p-3 mb-5 bg-white rounded" v-for="tournament in tournaments" v-bind:key="tournament.id">
+            <div class="card-body">
+              <h5 class="card-title">Date: {{tournament.date}}</h5>
+              <p class="card-text">Token: {{tournament.token}}</p>
+              <button class="btn btn-secondary btn-l rounded-pill mt-2" v-on:click="tournamentDestroyModal(tournament)">Delete</button>
+            </div>
           </div>
         </div>
         <dialog id="tournament-delete">
@@ -34,6 +36,10 @@
 </template>
 
 <style>
+.center-cards{
+  display: flex;
+  justify-content: center;
+}
 .margin-bottom{
  margin-bottom: 40px;
 }
