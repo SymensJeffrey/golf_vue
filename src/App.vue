@@ -15,6 +15,9 @@
               <a class="nav-link" v-if="isLoggedIn()" href="/scores">Scorecards</a>
             </li>
             <li class="nav-item">
+              <a class="nav-link" v-if="isLoggedIn()" href="/tournament/new">Tournaments</a>
+            </li>
+            <li class="nav-item">
               <a class="nav-link" v-if="isLoggedIn()" href="/logout">Logout</a>
             </li>
             <li class="nav-item">
