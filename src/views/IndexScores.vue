@@ -11,7 +11,7 @@
       <h6>Tournament: {{score.token}}</h6>
       <div class="row justify-content-center no-border">
         <div class="col-1">
-          <div class="row justify-content-center border border-dark row-fill">
+          <div class="row justify-content-center border border-dark row-fill-green">
             Hole
           </div>
           <div class="row justify-content-center border border-dark">
@@ -41,7 +41,7 @@
           <div class="row justify-content-center border border-dark">
             9
           </div>
-          <div class="row justify-content-center border border-dark row-fill">
+          <div class="row justify-content-center border border-dark row-fill-green">
             Front
           </div>
           <div class="row justify-content-center border border-dark">
@@ -71,15 +71,15 @@
           <div class="row justify-content-center border border-dark">
             18
           </div>
-          <div class="row justify-content-center border border-dark row-fill">
+          <div class="row justify-content-center border border-dark row-fill-green">
             Back
           </div>
-          <div class="row justify-content-center border border-dark row-fill">
+          <div class="row justify-content-center border border-dark row-fill-green">
             Out
           </div>
         </div>
         <div class="col-1">
-          <div class="row justify-content-center border border-dark row-fill">
+          <div class="row justify-content-center border border-dark row-fill-green">
             {{ score.name }}
           </div>
           <div class="row justify-content-center border border-dark">
@@ -109,7 +109,7 @@
           <div class="row justify-content-center border border-dark">
             {{ score.hole9 }}
           </div>
-          <div class="row justify-content-center border border-dark row-fill">
+          <div class="row justify-content-center border border-dark row-fill-green">
             {{ score.front }}
           </div>
           <div class="row justify-content-center border border-dark">
@@ -139,10 +139,10 @@
           <div class="row justify-content-center border border-dark">
             {{ score.hole18 }}
           </div>
-          <div class="row justify-content-center border border-dark row-fill">
+          <div class="row justify-content-center border border-dark row-fill-green">
             {{ score.back }}
           </div>
-          <div class="row justify-content-center border border-dark row-fill">
+          <div class="row justify-content-center border border-dark row-fill-green">
             {{ score.total }}
           </div>
         </div>
@@ -192,7 +192,7 @@
   width: 30%;
   height: 30px;
 }
-.row-fill{
+.row-fill-green{
   background-color:#009c1a3b;
 }
 .border{
