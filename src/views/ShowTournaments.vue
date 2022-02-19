@@ -9,7 +9,7 @@
     <div class="row justify-content-center no-border">
         <!-- Hole list -->
         <div class="col-1">
-          <div class="row justify-content-center border border-dark">
+          <div class="row justify-content-center border border-dark row-fill">
             Hole
           </div>
           <div class="row justify-content-center border border-dark">
@@ -39,7 +39,7 @@
           <div class="row justify-content-center border border-dark">
             9
           </div>
-          <div class="row justify-content-center border border-dark">
+          <div class="row justify-content-center border border-dark row-fill">
             Front
           </div>
           <div class="row justify-content-center border border-dark">
@@ -69,16 +69,16 @@
           <div class="row justify-content-center border border-dark">
             18
           </div>
-          <div class="row justify-content-center border border-dark">
+          <div class="row justify-content-center border border-dark row-fill">
             Back
           </div>
-          <div class="row justify-content-center border border-dark">
+          <div class="row justify-content-center border border-dark row-fill">
             Out
           </div>
         </div>
         <!-- Array of Scores in the tournament -->
         <div class="col-1" v-for="score in tournament.scores" v-bind:key="score.id">
-          <div class="row justify-content-center border border-dark">
+          <div class="row justify-content-center border border-dark row-fill">
             {{ score.name }}
           </div>
           <div class="row justify-content-center border border-dark">
@@ -108,7 +108,7 @@
           <div class="row justify-content-center border border-dark">
             {{  score.hole9  }}
           </div>
-          <div class="row justify-content-center border border-dark">
+          <div class="row justify-content-center border border-dark row-fill">
             {{  score.front  }}
           </div>
           <div class="row justify-content-center border border-dark">
@@ -138,10 +138,10 @@
           <div class="row justify-content-center border border-dark">
             {{  score.hole18  }}
           </div>
-          <div class="row justify-content-center border border-dark">
+          <div class="row justify-content-center border border-dark row-fill">
             {{  score.back  }}
           </div>
-          <div class="row justify-content-center border border-dark">
+          <div class="row justify-content-center border border-dark row-fill">
             {{  score.total }}
           </div>
         </div>
@@ -161,6 +161,9 @@
   border-style: solid;
   border-width: 2px;
   border-color: black;
+}
+.row-fill{
+  background-color:#009c1a3b;
 } 
 </style>
 
