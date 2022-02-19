@@ -147,7 +147,7 @@
         </div>
     </div>
     <br>
-    <button class="btn btn-secondary btn-s rounded-pill" v-on:click="pushBackToScore()">Return to Scorecard</button>
+    <button class="btn btn-secondary btn-s rounded-pill" v-on:click="pushBackToScore()">Return</button>
   </div>
 </template>
 
