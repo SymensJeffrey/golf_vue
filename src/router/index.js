@@ -16,10 +16,18 @@ const routes = [
   { path: "/signup", name: "Signup", component: Signup },
   { path: "/login", name: "login", component: Login },
   { path: "/logout", name: "logout", component: Logout },
-  { path: "/tournament/new", name: "createTournament", component: CreateTournament },
+  {
+    path: "/tournament/new",
+    name: "createTournament",
+    component: CreateTournament,
+  },
   { path: "/score/new", name: "createScore", component: CreateScore },
   { path: "/scores", name: "indexScores", component: IndexScores },
-  { path: "/tournament/:id", name: "showtournaments", component: ShowTournaments },
+  {
+    path: "/tournament/:id",
+    name: "showtournaments",
+    component: ShowTournaments,
+  },
 ];
 
 const router = new VueRouter({
