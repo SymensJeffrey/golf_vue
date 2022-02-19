@@ -12,61 +12,61 @@
           <div class="row justify-content-center border border-dark row-fill-green">
             Hole
           </div>
-          <div class="row justify-content-center border border-dark">
+          <div class="row justify-content-center border border-dark row-fill-grey">
             1
           </div>
-          <div class="row justify-content-center border border-dark">
+          <div class="row justify-content-center border border-dark row-fill-grey">
             2
           </div>
-          <div class="row justify-content-center border border-dark">
+          <div class="row justify-content-center border border-dark row-fill-grey">
             3
           </div>
-          <div class="row justify-content-center border border-dark">
+          <div class="row justify-content-center border border-dark row-fill-grey">
             4
           </div>
-          <div class="row justify-content-center border border-dark">
+          <div class="row justify-content-center border border-dark row-fill-grey">
             5
           </div>
-          <div class="row justify-content-center border border-dark">
+          <div class="row justify-content-center border border-dark row-fill-grey">
             6
           </div>
-          <div class="row justify-content-center border border-dark">
+          <div class="row justify-content-center border border-dark row-fill-grey">
             7
           </div>
-          <div class="row justify-content-center border border-dark">
+          <div class="row justify-content-center border border-dark row-fill-grey">
             8
           </div>
-          <div class="row justify-content-center border border-dark">
+          <div class="row justify-content-center border border-dark row-fill-grey">
             9
           </div>
           <div class="row justify-content-center border border-dark row-fill-green">
             Front
           </div>
-          <div class="row justify-content-center border border-dark">
+          <div class="row justify-content-center border border-dark row-fill-grey">
             10
           </div>
-          <div class="row justify-content-center border border-dark">
+          <div class="row justify-content-center border border-dark row-fill-grey">
             11
           </div>
-          <div class="row justify-content-center border border-dark">
+          <div class="row justify-content-center border border-dark row-fill-grey">
             12
           </div>
-          <div class="row justify-content-center border border-dark">
+          <div class="row justify-content-center border border-dark row-fill-grey">
             13
           </div>
-          <div class="row justify-content-center border border-dark">
+          <div class="row justify-content-center border border-dark row-fill-grey">
             14
           </div>
-          <div class="row justify-content-center border border-dark">
+          <div class="row justify-content-center border border-dark row-fill-grey">
             15
           </div>
-          <div class="row justify-content-center border border-dark">
+          <div class="row justify-content-center border border-dark row-fill-grey">
             16
           </div>
-          <div class="row justify-content-center border border-dark">
+          <div class="row justify-content-center border border-dark row-fill-grey">
             17
           </div>
-          <div class="row justify-content-center border border-dark">
+          <div class="row justify-content-center border border-dark row-fill-grey">
             18
           </div>
           <div class="row justify-content-center border border-dark row-fill-green">
@@ -164,6 +164,9 @@
 }
 .row-fill-green{
   background-color:#009c1a3b;
+}
+.row-fill-grey{
+  background-color:#2c2c2c18;
 } 
 </style>
 
