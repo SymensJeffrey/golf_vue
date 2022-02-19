@@ -15,6 +15,7 @@
             <div class="card-body">
               <h5 class="card-title">Date: {{tournament.date}}</h5>
               <p class="card-text">Token: {{tournament.token}}</p>
+              <button class="btn btn-secondary btn-l rounded-pill mt-2 me-3" v-on:click="tournamentShow(tournament)">View</button>
               <button class="btn btn-secondary btn-l rounded-pill mt-2" v-on:click="tournamentDestroyModal(tournament)">Delete</button>
             </div>
           </div>
@@ -95,6 +96,11 @@
         document.querySelector("#tournament-delete").showModal();
       },
       Default: function () {
+      },
+      tournamentShow(tournament) {
+        this.$router.push({
+          path: `/tournament/${tournament.id}`, 
+        })
       },
     },
   };
