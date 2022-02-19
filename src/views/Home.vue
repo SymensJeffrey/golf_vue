@@ -105,7 +105,7 @@
       }      
       },
       pushToCreateTournament () {
-        this.$router.push("/Tournament/new");
+        this.$router.push("/tournament/new");
       },
       pushToCreateScorecard () {
         this.$router.push("/score/new")
