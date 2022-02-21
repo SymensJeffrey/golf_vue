@@ -32,8 +32,9 @@
               </button>
               <button
                 class="btn btn-secondary btn-l rounded-pill mt-2"
-                data-bs-toggle="modal" 
+                data-bs-toggle="modal"
                 data-bs-target="#tournament-delete"
+                v-on:click="tournamentDestroyModal(tournament)"
               >
                 Delete
               </button>
@@ -62,18 +63,20 @@
           </form>
         </dialog> -->
         <div class="modal fade" id="tournament-delete" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-          <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-dialog">
             <div class="modal-content">
               <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                <h5 class="modal-title" id="exampleModalLabel">Delete Tournament</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
               </div>
               <div class="modal-body">
-                ...
+                <h6>Are you sure?</h6>
+                <p class="italic">If you delete this tournament all the scores will be removed as
+                well</p>
               </div>
               <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
+                <button type="button" class="btn btn-primary" v-on:click="tournamentDestroy(currentTournament)" data-bs-dismiss="modal">Yes</button>
               </div>
             </div>
           </div>
@@ -95,8 +98,8 @@
   width: 275px;
 }
 #tournament-delete {
-  margin-top: 50%;
-  height: 280px;
+  margin-top:50%;
+  height: 300px;
 }
 .italic {
   font-style: italic;
@@ -143,7 +146,6 @@ export default {
     },
     tournamentDestroyModal: function (tournament) {
       this.currentTournament = tournament;
-      document.querySelector("#tournament-delete").showModal();
     },
     Default: function () {},
     tournamentShow(tournament) {
