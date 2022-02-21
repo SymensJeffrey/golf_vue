@@ -41,27 +41,6 @@
             </div>
           </div>
         </div>
-        <!-- <dialog id="tournament-delete" tabindex="-1" aria-hidden="true">
-          <form method="dialog">
-            <div>
-              <h6>Are you sure you want to delete this tournament?</h6>
-              <p class="italic">
-                If you delete this tournament all the scores will be removed as
-                well
-              </p>
-              <br />
-              <button
-                class="btn btn-secondary btn-l rounded-pill mt-2 me-3"
-                v-on:click="tournamentDestroy(currentTournament)"
-              >
-                Yes
-              </button>
-              <button class="btn btn-secondary btn-l rounded-pill mt-2">
-                No
-              </button>
-            </div>
-          </form>
-        </dialog> -->
         <div class="modal fade" id="tournament-delete" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
           <div class="modal-dialog">
             <div class="modal-content">
