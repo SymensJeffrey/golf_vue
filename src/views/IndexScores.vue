@@ -202,6 +202,8 @@
       <br />
       <button
         class="btn btn-secondary btn-l rounded-pill mt-2 me-3"
+        data-bs-toggle="modal"
+        data-bs-target="#score-update"
         v-on:click="scoreUpdateModal(score)"
       >
         Add Score
@@ -215,23 +217,23 @@
       <button
         class="btn btn-secondary btn-l rounded-pill mt-2"
         v-on:click="scoreDestroyModal(score)"
+        data-bs-toggle="modal"
+        data-bs-target="#score-destroy"
       >
         Delete Scorecard
       </button>
     </div>
-    <dialog id="score-update">
-      <form method="dialog">
-        <div>
-          <button
-            class="btn btn-secondary btn-l rounded-circle mt-2"
-            id="close-button"
-          >
-            x
-          </button>
-        </div>
-        <div class="container">
-          <h2 class="margin-top">Add Score</h2>
-          <select v-model="selected" class="dropdown">
+    
+    <!-- Score Update Modal -->
+    <div class="modal fade" id="score-update" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Add Score</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <select v-model="selected" class="dropdown">
             <option value="" disabled selected>Hole</option>
             <option v-for="option in options" v-bind:key="option.value">
               {{ option.value }}
@@ -265,24 +267,28 @@
           >
             Save
           </button>
+          </div>
         </div>
-      </form>
-    </dialog>
-    <dialog id="score-destroy">
-      <form method="dialog">
-        <div>
-          <h6>Are you sure you want to delete this scorecard?</h6>
-          <br />
-          <button
-            class="btn btn-secondary btn-l rounded-pill mt-2 me-3"
-            v-on:click="scoreDestroy(currentScore)"
-          >
-            Yes
-          </button>
-          <button class="btn btn-secondary btn-l rounded-pill mt-2">No</button>
+      </div>
+    </div>
+    <!-- Score Destroy Modal -->
+    <div class="modal fade" id="score-destroy" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Delete Scorecard</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <h6>Are you sure you want to delete this scorecard?</h6>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
+            <button type="button" class="btn btn-primary" v-on:click="scoreDestroy(currentScore)" data-bs-dismiss="modal">Yes</button>
+          </div>
         </div>
-      </form>
-    </dialog>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -318,8 +324,12 @@
   margin-right: 95%;
 }
 #score-update {
+  margin-top: 50%;
   width: 450px;
   height: 300px;
+}
+#score-destroy{
+  margin-top: 50%;
 }
 .margin-top {
   margin-top: 8%;
@@ -402,7 +412,6 @@ export default {
     },
     scoreUpdateModal: function (score) {
       this.currentScore = score;
-      document.querySelector("#score-update").showModal();
     },
     scoreUpdate: function (score) {
       var editScoreParams = score;
@@ -427,7 +436,6 @@ export default {
     },
     scoreDestroyModal: function (score) {
       this.currentScore = score;
-      document.querySelector("#score-destroy").showModal();
     },
   },
 };
