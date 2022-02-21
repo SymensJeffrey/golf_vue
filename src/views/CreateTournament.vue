@@ -39,7 +39,7 @@
             </div>
           </div>
         </div>
-        <dialog id="tournament-delete" tabindex="-1">
+        <dialog id="tournament-delete" tabindex="-1" aria-hidden="true">
           <form method="dialog">
             <div>
               <h6>Are you sure you want to delete this tournament?</h6>
