@@ -449,7 +449,6 @@ export default {
         .catch((error) => {
           console.log("scores update error", error.response);
         });
-      window.location.reload();
     },
     Default: function () {},
     scoreDestroy: function (score) {
