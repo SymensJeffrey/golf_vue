@@ -359,14 +359,6 @@
 #close-button {
   margin-right: 95%;
 }
-#score-update {
-  margin-top: 50%;
-  width: 450px;
-  height: 300px;
-}
-#score-destroy {
-  margin-top: 50%;
-}
 .margin-top {
   margin-top: 8%;
 }

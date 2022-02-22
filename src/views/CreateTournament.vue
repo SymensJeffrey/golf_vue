@@ -105,7 +105,6 @@
   width: 275px;
 }
 #tournament-delete {
-  margin-top: 50%;
   height: 300px;
 }
 .italic {
