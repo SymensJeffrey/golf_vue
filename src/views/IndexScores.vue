@@ -274,6 +274,8 @@
             </p>
             <button
               class="btn btn-secondary btn-l rounded-pill mt-2"
+              data-bs-dismiss="modal"
+              aria-label="Close"
               v-on:click="scoreUpdate(currentScore)"
             >
               Save
