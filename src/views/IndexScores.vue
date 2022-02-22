@@ -356,9 +356,6 @@
   overflow: scroll;
   width: 100px;
 }
-#close-button {
-  margin-right: 95%;
-}
 .margin-top {
   margin-top: 8%;
 }
