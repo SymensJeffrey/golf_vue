@@ -15,7 +15,7 @@
       <br />
       <div class="container">
         <h2 class="mb-5">Active Tournaments</h2>
-        <div class="center-cards">
+        <div class="center-cards row">
           <div
             class="card margin-bottom shadow-lg p-3 mb-5 bg-white rounded"
             v-for="tournament in tournaments"
