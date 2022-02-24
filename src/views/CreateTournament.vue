@@ -4,6 +4,7 @@
       <br />
       <br />
       <h1>{{ message }}</h1>
+      <v-select :options="['Canada', 'United States']"></v-select>
       <button
         class="btn btn-secondary btn-l rounded-pill mt-5"
         v-on:click="tournamentsCreate()"
@@ -124,12 +125,19 @@ export default {
   },
   created: function () {
     this.tournamentsIndex();
+    this.coursesIndex();
   },
   methods: {
     tournamentsIndex() {
       axios.get("/tournaments").then((response) => {
         console.log("tournaments index", response);
         this.tournaments = response.data;
+      });
+    },
+    coursesIndex() {
+      axios.get("/courses").then((response) => {
+        console.log("courses index", response);
+        this.courses = response.data;
       });
     },
     tournamentsCreate() {
