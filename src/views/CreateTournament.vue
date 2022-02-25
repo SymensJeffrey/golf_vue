@@ -4,7 +4,7 @@
       <br />
       <br />
       <h1>{{ message }}</h1>
-      <v-select :options="['Canada', 'United States']"></v-select>
+      <v-select :options="courses" label="name" v-model="newTournamentParams.course_id" :reduce="course=> course.id"></v-select>
       <button
         class="btn btn-secondary btn-l rounded-pill mt-5"
         v-on:click="tournamentsCreate()"
@@ -25,6 +25,7 @@
             <div class="card-body">
               <h5 class="card-title">Date: {{ tournament.date }}</h5>
               <p class="card-text">Token: {{ tournament.token }}</p>
+              <p class="card-text">Course: {{ tournament.course_id }}</p>
               <button
                 class="btn btn-secondary btn-l rounded-pill mt-2 me-3"
                 v-on:click="tournamentShow(tournament)"
@@ -121,6 +122,8 @@ export default {
       message: "Create your Tournament",
       tournaments: [],
       currentTournament: {},
+      courses: [],
+      newTournamentParams: {},
     };
   },
   created: function () {
@@ -142,7 +145,7 @@ export default {
     },
     tournamentsCreate() {
       axios
-        .post("/tournaments")
+        .post("/tournaments", this.newTournamentParams)
         .then((response) => {
           console.log("tournaments create", response);
           this.tournaments.push(response.data);
