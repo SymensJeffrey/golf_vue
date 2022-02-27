@@ -3,7 +3,7 @@
     <br />
     <br />
     <h1>{{ message }}</h1>
-    <div></div>
+    <br>
     <!-- Scorecard -->
     <div class="row justify-content-center no-border">
       <!-- Hole list -->
