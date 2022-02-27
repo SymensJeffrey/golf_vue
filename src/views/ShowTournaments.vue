@@ -6,6 +6,9 @@
     <br>
     <!-- Scorecard -->
     <div class="row justify-content-center no-border">
+      <div class="row justify-content-center mb-1 bold-text">
+          {{tournament.course.name}}
+      </div>
       <!-- Hole list -->
       <div class="col-1">
         <div
