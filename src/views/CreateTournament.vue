@@ -25,7 +25,7 @@
             <div class="card-body">
               <h5 class="card-title">Date: {{ tournament.date }}</h5>
               <p class="card-text">Token: {{ tournament.token }}</p>
-              <p class="card-text">Course: {{ tournament.course_id }}</p>
+              <p class="card-text">Course: {{tournament.course.name}}</p>
               <button
                 class="btn btn-secondary btn-l rounded-pill mt-2 me-3"
                 v-on:click="tournamentShow(tournament)"
