@@ -119,6 +119,119 @@
           Out
         </div>
       </div>
+      <!-- Course hole Par -->
+    <div class="col-1">
+      <div
+        class="row justify-content-center border border-dark row-fill-green bold-text"
+      >
+        Par
+      </div>
+      <div
+        class="row justify-content-center border border-dark row-fill-grey"
+      >
+       {{tournament.course.hole1_par}}
+      </div>
+      <div
+        class="row justify-content-center border border-dark row-fill-grey"
+      >
+        {{tournament.course.hole2_par}}
+      </div>
+      <div
+        class="row justify-content-center border border-dark row-fill-grey"
+      >
+        {{tournament.course.hole3_par}}
+      </div>
+      <div
+        class="row justify-content-center border border-dark row-fill-grey"
+      >
+        {{tournament.course.hole4_par}}
+      </div>
+      <div
+        class="row justify-content-center border border-dark row-fill-grey"
+      >
+        {{tournament.course.hole5_par}}
+      </div>
+      <div
+        class="row justify-content-center border border-dark row-fill-grey"
+      >
+        {{tournament.course.hole6_par}}
+      </div>
+      <div
+        class="row justify-content-center border border-dark row-fill-grey"
+      >
+        {{tournament.course.hole7_par}}
+      </div>
+      <div
+        class="row justify-content-center border border-dark row-fill-grey"
+      >
+        {{tournament.course.hole8_par}}
+      </div>
+      <div
+        class="row justify-content-center border border-dark row-fill-grey"
+      >
+        {{tournament.course.hole9_par}}
+      </div>
+      <div
+        class="row justify-content-center border border-dark row-fill-green bold-text"
+      >
+        {{tournament.course.front_par}}
+      </div>
+      <div
+        class="row justify-content-center border border-dark row-fill-grey"
+      >
+        {{tournament.course.hole10_par}}
+      </div>
+      <div
+        class="row justify-content-center border border-dark row-fill-grey"
+      >
+        {{tournament.course.hole11_par}}
+      </div>
+      <div
+        class="row justify-content-center border border-dark row-fill-grey"
+      >
+        {{tournament.course.hole12_par}}
+      </div>
+      <div
+        class="row justify-content-center border border-dark row-fill-grey"
+      >
+        {{tournament.course.hole13_par}}
+      </div>
+      <div
+        class="row justify-content-center border border-dark row-fill-grey"
+      >
+        {{tournament.course.hole14_par}}
+      </div>
+      <div
+        class="row justify-content-center border border-dark row-fill-grey"
+      >
+        {{tournament.course.hole15_par}}
+      </div>
+      <div
+        class="row justify-content-center border border-dark row-fill-grey"
+      >
+        {{tournament.course.hole16_par}}
+      </div>
+      <div
+        class="row justify-content-center border border-dark row-fill-grey"
+      >
+        {{tournament.course.hole17_par}}
+      </div>
+      <div
+        class="row justify-content-center border border-dark row-fill-grey"
+      >
+        {{tournament.course.hole18_par}}
+      </div>
+      <div
+        class="row justify-content-center border border-dark row-fill-green bold-text"
+      >
+        {{tournament.course.back_par}}
+      </div>
+      <div
+        class="row justify-content-center border border-dark row-fill-green bold-text"
+      >
+        {{tournament.course.total_par}}
+      </div>
+    </div>
       <!-- Array of Scores in the tournament -->
       <div
         class="col-1"
