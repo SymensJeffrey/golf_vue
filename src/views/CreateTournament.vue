@@ -4,7 +4,9 @@
       <br />
       <br />
       <h1>{{ message }}</h1>
-      <v-select :options="courses" label="name" v-model="newTournamentParams.course_id" :reduce="course=> course.id"></v-select>
+      <div class="center-cards">
+        <v-select class="dropdown" :options="courses" label="name" v-model="newTournamentParams.course_id" :reduce="course=> course.id"></v-select>
+      </div>
       <button
         class="btn btn-secondary btn-l rounded-pill mt-5"
         v-on:click="tournamentsCreate()"
@@ -111,6 +113,9 @@
 }
 .italic {
   font-style: italic;
+}
+.dropdown {
+  width: 400px;
 }
 </style>
 
