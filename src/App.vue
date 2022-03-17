@@ -35,6 +35,9 @@
               >
             </li>
             <li class="nav-item">
+              <a class="nav-link" v-if="isLoggedIn()" href="/user">Profile</a>
+            </li>
+            <li class="nav-item">
               <a class="nav-link" v-if="isLoggedIn()" href="/logout">Logout</a>
             </li>
             <li class="nav-item">
@@ -42,9 +45,6 @@
             </li>
             <li class="nav-item">
               <a class="nav-link" v-if="!isLoggedIn()" href="/signup">Signup</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" v-if="isLoggedIn()" href="/user">Profile</a>
             </li>
           </ul>
         </div>
