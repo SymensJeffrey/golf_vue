@@ -7,7 +7,7 @@
       <h5>You have no active scorecards</h5>
       <a href="/score/new">Create Scorecard</a>
     </div>
-    <div class="my-5" v-for="score in scores" v-bind:key="score.id">
+    <div class="my-5" v-for="score in activeScores" v-bind:key="score.id">
       <h6>Tournament: {{ score.token }}</h6>
       <div class="row justify-content-center no-border">
         <div class="col-1">
@@ -420,6 +420,7 @@ export default {
       message: "Active Scorecards",
       scores: [],
       currentScore: {},
+      activeScores: [],
     };
   },
   created: function () {
@@ -430,6 +431,9 @@ export default {
       axios.get("/scores").then((response) => {
         console.log("scores index", response);
         this.scores = response.data;
+        this.activeScores = this.scores.filter(function(score){
+          return score.status == "active";
+        });
       });
     },
     tournamentShow(score) {
