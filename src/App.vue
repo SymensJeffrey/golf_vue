@@ -43,6 +43,9 @@
             <li class="nav-item">
               <a class="nav-link" v-if="!isLoggedIn()" href="/signup">Signup</a>
             </li>
+            <li class="nav-item">
+              <a class="nav-link" v-if="isLoggedIn()" href="/user">Profile</a>
+            </li>
           </ul>
         </div>
       </div>
@@ -62,13 +65,17 @@
 </style>
 
 <script>
+import axios from "axios"
 export default {
   data: function () {
     return {
       show: "",
+      user: "",
     };
   },
-  created: function () {},
+  created: function () {
+    this.userShow()
+  },
   methods: {
     isLoggedIn: function () {
       if (localStorage.getItem("jwt")) {
@@ -79,6 +86,11 @@ export default {
     },
     toggleNavbar() {
       this.show = !this.show;
+    },
+    userShow: function() {
+      axios.get(`/users/${localStorage.user_id}`).then((response) => {console.log(response)
+      this.user = response.data;
+      });
     },
   },
 };

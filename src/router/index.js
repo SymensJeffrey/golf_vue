@@ -8,6 +8,7 @@ import CreateTournament from "../views/CreateTournament.vue";
 import CreateScore from "../views/CreateScore.vue";
 import IndexScores from "../views/IndexScores.vue";
 import ShowTournaments from "../views/ShowTournaments.vue";
+import ShowUser from "../views/ShowUser.vue";
 
 Vue.use(VueRouter);
 
@@ -26,8 +27,13 @@ const routes = [
   {
     path: "/tournament/:id",
     name: "showtournaments",
-    component: ShowTournaments,
+    component: ShowTournaments
   },
+  {
+    path: "/user",
+    name: "showuser",
+    component: ShowUser
+  }
 ];
 
 const router = new VueRouter({
