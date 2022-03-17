@@ -3,7 +3,7 @@
     <br />
     <br />
     <h1>{{ message }}</h1>
-    <div v-if="scores.length == 0">
+    <div v-if="activeScores.length == 0">
       <h5>You have no active scorecards</h5>
       <a href="/score/new">Create Scorecard</a>
     </div>
