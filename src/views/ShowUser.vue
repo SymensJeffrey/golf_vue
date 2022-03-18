@@ -253,20 +253,25 @@ import axios from "axios"
         this.scoresIndex();
     },
     methods: {
-        userShow: function() {
-            axios.get(`/users/${localStorage.user_id}`).then((response) => {console.log(response)
-                this.user = response.data;
-            });
-        },
-        scoresIndex() {
-            axios.get("/scores").then((response) => {
-                console.log("scores index", response);
-                this.scores = response.data;
-                this.inactiveScores = this.scores.filter(function(score){
-                return score.status == "inactive";
-            });
+      userShow: function() {
+          axios.get(`/users/${localStorage.user_id}`).then((response) => {console.log(response)
+              this.user = response.data;
+          });
+      },
+      scoresIndex() {
+          axios.get("/scores").then((response) => {
+              console.log("scores index", response);
+              this.scores = response.data;
+              this.inactiveScores = this.scores.filter(function(score){
+              return score.status == "inactive";
+          });
         });
-    },
+      },
+      tournamentShow(score) {
+        this.$router.push({
+          path: `/tournament/${score.tournament_id}`,
+        });
+      },
     },
   };
 </script>
