@@ -193,6 +193,21 @@
           </div>
         </div>
       </div>
+      <br />
+      <button
+        class="btn btn-secondary btn-l rounded-pill mt-2 me-3"
+        v-on:click="tournamentShow(score)"
+      >
+        View Tournament
+      </button>
+      <button
+        class="btn btn-secondary btn-l rounded-pill mt-2"
+        v-on:click="scoreDestroyModal(score)"
+        data-bs-toggle="modal"
+        data-bs-target="#score-destroy"
+      >
+        Delete Scorecard
+      </button>
     </div>
   </div>
 </template>
