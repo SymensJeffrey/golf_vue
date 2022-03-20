@@ -128,6 +128,37 @@
         </div>
       </div>
     </section>
+    <!-- Content section 4-->
+    <section>
+      <div class="container px-2">
+        <div class="row gx-5 align-items-center">
+          <div class="col-lg-6">
+            <div class="p-5">
+              <img
+                class="img-fluid rounded-circle"
+                src="assets/img/new04.jpg"
+                alt="..."
+              />
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="p-2">
+              <h2 class="display-4">Courses</h2>
+              <p>
+                Courses are created and entered and created by administrators. If you do not see a course you are playing and want it added, please click "Request Course" and it will prompt you to email us. In your email please include the name of the course and the par for each hole. A picture of the scorecard would be helpful as well.
+              </p>
+            </div>
+            <button
+              class="btn btn-secondary btn-xl rounded-pill mt-5"
+              v-if="isLoggedIn()"
+              v-on:click="pushToCreateTournament()"
+            >
+              Request Course
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
   </div>
 </template>
 
