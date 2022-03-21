@@ -151,7 +151,7 @@
             <button
               class="btn btn-secondary btn-xl rounded-pill mt-5"
               v-if="isLoggedIn()"
-              v-on:click="pushToCreateTournament()"
+              v-on:click="sendEmail()"
             >
               Request Course
             </button>
@@ -201,6 +201,9 @@ export default {
     pushToCreateScorecard() {
       this.$router.push("/score/new");
     },
+    sendEmail() {
+      window.location.assign("mailto:jeffrey.symens23@gmail.com?subject=Request Course");
+    }
   },
 };
 </script>
