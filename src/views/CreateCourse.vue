@@ -10,6 +10,7 @@
           <li v-for="error in errors" v-bind:key="error">{{ error }}</li>
         </ul>
         <p>Name: <input type="text" v-model="newCourseParams.name" /></p>
+        <p>City: <input type="text" v-model="newCourseParams.city" /></p>
         <p>Hole 1 Par: <input class="par-input" type="number" v-model="newCourseParams.hole1_par" /></p>
         <p>Hole 2 Par: <input type="number" v-model="newCourseParams.hole2_par" /></p>
         <p>Hole 3 Par: <input type="number" v-model="newCourseParams.hole3_par" /></p>
@@ -67,8 +68,8 @@ import axios from "axios"
     created: function () {},
     methods: {
         courseCreate() {
-            axios.post("/course", this.newCourseParams).then((response) => {
-            this.$router.push("/course");
+            axios.post("/courses", this.newCourseParams).then((response) => {
+            this.$router.push("/courses");
             console.log("course create", response);
             this.course.push(response.data);
             })
