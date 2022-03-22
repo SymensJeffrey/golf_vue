@@ -28,18 +28,18 @@ const routes = [
   {
     path: "/tournament/:id",
     name: "showtournaments",
-    component: ShowTournaments
+    component: ShowTournaments,
   },
   {
     path: "/user",
     name: "showuser",
-    component: ShowUser
+    component: ShowUser,
   },
   {
     path: "/course/new",
     name: "createcourse",
-    component: CreateCourse
-  }
+    component: CreateCourse,
+  },
 ];
 
 const router = new VueRouter({

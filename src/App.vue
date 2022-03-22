@@ -62,7 +62,7 @@
 </style>
 
 <script>
-import axios from "axios"
+import axios from "axios";
 export default {
   data: function () {
     return {
@@ -71,7 +71,7 @@ export default {
     };
   },
   created: function () {
-    this.userShow()
+    this.userShow();
   },
   methods: {
     isLoggedIn: function () {
@@ -84,9 +84,10 @@ export default {
     toggleNavbar() {
       this.show = !this.show;
     },
-    userShow: function() {
-      axios.get(`/users/${localStorage.user_id}`).then((response) => {console.log(response)
-      this.user = response.data;
+    userShow: function () {
+      axios.get(`/users/${localStorage.user_id}`).then((response) => {
+        console.log(response);
+        this.user = response.data;
       });
     },
   },

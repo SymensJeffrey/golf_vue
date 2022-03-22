@@ -145,7 +145,12 @@
             <div class="p-2">
               <h2 class="display-4">Courses</h2>
               <p>
-                Courses are created and entered and created by administrators. If you do not see a course you are playing and want it added, please click "Request Course" and it will prompt you to email us. In your email please include the name of the course and the par for each hole. A picture of the scorecard would be helpful as well.
+                Courses are created and entered and created by administrators.
+                If you do not see a course you are playing and want it added,
+                please click "Request Course" and it will prompt you to email
+                us. In your email please include the name of the course and the
+                par for each hole. A picture of the scorecard would be helpful
+                as well.
               </p>
             </div>
             <button
@@ -202,8 +207,10 @@ export default {
       this.$router.push("/score/new");
     },
     sendEmail() {
-      window.location.assign("mailto:jeffrey.symens23@gmail.com?subject=Request Course");
-    }
+      window.location.assign(
+        "mailto:jeffrey.symens23@gmail.com?subject=Request Course"
+      );
+    },
   },
 };
 </script>

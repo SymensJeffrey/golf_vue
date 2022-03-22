@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <h1>{{ message }}</h1>
-        <div class="my-5" v-for="score in inactiveScores" v-bind:key="score.id">
+    <div class="my-5" v-for="score in inactiveScores" v-bind:key="score.id">
       <h6>Tournament: {{ score.token }}</h6>
       <div class="row justify-content-center no-border">
         <div class="col-1">
@@ -276,54 +276,56 @@
   resize: none;
   overflow: scroll;
   width: 100px;
-}</style>
+}
+</style>
 
 <script>
-import axios from "axios"
-  export default {
-    data: function () {
-      return {
-        message: "Previous Scorecards",
-        user: "",
-        inactiveScores: [],
-        scores: [],
-      };
+import axios from "axios";
+export default {
+  data: function () {
+    return {
+      message: "Previous Scorecards",
+      user: "",
+      inactiveScores: [],
+      scores: [],
+    };
+  },
+  created: function () {
+    this.userShow();
+    this.scoresIndex();
+  },
+  methods: {
+    userShow: function () {
+      axios.get(`/users/${localStorage.user_id}`).then((response) => {
+        console.log(response);
+        this.user = response.data;
+      });
     },
-    created: function () {
-        this.userShow();
-        this.scoresIndex();
+    scoresIndex() {
+      axios.get("/scores").then((response) => {
+        console.log("scores index", response);
+        this.scores = response.data;
+        this.inactiveScores = this.scores.filter(function (score) {
+          return score.status == "inactive";
+        });
+      });
     },
-    methods: {
-      userShow: function() {
-          axios.get(`/users/${localStorage.user_id}`).then((response) => {console.log(response)
-              this.user = response.data;
-          });
-      },
-      scoresIndex() {
-          axios.get("/scores").then((response) => {
-              console.log("scores index", response);
-              this.scores = response.data;
-              this.inactiveScores = this.scores.filter(function(score){
-              return score.status == "inactive";
-          });
-        });
-      },
-      tournamentShow(score) {
-        this.$router.push({
-          path: `/tournament/${score.tournament_id}`,
-        });
-      },
-      Default: function () {},
-      scoreDestroy: function (score) {
-        axios.delete("/scores/" + score.id).then((response) => {
-          console.log("scores destroy", response);
-          var index = this.scores.indexOf(score);
-          this.scores.splice(index, 1);
-        });
-      },
-      scoreDestroyModal: function (score) {
-        this.currentScore = score;
-      },
+    tournamentShow(score) {
+      this.$router.push({
+        path: `/tournament/${score.tournament_id}`,
+      });
     },
-  };
+    Default: function () {},
+    scoreDestroy: function (score) {
+      axios.delete("/scores/" + score.id).then((response) => {
+        console.log("scores destroy", response);
+        var index = this.scores.indexOf(score);
+        this.scores.splice(index, 1);
+      });
+    },
+    scoreDestroyModal: function (score) {
+      this.currentScore = score;
+    },
+  },
+};
 </script>

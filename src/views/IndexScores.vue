@@ -431,7 +431,7 @@ export default {
       axios.get("/scores").then((response) => {
         console.log("scores index", response);
         this.scores = response.data;
-        this.activeScores = this.scores.filter(function(score){
+        this.activeScores = this.scores.filter(function (score) {
           return score.status == "active";
         });
       });

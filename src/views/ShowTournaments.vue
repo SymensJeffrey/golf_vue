@@ -3,11 +3,11 @@
     <br />
     <br />
     <h1>{{ message }}</h1>
-    <br>
+    <br />
     <!-- Scorecard -->
     <div class="row justify-content-center no-border">
       <div class="row justify-content-center mb-1 bold-text">
-          {{tournament.course.name}}
+        {{ tournament.course.name }}
       </div>
       <!-- Hole list -->
       <div class="col-1">
@@ -16,101 +16,29 @@
         >
           Hole
         </div>
-        <div
-          class="row justify-content-center border border-dark"
-        >
-          1
-        </div>
-        <div
-          class="row justify-content-center border border-dark"
-        >
-          2
-        </div>
-        <div
-          class="row justify-content-center border border-dark"
-        >
-          3
-        </div>
-        <div
-          class="row justify-content-center border border-dark"
-        >
-          4
-        </div>
-        <div
-          class="row justify-content-center border border-dark"
-        >
-          5
-        </div>
-        <div
-          class="row justify-content-center border border-dark"
-        >
-          6
-        </div>
-        <div
-          class="row justify-content-center border border-dark"
-        >
-          7
-        </div>
-        <div
-          class="row justify-content-center border border-dark"
-        >
-          8
-        </div>
-        <div
-          class="row justify-content-center border border-dark"
-        >
-          9
-        </div>
+        <div class="row justify-content-center border border-dark">1</div>
+        <div class="row justify-content-center border border-dark">2</div>
+        <div class="row justify-content-center border border-dark">3</div>
+        <div class="row justify-content-center border border-dark">4</div>
+        <div class="row justify-content-center border border-dark">5</div>
+        <div class="row justify-content-center border border-dark">6</div>
+        <div class="row justify-content-center border border-dark">7</div>
+        <div class="row justify-content-center border border-dark">8</div>
+        <div class="row justify-content-center border border-dark">9</div>
         <div
           class="row justify-content-center border border-dark row-fill-green bold-text"
         >
           Front
         </div>
-        <div
-          class="row justify-content-center border border-dark"
-        >
-          10
-        </div>
-        <div
-          class="row justify-content-center border border-dark"
-        >
-          11
-        </div>
-        <div
-          class="row justify-content-center border border-dark"
-        >
-          12
-        </div>
-        <div
-          class="row justify-content-center border border-dark"
-        >
-          13
-        </div>
-        <div
-          class="row justify-content-center border border-dark"
-        >
-          14
-        </div>
-        <div
-          class="row justify-content-center border border-dark"
-        >
-          15
-        </div>
-        <div
-          class="row justify-content-center border border-dark"
-        >
-          16
-        </div>
-        <div
-          class="row justify-content-center border border-dark"
-        >
-          17
-        </div>
-        <div
-          class="row justify-content-center border border-dark"
-        >
-          18
-        </div>
+        <div class="row justify-content-center border border-dark">10</div>
+        <div class="row justify-content-center border border-dark">11</div>
+        <div class="row justify-content-center border border-dark">12</div>
+        <div class="row justify-content-center border border-dark">13</div>
+        <div class="row justify-content-center border border-dark">14</div>
+        <div class="row justify-content-center border border-dark">15</div>
+        <div class="row justify-content-center border border-dark">16</div>
+        <div class="row justify-content-center border border-dark">17</div>
+        <div class="row justify-content-center border border-dark">18</div>
         <div
           class="row justify-content-center border border-dark row-fill-green bold-text"
         >
@@ -123,118 +51,118 @@
         </div>
       </div>
       <!-- Course hole Par -->
-    <div class="col-1">
-      <div
-        class="row justify-content-center border border-dark row-fill-green bold-text"
-      >
-        Par
+      <div class="col-1">
+        <div
+          class="row justify-content-center border border-dark row-fill-green bold-text"
+        >
+          Par
+        </div>
+        <div
+          class="row justify-content-center border border-dark row-fill-grey"
+        >
+          {{ tournament.course.hole1_par }}
+        </div>
+        <div
+          class="row justify-content-center border border-dark row-fill-grey"
+        >
+          {{ tournament.course.hole2_par }}
+        </div>
+        <div
+          class="row justify-content-center border border-dark row-fill-grey"
+        >
+          {{ tournament.course.hole3_par }}
+        </div>
+        <div
+          class="row justify-content-center border border-dark row-fill-grey"
+        >
+          {{ tournament.course.hole4_par }}
+        </div>
+        <div
+          class="row justify-content-center border border-dark row-fill-grey"
+        >
+          {{ tournament.course.hole5_par }}
+        </div>
+        <div
+          class="row justify-content-center border border-dark row-fill-grey"
+        >
+          {{ tournament.course.hole6_par }}
+        </div>
+        <div
+          class="row justify-content-center border border-dark row-fill-grey"
+        >
+          {{ tournament.course.hole7_par }}
+        </div>
+        <div
+          class="row justify-content-center border border-dark row-fill-grey"
+        >
+          {{ tournament.course.hole8_par }}
+        </div>
+        <div
+          class="row justify-content-center border border-dark row-fill-grey"
+        >
+          {{ tournament.course.hole9_par }}
+        </div>
+        <div
+          class="row justify-content-center border border-dark row-fill-green bold-text"
+        >
+          {{ tournament.course.front_par }}
+        </div>
+        <div
+          class="row justify-content-center border border-dark row-fill-grey"
+        >
+          {{ tournament.course.hole10_par }}
+        </div>
+        <div
+          class="row justify-content-center border border-dark row-fill-grey"
+        >
+          {{ tournament.course.hole11_par }}
+        </div>
+        <div
+          class="row justify-content-center border border-dark row-fill-grey"
+        >
+          {{ tournament.course.hole12_par }}
+        </div>
+        <div
+          class="row justify-content-center border border-dark row-fill-grey"
+        >
+          {{ tournament.course.hole13_par }}
+        </div>
+        <div
+          class="row justify-content-center border border-dark row-fill-grey"
+        >
+          {{ tournament.course.hole14_par }}
+        </div>
+        <div
+          class="row justify-content-center border border-dark row-fill-grey"
+        >
+          {{ tournament.course.hole15_par }}
+        </div>
+        <div
+          class="row justify-content-center border border-dark row-fill-grey"
+        >
+          {{ tournament.course.hole16_par }}
+        </div>
+        <div
+          class="row justify-content-center border border-dark row-fill-grey"
+        >
+          {{ tournament.course.hole17_par }}
+        </div>
+        <div
+          class="row justify-content-center border border-dark row-fill-grey"
+        >
+          {{ tournament.course.hole18_par }}
+        </div>
+        <div
+          class="row justify-content-center border border-dark row-fill-green bold-text"
+        >
+          {{ tournament.course.back_par }}
+        </div>
+        <div
+          class="row justify-content-center border border-dark row-fill-green bold-text"
+        >
+          {{ tournament.course.total_par }}
+        </div>
       </div>
-      <div
-        class="row justify-content-center border border-dark row-fill-grey"
-      >
-       {{tournament.course.hole1_par}}
-      </div>
-      <div
-        class="row justify-content-center border border-dark row-fill-grey"
-      >
-        {{tournament.course.hole2_par}}
-      </div>
-      <div
-        class="row justify-content-center border border-dark row-fill-grey"
-      >
-        {{tournament.course.hole3_par}}
-      </div>
-      <div
-        class="row justify-content-center border border-dark row-fill-grey"
-      >
-        {{tournament.course.hole4_par}}
-      </div>
-      <div
-        class="row justify-content-center border border-dark row-fill-grey"
-      >
-        {{tournament.course.hole5_par}}
-      </div>
-      <div
-        class="row justify-content-center border border-dark row-fill-grey"
-      >
-        {{tournament.course.hole6_par}}
-      </div>
-      <div
-        class="row justify-content-center border border-dark row-fill-grey"
-      >
-        {{tournament.course.hole7_par}}
-      </div>
-      <div
-        class="row justify-content-center border border-dark row-fill-grey"
-      >
-        {{tournament.course.hole8_par}}
-      </div>
-      <div
-        class="row justify-content-center border border-dark row-fill-grey"
-      >
-        {{tournament.course.hole9_par}}
-      </div>
-      <div
-        class="row justify-content-center border border-dark row-fill-green bold-text"
-      >
-        {{tournament.course.front_par}}
-      </div>
-      <div
-        class="row justify-content-center border border-dark row-fill-grey"
-      >
-        {{tournament.course.hole10_par}}
-      </div>
-      <div
-        class="row justify-content-center border border-dark row-fill-grey"
-      >
-        {{tournament.course.hole11_par}}
-      </div>
-      <div
-        class="row justify-content-center border border-dark row-fill-grey"
-      >
-        {{tournament.course.hole12_par}}
-      </div>
-      <div
-        class="row justify-content-center border border-dark row-fill-grey"
-      >
-        {{tournament.course.hole13_par}}
-      </div>
-      <div
-        class="row justify-content-center border border-dark row-fill-grey"
-      >
-        {{tournament.course.hole14_par}}
-      </div>
-      <div
-        class="row justify-content-center border border-dark row-fill-grey"
-      >
-        {{tournament.course.hole15_par}}
-      </div>
-      <div
-        class="row justify-content-center border border-dark row-fill-grey"
-      >
-        {{tournament.course.hole16_par}}
-      </div>
-      <div
-        class="row justify-content-center border border-dark row-fill-grey"
-      >
-        {{tournament.course.hole17_par}}
-      </div>
-      <div
-        class="row justify-content-center border border-dark row-fill-grey"
-      >
-        {{tournament.course.hole18_par}}
-      </div>
-      <div
-        class="row justify-content-center border border-dark row-fill-green bold-text"
-      >
-        {{tournament.course.back_par}}
-      </div>
-      <div
-        class="row justify-content-center border border-dark row-fill-green bold-text"
-      >
-        {{tournament.course.total_par}}
-      </div>
-    </div>
       <!-- Array of Scores in the tournament -->
       <div
         class="col-1"

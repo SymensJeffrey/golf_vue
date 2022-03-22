@@ -5,7 +5,13 @@
       <br />
       <h1>{{ message }}</h1>
       <div class="center-cards">
-        <v-select class="dropdown" :options="courses" label="name" v-model="newTournamentParams.course_id" :reduce="course=> course.id"></v-select>
+        <v-select
+          class="dropdown"
+          :options="courses"
+          label="name"
+          v-model="newTournamentParams.course_id"
+          :reduce="(course) => course.id"
+        ></v-select>
       </div>
       <button
         class="btn btn-secondary btn-l rounded-pill mt-5"
@@ -28,7 +34,7 @@
               <h5 class="card-title">Date: {{ tournament.date }}</h5>
               <h5 class="card-title">Status: {{ tournament.status }}</h5>
               <p class="card-text">Token: {{ tournament.token }}</p>
-              <p class="card-text">Course: {{tournament.course.name}}</p>
+              <p class="card-text">Course: {{ tournament.course.name }}</p>
               <button
                 class="btn btn-secondary btn-l rounded-pill mt-2 me-3"
                 v-on:click="tournamentShow(tournament)"
