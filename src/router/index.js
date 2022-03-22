@@ -9,6 +9,7 @@ import CreateScore from "../views/CreateScore.vue";
 import IndexScores from "../views/IndexScores.vue";
 import ShowTournaments from "../views/ShowTournaments.vue";
 import ShowUser from "../views/ShowUser.vue";
+import CreateCourse from "../views/CreateCourse.vue";
 
 Vue.use(VueRouter);
 
@@ -33,6 +34,11 @@ const routes = [
     path: "/user",
     name: "showuser",
     component: ShowUser
+  },
+  {
+    path: "/course/new",
+    name: "createcourse",
+    component: CreateCourse
   }
 ];
 
