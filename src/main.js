@@ -4,8 +4,10 @@ import router from "./router";
 import axios from "axios";
 import vSelect from "vue-select";
 import "vue-select/dist/vue-select.css";
+import Vue2Filters from 'vue2-filters';
 
 Vue.component("v-select", vSelect);
+Vue.use(Vue2Filters);
 
 axios.defaults.baseURL =
   process.env.NODE_ENV === "development"
