@@ -10,6 +10,7 @@ import IndexScores from "../views/IndexScores.vue";
 import ShowTournaments from "../views/ShowTournaments.vue";
 import ShowUser from "../views/ShowUser.vue";
 import CreateCourse from "../views/CreateCourse.vue";
+import IndexCourse from "../views/IndexCourse.vue";
 
 Vue.use(VueRouter);
 
@@ -39,6 +40,11 @@ const routes = [
     path: "/course/new",
     name: "createcourse",
     component: CreateCourse,
+  },
+  {
+    path: "/courses",
+    name: "indexcourse",
+    component: IndexCourse,
   },
 ];
 
