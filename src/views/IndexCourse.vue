@@ -8,8 +8,8 @@
     <div class="center-cards row">
           <div
             class="card margin-bottom shadow-lg p-3 mb-5 bg-white rounded"
-            v-for="course in courses"
-            v-bind:key="course.id | searchTerm"
+            v-for="course in filterBy(courses, searchTerm)"
+            v-bind:key="course.id"
           >
             <div class="card-body">
               <h5 class="card-title">Name: {{ course.name }}</h5>
@@ -32,11 +32,14 @@
 
 <script>
 import axios from "axios";
+import Vue2Filters from 'vue2-filters'
 export default {
+    mixins: [Vue2Filters.mixin],
     data: function () {
       return {
         message: "Courses",
         courses: [],
+        searchTerm: ""
       };
     },
     created: function () {
