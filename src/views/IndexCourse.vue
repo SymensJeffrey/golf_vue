@@ -1,22 +1,43 @@
 <template>
   <div class="home">
+    <br> 
     <h1>{{ message }}</h1>
+    <div class="center-cards row">
+          <div
+            class="card margin-bottom shadow-lg p-3 mb-5 bg-white rounded"
+            v-for="course in courses"
+            v-bind:key="course.id"
+          >
+            <div class="card-body">
+              <h5 class="card-title">Name: {{ course.name }}</h5>
+              <p class="card-text">{{ course.city }}</p>
+            </div>
+          </div>
+        </div>
   </div>
 </template>
 
-<style></style>
+<style scoped>
+.center-cards {
+  display: flex;
+  justify-content: center;
+}
+.card {
+  width: 275px;
+}
+</style>
 
 <script>
 import axios from "axios";
 export default {
     data: function () {
       return {
-        message: "Welcome to Vue.js!",
+        message: "Courses",
         courses: [],
       };
     },
     created: function () {
-        this.coursesIndex
+        this.coursesIndex();
     },
     methods: {
         coursesIndex() {
