@@ -2,11 +2,14 @@
   <div class="home">
     <br> 
     <h1>{{ message }}</h1>
+    <div>
+        <p><input placeholder="Search" v-model="searchTerm"></p>
+    </div>
     <div class="center-cards row">
           <div
             class="card margin-bottom shadow-lg p-3 mb-5 bg-white rounded"
             v-for="course in courses"
-            v-bind:key="course.id"
+            v-bind:key="course.id | searchTerm"
           >
             <div class="card-body">
               <h5 class="card-title">Name: {{ course.name }}</h5>
