@@ -8,6 +8,14 @@
           class="register-form"
           id="register-form"
         >
+        <div class="form-group">
+            <label for="email"><i class="zmdi zmdi-email"></i></label>
+            <input
+              v-model="newUserParams.name"
+              type="text"
+              placeholder="Name"
+            />
+          </div>
           <div class="form-group">
             <label for="email"><i class="zmdi zmdi-email"></i></label>
             <input
@@ -35,7 +43,7 @@
               type="password"
               name="re_pass"
               id="re_pass"
-              placeholder="Repeat your password"
+              placeholder="Password Confirmation"
             />
           </div>
           <div class="form-group form-button">
