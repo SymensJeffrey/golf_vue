@@ -1,6 +1,9 @@
 <template>
   <div class="home">
-    <h1>{{ message }}</h1>
+    <br>
+    <h1> Welcome Back {{user.name}} </h1>
+    <br> 
+    <h4>{{ message }}</h4>
     <div class="my-5" v-for="score in inactiveScores" v-bind:key="score.id">
       <h6>Tournament: {{ score.token }}</h6>
       <div class="row justify-content-center no-border">
