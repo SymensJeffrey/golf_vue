@@ -47,10 +47,10 @@ export default {
     },
     methods: {
       coursesIndex() {
-          axios.get("/courses").then((response) => {
-          console.log("courses index", response);
-          this.courses = response.data;
-          });
+        axios.get("/courses").then((response) => {
+        console.log("courses index", response);
+        this.courses = response.data;
+        });
       },
     }
 };
