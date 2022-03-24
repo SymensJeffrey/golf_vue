@@ -46,12 +46,12 @@ export default {
         this.coursesIndex();
     },
     methods: {
-        coursesIndex() {
-            axios.get("/courses").then((response) => {
-            console.log("courses index", response);
-            this.courses = response.data;
-            });
-        },
+      coursesIndex() {
+          axios.get("/courses").then((response) => {
+          console.log("courses index", response);
+          this.courses = response.data;
+          });
+      },
     }
 };
 </script>
