@@ -32,6 +32,9 @@
               >
             </li>
             <li class="nav-item">
+              <a class="nav-link" v-if="isLoggedIn()" href="/courses">Courses</a>
+            </li>
+            <li class="nav-item">
               <a class="nav-link" v-if="isLoggedIn()" href="/user">Profile</a>
             </li>
             <li class="nav-item">
