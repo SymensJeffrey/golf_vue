@@ -199,7 +199,8 @@
           </div>
         </div>
       </div>
-      <br />
+      <br>
+      <p>
       <button
         class="btn btn-secondary btn-l rounded-pill mt-2 me-3"
         data-bs-toggle="modal"
@@ -213,6 +214,15 @@
         v-on:click="tournamentShow(score)"
       >
         View Leaderboard
+      </button>
+      </p>
+      <button
+        class="btn btn-secondary btn-l rounded-pill mt-2 me-3"
+        data-bs-toggle="modal"
+        data-bs-target="#score-finish"
+        v-on:click="scoreFinishModal(score)"
+      >
+        Finish Round
       </button>
       <button
         class="btn btn-secondary btn-l rounded-pill mt-2"
@@ -319,6 +329,48 @@
               type="button"
               class="btn btn-primary"
               v-on:click="scoreDestroy(currentScore)"
+              data-bs-dismiss="modal"
+            >
+              Yes
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Score Finish Round Modal -->
+    <div
+      class="modal fade"
+      id="score-finish"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Finish Round</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <h6>Are you sure you want to finish this round?</h6>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              No
+            </button>
+            <button
+              type="button"
+              class="btn btn-primary"
+              v-on:click="scoreFinish(currentScore)"
               data-bs-dismiss="modal"
             >
               Yes
@@ -466,6 +518,22 @@ export default {
     },
     scoreDestroyModal: function (score) {
       this.currentScore = score;
+    },
+    scoreFinishModal: function (score) {
+      this.currentScore = score;
+    },
+    scoreFinish: function (score) {
+      var editScoreParams = score;
+      score.status = 'inactive'
+      axios
+        .patch("/scores/" + score.id, editScoreParams)
+        .then((response) => {
+          console.log("scores update", response);
+          this.currentScore = {};
+        })
+        .catch((error) => {
+          console.log("scores update error", error.response);
+        });
     },
   },
 };
