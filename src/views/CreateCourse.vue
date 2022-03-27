@@ -2,8 +2,7 @@
   <div class="home">
     <br />
     <h1>{{ message }}</h1>
-    <div class="container">
-      <br />
+    <div v-if="isAdmin()" class="container">
       <br />
       <div>
         <ul>
@@ -97,12 +96,15 @@
           Total Par: <input type="number" v-model="newCourseParams.total_par" />
         </p>
         <button
-          class="btn btn-secondary btn-xl rounded-pill mt-5"
+          class="btn btn-secondary btn-l rounded-pill mt-3"
           v-on:click="courseCreate()"
         >
           Create
         </button>
       </div>
+    </div>
+    <div v-if="!isAdmin()">
+      <p>You do not have access to add courses</p>
     </div>
   </div>
 </template>
@@ -126,9 +128,12 @@ export default {
       message: "Add a Course",
       errors: [],
       newCourseParams: {},
+      user: {}
     };
   },
-  created: function () {},
+  created: function () {
+    this.userShow();
+  },
   methods: {
     courseCreate() {
       axios
@@ -142,6 +147,18 @@ export default {
           console.log(error.response);
           this.errors = ["Invalid course"];
         });
+    },
+    userShow: function () {
+        axios.get(`/users/${localStorage.user_id}`).then((response) => {
+        this.user = response.data;
+        });
+    },
+    isAdmin() {
+      if(this.user.role == "admin"){
+        return true 
+      } else {
+        return false
+      }
     },
   },
 };
