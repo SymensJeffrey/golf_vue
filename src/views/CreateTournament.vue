@@ -24,6 +24,9 @@
       <br />
       <div class="container">
         <h2 class="mb-5">Active Tournaments</h2>
+        <div v-if="tournaments.length == 0">
+          <h5>You have no active Tournaments</h5>
+        </div>
         <div class="center-cards row">
           <div
             class="card margin-bottom shadow-lg p-3 mb-5 bg-white rounded"
