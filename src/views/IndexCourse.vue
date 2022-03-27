@@ -5,6 +5,14 @@
     <div>
         <p><input placeholder="Search" v-model="searchTerm"></p>
     </div>
+    <div v-if="isAdmin()">
+      <button
+        class="btn btn-secondary btn-l rounded-pill mt-2 mb-3"
+        v-on:click="pushToCreateCourse()"
+      >
+        Add Course
+      </button>
+    </div>
     <div class="center-cards row">
           <div
             class="card margin-bottom shadow-lg p-3 mb-5 bg-white rounded"
@@ -39,11 +47,13 @@ export default {
       return {
         message: "Courses",
         courses: [],
-        searchTerm: ""
+        searchTerm: "",
+        user: {}
       };
     },
     created: function () {
         this.coursesIndex();
+        this.userShow();
     },
     methods: {
       coursesIndex() {
@@ -52,6 +62,21 @@ export default {
         this.courses = response.data;
         });
       },
+      userShow: function () {
+        axios.get(`/users/${localStorage.user_id}`).then((response) => {
+        this.user = response.data;
+        });
+      },
+      isAdmin() {
+        if(this.user.role == "admin"){
+          return true 
+        } else {
+          return false
+        }
+      },
+      pushToCreateCourse() {
+        this.$router.push("/course/new");
+      }
     }
 };
 </script>
