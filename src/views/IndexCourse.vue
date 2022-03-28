@@ -68,7 +68,7 @@ export default {
         });
       },
       isAdmin() {
-        if(this.user.role == "admin"){
+        if(this.user.role == "admin" || this.user.role == "master"){
           return true 
         } else {
           return false
