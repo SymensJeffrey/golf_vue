@@ -241,6 +241,12 @@
         </div>
       </div>
     </div>
+    <button
+      class="btn btn-secondary btn-s rounded-pill mt-4"
+      v-on:click="pushBackToProfile()"
+    >
+      Return
+    </button>
   </div>
 </template>
 
@@ -280,6 +286,10 @@ import axios from "axios";
             this.score = response.data;
         });
     },
-    methods: {},
+    methods: {
+        pushBackToProfile() {
+            this.$router.go(-1);
+        },
+    },
   };
 </script>

@@ -12,13 +12,27 @@
         <div class="card-body">
           <h5 class="card-title">Score: {{ score.total }}</h5>
           <p class="card-text">Course {{ score.course.name }}</p>
+          <button
+            class="btn btn-secondary btn-l rounded-pill mt-2 mb-3"
+            v-on:click="scoreShow(score)"
+          >
+            View
+          </button>
+          <button
+            class="btn btn-secondary btn-l rounded-pill mt-2 mb-3"
+            v-on:click="tournamentShow(score)"
+          >
+            View Tournament
+          </button>
+          <button
+            class="btn btn-secondary btn-l rounded-pill mt-2 mb-3"
+            v-on:click="scoreDestroyModal(score)"
+            data-bs-toggle="modal"
+            data-bs-target="#score-destroy"
+          >
+            Delete Scorecard
+          </button>
         </div>
-        <button
-        class="btn btn-secondary btn-l rounded-pill mt-2 mb-3"
-        v-on:click="scoreShow(score)"
-      >
-        View
-      </button>
       </div>
     </div>
     <div
