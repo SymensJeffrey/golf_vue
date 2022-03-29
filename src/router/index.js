@@ -10,7 +10,7 @@ import IndexScores from "../views/IndexScores.vue";
 import ShowTournaments from "../views/ShowTournaments.vue";
 import ShowUser from "../views/ShowUser.vue";
 import CreateCourse from "../views/CreateCourse.vue";
-import IndexCourse from "../views/IndexCourse.vue";
+import IndexCourses from "../views/IndexCourses.vue";
 import ShowScores from "../views/ShowScores.vue";
 import IndexUsers from "../views/IndexUsers.vue";
 
@@ -45,8 +45,8 @@ const routes = [
   },
   {
     path: "/courses",
-    name: "indexcourse",
-    component: IndexCourse,
+    name: "indexcourses",
+    component: IndexCourses,
   },
   {
     path: "/scores/:id",
