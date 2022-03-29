@@ -13,7 +13,7 @@
           <h5 class="card-title">Score: {{ score.total }}</h5>
           <p class="card-text">Course {{ score.course.name }}</p>
           <button
-            class="btn btn-secondary btn-l rounded-pill mt-2 mb-3"
+            class="btn btn-secondary btn-l rounded-pill mt-2 mb-3 view-button"
             v-on:click="scoreShow(score)"
           >
             View
@@ -22,7 +22,7 @@
             class="btn btn-secondary btn-l rounded-pill mt-2 mb-3"
             v-on:click="tournamentShow(score)"
           >
-            View Tournament
+            Tournament
           </button>
           <button
             class="btn btn-secondary btn-l rounded-pill mt-2 mb-3"
@@ -30,7 +30,7 @@
             data-bs-toggle="modal"
             data-bs-target="#score-destroy"
           >
-            Delete Scorecard
+            Delete
           </button>
         </div>
       </div>
@@ -102,6 +102,10 @@
   resize: none;
   overflow: scroll;
   width: 100px;
+}
+.btn-l{
+  width: 150px;
+  height: 35px;
 }
 </style>
 
