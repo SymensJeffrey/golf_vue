@@ -14,17 +14,17 @@
       </button>
     </div>
     <div class="center-cards row">
-          <div
-            class="card margin-bottom shadow-lg p-3 mb-5 bg-white rounded"
-            v-for="course in filterBy(courses, searchTerm)"
-            v-bind:key="course.id"
-          >
-            <div class="card-body">
-              <h5 class="card-title">Name: {{ course.name }}</h5>
-              <p class="card-text">{{ course.city }}</p>
-            </div>
-          </div>
+      <div
+        class="card margin-bottom shadow-lg p-3 mb-5 bg-white rounded"
+        v-for="course in filterBy(courses, searchTerm)"
+        v-bind:key="course.id"
+      >
+        <div class="card-body">
+          <h5 class="card-title">Name: {{ course.name }}</h5>
+          <p class="card-text">{{ course.city }}</p>
         </div>
+      </div>
+    </div>
   </div>
 </template>
 
