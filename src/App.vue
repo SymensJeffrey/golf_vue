@@ -38,6 +38,9 @@
               <a class="nav-link" v-if="isLoggedIn()" href="/user">Profile</a>
             </li>
             <li class="nav-item">
+              <a class="nav-link" v-if="isMaster()" href="/users">Users</a>
+            </li>
+            <li class="nav-item">
               <a class="nav-link" v-if="isLoggedIn()" href="/logout">Logout</a>
             </li>
             <li class="nav-item">
@@ -92,6 +95,13 @@ export default {
         console.log(response);
         this.user = response.data;
       });
+    },
+    isMaster() {
+      if(this.user.role == "master"){
+        return true 
+      } else {
+        return false
+      }
     },
   },
 };
