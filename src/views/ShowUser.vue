@@ -140,7 +140,7 @@ export default {
     },
     scoreShow(score) {
       this.$router.push({
-        path: `/score/${score.id}`,
+        path: `/scores/${score.id}`,
       });
     },
   },

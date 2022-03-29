@@ -48,7 +48,7 @@ const routes = [
     component: IndexCourse,
   },
   {
-    path: "/score/:id",
+    path: "/scores/:id",
     name: "showscores",
     component: ShowScores,
   },
