@@ -4,6 +4,17 @@
     <h1> Welcome Back {{user.name}} </h1>
     <br> 
     <h4>{{ message }}</h4>
+    <div class="center-cards row">
+      <div
+        class="card margin-bottom shadow-lg p-3 mb-5 bg-white rounded"
+        v-for="score in inactiveScores" v-bind:key="score.id"
+      >
+        <div class="card-body">
+          <h5 class="card-title">Score: {{ score.total }}</h5>
+          <p class="card-text">Course {{ score.course.name }}</p>
+        </div>
+      </div>
+    </div>
     <div class="my-5" v-for="score in inactiveScores" v-bind:key="score.id">
       <h6>Tournament: {{ score.token }}</h6>
       <div class="row justify-content-center no-border">
