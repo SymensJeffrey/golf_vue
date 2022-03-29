@@ -11,6 +11,7 @@ import ShowTournaments from "../views/ShowTournaments.vue";
 import ShowUser from "../views/ShowUser.vue";
 import CreateCourse from "../views/CreateCourse.vue";
 import IndexCourse from "../views/IndexCourse.vue";
+import ShowScores from "../views/ShowScores.vue";
 
 Vue.use(VueRouter);
 
@@ -45,6 +46,11 @@ const routes = [
     path: "/courses",
     name: "indexcourse",
     component: IndexCourse,
+  },
+  {
+    path: "/score/:id",
+    name: "showscore",
+    component: ShowScore,
   },
 ];
 
