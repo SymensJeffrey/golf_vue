@@ -49,8 +49,8 @@ const routes = [
   },
   {
     path: "/score/:id",
-    name: "showscore",
-    component: ShowScore,
+    name: "showscores",
+    component: ShowScores,
   },
 ];
 
