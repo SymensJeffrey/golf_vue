@@ -12,6 +12,7 @@ import ShowUser from "../views/ShowUser.vue";
 import CreateCourse from "../views/CreateCourse.vue";
 import IndexCourse from "../views/IndexCourse.vue";
 import ShowScores from "../views/ShowScores.vue";
+import IndexUsers from "../views/IndexUsers.vue";
 
 Vue.use(VueRouter);
 
@@ -51,6 +52,11 @@ const routes = [
     path: "/scores/:id",
     name: "showscores",
     component: ShowScores,
+  },
+  {
+    path: "/users",
+    name: "indexusers",
+    component: IndexUsers,
   },
 ];
 
