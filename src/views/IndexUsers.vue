@@ -70,8 +70,10 @@
   border-top: 3px;
   margin-bottom: 5px;
 }
-.user-role{
-  border: none;
+.dropdown{
+  width: 75%;
+  margin-left: auto;
+  margin-right: auto;
 }
 </style>
 
