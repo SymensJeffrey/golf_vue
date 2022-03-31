@@ -16,7 +16,7 @@
         {{user.email}}
       </div>
       <div class="col">
-          <a href="javascript:userUpdateModal(user)" data-bs-toggle="modal" data-bs-target="#user-update">{{user.role}}</a>
+          <a href="" v-on:click="userUpdateModal(user)" data-bs-toggle="modal" data-bs-target="#user-update">{{user.role}}</a>
       </div>
     </div>
     <!-- User Update Modal -->
@@ -24,7 +24,6 @@
       class="modal fade"
       id="user-update"
       tabindex="-1"
-      aria-labelledby="exampleModalLabel"
       aria-hidden="true"
     >
       <div class="modal-dialog">
@@ -39,7 +38,14 @@
             ></button>
           </div>
           <div class="modal-body">
-            <h6>Update User Role</h6>
+            <h6>Update User Role for {{currentUser.email}}</h6>
+            <v-select
+              class="dropdown"
+              :options="roles"
+              label="role"
+              v-model="editUserParams.role"
+              :reduce="(user) => user.role"
+            ></v-select>
           </div>
           <div class="modal-footer">
             <button
@@ -76,7 +82,14 @@ import axios from "axios"
       return {
         message: "User Role Management",
         users: [],
-        currentUser: {}
+        currentUser: {},
+        user: {},
+        editUserParams: {},
+        roles:[
+          {role: "user"},
+          {role: "admin"},
+          {role: "master"}
+        ]
       };
     },
     created: function () {
@@ -89,9 +102,22 @@ import axios from "axios"
           this.users = response.data;
       });
       },
-      userUpdateModal: function (score) {
-      this.currentScore = score;
-    },
+      userUpdateModal(user) {
+        this.currentUser = user;
+      },
+      userUpdate: function (user) {
+      var editUserParams = user;
+      console.log(editUserParams)
+      axios
+        .patch("/users/" + user.id, this.editUserParams)
+        .then((response) => {
+          console.log("users update", response);
+          this.currentUser = {};
+        })
+        .catch((error) => {
+          console.log("users update error", error.response);
+        });
+      },
     },
   };
 </script>
