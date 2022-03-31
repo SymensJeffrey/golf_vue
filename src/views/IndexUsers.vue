@@ -16,7 +16,11 @@
           {{user.email}}
         </div>
         <div class="col">
-          {{user.role}}
+          <select class="user-role">
+            <option>{{user.role}}</option>
+            <option value="admin">admin</option>
+            <option value="user">user</option>
+          </select>
         </div>
     </div>
   </div>
@@ -24,10 +28,13 @@
 
 <style scoped>
 .bottom-border{
-    border-style: solid;
-    border-color: rgb(58, 58, 58);
-    border-top: 3px;
-    margin-bottom: 5px;
+  border-style: solid;
+  border-color: rgb(58, 58, 58);
+  border-top: 3px;
+  margin-bottom: 5px;
+}
+.user-role{
+  border: none;
 }
 </style>
 
