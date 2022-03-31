@@ -73,7 +73,7 @@ export default {
   data: function () {
     return {
       show: "",
-      user: "",
+      user: [],
     };
   },
   created: function () {
