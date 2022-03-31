@@ -13,10 +13,10 @@
     </div>
     <div  class="row mb-2" v-for="user in users" v-bind:key="user.id">
         <div class="col-8 m-1">
-            {{user.email}}
+          {{user.email}}
         </div>
         <div class="col">
-            {{user.role}}
+          {{user.role}}
         </div>
     </div>
   </div>
