@@ -71,7 +71,7 @@
   margin-bottom: 5px;
 }
 .dropdown{
-  width: 75%;
+  width: 40%;
   margin-left: auto;
   margin-right: auto;
 }
