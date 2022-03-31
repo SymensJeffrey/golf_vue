@@ -12,16 +12,47 @@
         </div>
     </div>
     <div  class="row mb-2" v-for="user in users" v-bind:key="user.id">
-        <div class="col-8 m-1">
-          {{user.email}}
+      <div class="col-8 m-1">
+        {{user.email}}
+      </div>
+      <div class="col">
+          <a href="javascript:userUpdateModal(user)" data-bs-toggle="modal" data-bs-target="#user-update">{{user.role}}</a>
+      </div>
+    </div>
+    <!-- User Update Modal -->
+    <div
+      class="modal fade"
+      id="user-update"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">User Role</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <h6>Update User Role</h6>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-primary"
+              v-on:click="userUpdate(currentUser)"
+              data-bs-dismiss="modal"
+            >
+              Update
+            </button>
+          </div>
         </div>
-        <div class="col">
-          <select class="user-role">
-            <option>{{user.role}}</option>
-            <option value="admin">admin</option>
-            <option value="user">user</option>
-          </select>
-        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -45,18 +76,22 @@ import axios from "axios"
       return {
         message: "User Role Management",
         users: [],
+        currentUser: {}
       };
     },
     created: function () {
         this.usersIndex();
     },
     methods: {
-        usersIndex() {
-            axios.get("/users").then((response) => {
-            console.log("users index", response);
-            this.users = response.data;
-        });
-        }
+      usersIndex() {
+          axios.get("/users").then((response) => {
+          console.log("users index", response);
+          this.users = response.data;
+      });
+      },
+      userUpdateModal: function (score) {
+      this.currentScore = score;
+    },
     },
   };
 </script>
