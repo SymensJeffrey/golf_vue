@@ -251,6 +251,66 @@
     >
       Return
     </button>
+    <!-- Score Update Modal -->
+    <div
+      class="modal fade"
+      id="score-update"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Add Score</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <select v-model="selected" class="dropdown">
+              <option value="" disabled selected>Hole</option>
+              <option v-for="option in options" v-bind:key="option.value">
+                {{ option.value }}
+              </option>
+            </select>
+            <p>
+              <button
+                class="btn btn-secondary btn-s rounded-2"
+                v-on:click.prevent="Default()"
+                v-on:click="currentScore[selected] -= 1"
+              >
+                -
+              </button>
+              <input
+                class="score-input"
+                type="number"
+                placeholder="Score"
+                v-model="currentScore[selected]"
+              />
+              <button
+                class="btn btn-secondary btn-s rounded-2"
+                v-on:click.prevent="Default()"
+                v-on:click="currentScore[selected] += 1"
+              >
+                +
+              </button>
+            </p>
+            <button
+              class="btn btn-secondary btn-l rounded-pill mt-2"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+              v-on:click="scoreUpdate(currentScore)"
+            >
+              Save
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -282,6 +342,28 @@ import axios from "axios";
     data: function () {
       return {
         score: {},
+        options: [
+        { text: "Hole 1", value: "hole1" },
+        { text: "Hole 2", value: "hole2" },
+        { text: "Hole 3", value: "hole3" },
+        { text: "Hole 4", value: "hole4" },
+        { text: "Hole 5", value: "hole5" },
+        { text: "Hole 6", value: "hole6" },
+        { text: "Hole 7", value: "hole7" },
+        { text: "Hole 8", value: "hole8" },
+        { text: "Hole 9", value: "hole9" },
+        { text: "Hole 10", value: "hole10" },
+        { text: "Hole 11", value: "hole11" },
+        { text: "Hole 12", value: "hole12" },
+        { text: "Hole 13", value: "hole13" },
+        { text: "Hole 14", value: "hole14" },
+        { text: "Hole 15", value: "hole15" },
+        { text: "Hole 16", value: "hole16" },
+        { text: "Hole 17", value: "hole17" },
+        { text: "Hole 18", value: "hole18" },
+      ],
+      selected: "",
+      currentScore: {},
       };
     },
     created: function () {
@@ -296,7 +378,19 @@ import axios from "axios";
             console.log("scores show", response);
             this.score = response.data;
         }); 
-      }
+      },
+      scoreUpdate: function (score) {
+      var editScoreParams = score;
+      axios
+        .patch("/scores/" + score.id, editScoreParams)
+        .then((response) => {
+          console.log("scores update", response);
+          this.currentScore = {};
+        })
+        .catch((error) => {
+          console.log("scores update error", error.response);
+        });
+    },
     },
   };
 </script>
