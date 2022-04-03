@@ -347,6 +347,48 @@
         </div>
       </div>
     </div>
+    <!-- Score Finish Modal -->
+    <div
+      class="modal fade"
+      id="score-finish"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Finish Round</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <h6>Are you sure you want to finish this round?</h6>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              No
+            </button>
+            <button
+              type="button"
+              class="btn btn-primary"
+              v-on:click="scoreFinish(currentScore)"
+              data-bs-dismiss="modal"
+            >
+              Yes
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -448,17 +490,52 @@ import axios from "axios";
         }); 
       },
       scoreUpdate: function (score) {
-      var editScoreParams = score;
-      axios
-        .patch("/scores/" + score.id, editScoreParams)
-        .then((response) => {
-          console.log("scores update", response);
-          this.currentScore = {};
-        })
-        .catch((error) => {
-          console.log("scores update error", error.response);
+        var editScoreParams = score;
+        axios
+          .patch("/scores/" + score.id, editScoreParams)
+          .then((response) => {
+            console.log("scores update", response);
+            this.currentScore = {};
+          })
+          .catch((error) => {
+            console.log("scores update error", error.response);
+          });
+      },
+      scoreFinish: function (score) {
+        var editScoreParams = score;
+        score.status = 'inactive'
+        axios
+          .patch("/scores/" + score.id, editScoreParams)
+          .then((response) => {
+            console.log("scores update", response);
+            this.currentScore = {};
+          })
+          .catch((error) => {
+            console.log("scores update error", error.response);
+          });
+      },
+      Default: function () {},
+      scoreUpdateModal: function (score) {
+        this.currentScore = score;
+      },
+      scoreFinishModal: function (score) {
+        this.currentScore = score;
+      },
+      tournamentShow(score) {
+        this.$router.push({
+          path: `/tournament/${score.tournament_id}`,
         });
-    },
+      },
+      scoreDestroy: function (score) {
+      axios.delete("/scores/" + score.id).then((response) => {
+        console.log("scores destroy", response);
+        var index = this.scores.indexOf(score);
+        this.scores.splice(index, 1);
+      });
+      },
+      scoreDestroyModal: function (score) {
+        this.currentScore = score;
+      },
     },
   };
 </script>
