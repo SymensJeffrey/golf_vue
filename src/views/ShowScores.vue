@@ -48,7 +48,7 @@
           </div>
         </div>
         <!-- Course hole Par -->
-        <!-- <div class="col-1">
+        <div class="col-1">
           <div
             class="row justify-content-center border border-dark row-fill-green bold-text"
           >
@@ -159,7 +159,7 @@
           >
             {{ score.course.total_par }}
           </div>
-        </div> -->
+        </div>
         <!-- Array of Scores in the tournament -->
         <div
           class="col-1"
