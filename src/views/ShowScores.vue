@@ -1,9 +1,13 @@
 <template>
   <div class="home">
+    <br>
     <h1>Scorecard</h1>
     <!-- Scorecard -->
     <div class="container">
       <div class="row justify-content-center no-border">
+        <div class="row justify-content-center mb-1 bold-text">
+          {{ score.course.name }}
+        </div>
         <div class="row justify-content-center mb-1 bold-text">
         </div>
         <!-- Hole list -->
