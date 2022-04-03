@@ -285,13 +285,13 @@ import axios from "axios";
       };
     },
     created: function () {
-        this.scoreIndex();
+        this.scoreShow();
     },
     methods: {
       pushBackToProfile() {
           this.$router.go(-1);
       },
-      scoreIndex() {
+      scoreShow() {
         axios.get("/scores/" + this.$route.params.id).then((response) => {
             console.log("scores show", response);
             this.score = response.data;
