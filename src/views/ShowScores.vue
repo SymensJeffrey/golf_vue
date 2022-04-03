@@ -370,6 +370,38 @@
 .bold-text {
   font-weight: 600;
 }
+.dropdown {
+  width: 30%;
+  height: 30px;
+}
+label {
+  margin-right: 3px;
+}
+.score-input {
+  width: 30%;
+  margin: 10px;
+}
+input[type="number"] {
+  text-align: center;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+select:required:invalid {
+  color: gray;
+}
+select {
+  text-align: center;
+}
+option[value=""][disabled] {
+  display: none;
+}
+option {
+  color: black;
+  text-align: center;
+}
 </style>
 
 <script>

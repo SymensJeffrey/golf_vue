@@ -121,10 +121,6 @@
 </template>
 
 <style scoped>
-.dropdown {
-  width: 30%;
-  height: 30px;
-}
 .row-fill-green {
   background-color: #009c1a3b;
 }
@@ -150,34 +146,6 @@
 }
 .margin-top {
   margin-top: 8%;
-}
-label {
-  margin-right: 3px;
-}
-.score-input {
-  width: 30%;
-  margin: 10px;
-}
-input[type="number"] {
-  text-align: center;
-}
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-select:required:invalid {
-  color: gray;
-}
-select {
-  text-align: center;
-}
-option[value=""][disabled] {
-  display: none;
-}
-option {
-  color: black;
-  text-align: center;
 }
 .btn-l{
   width: 150px;
