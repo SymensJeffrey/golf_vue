@@ -78,6 +78,8 @@ export default {
   },
   created: function () {
     this.userShow();
+    this.isLoggedIn();
+    this.isMaster();
   },
   methods: {
     isLoggedIn: function () {
@@ -96,9 +98,13 @@ export default {
         this.user = response.data;
       });
     },
-    isMaster() {
-      if(this.user.role == "master"){
-        return true 
+    isMaster: function () {
+      if (this.user){
+        if(this.user.role == "master"){
+          return true 
+        } else {
+          return false
+        }
       } else {
         return false
       }
