@@ -15,7 +15,7 @@
         <div class="card-body">
           <h5 class="card-title">Score: {{ score.total }}</h5>
           <h5 class="card-title">Tournament: {{ score.token }}</h5>
-          <p class="card-text"></p>
+          <p class="card-text">Course: {{ score.course.name }}</p>
           <button
             class="btn btn-secondary btn-l rounded-pill mt-2 mb-3 view-button"
             v-on:click="scoreShow(score)"
