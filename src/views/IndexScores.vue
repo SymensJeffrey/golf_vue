@@ -158,30 +158,8 @@ import axios from "axios";
 export default {
   data: function () {
     return {
-      options: [
-        { text: "Hole 1", value: "hole1" },
-        { text: "Hole 2", value: "hole2" },
-        { text: "Hole 3", value: "hole3" },
-        { text: "Hole 4", value: "hole4" },
-        { text: "Hole 5", value: "hole5" },
-        { text: "Hole 6", value: "hole6" },
-        { text: "Hole 7", value: "hole7" },
-        { text: "Hole 8", value: "hole8" },
-        { text: "Hole 9", value: "hole9" },
-        { text: "Hole 10", value: "hole10" },
-        { text: "Hole 11", value: "hole11" },
-        { text: "Hole 12", value: "hole12" },
-        { text: "Hole 13", value: "hole13" },
-        { text: "Hole 14", value: "hole14" },
-        { text: "Hole 15", value: "hole15" },
-        { text: "Hole 16", value: "hole16" },
-        { text: "Hole 17", value: "hole17" },
-        { text: "Hole 18", value: "hole18" },
-      ],
-      selected: "",
       message: "Active Scorecards",
       scores: [],
-      currentScore: {},
       activeScores: [],
     };
   },
