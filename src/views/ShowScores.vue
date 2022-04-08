@@ -518,19 +518,6 @@ import axios from "axios";
           path: `/tournament/${score.tournament_id}`,
         });
       },
-      scoreDestroy: function (score) {
-      axios.delete("/scores/" + score.id).then((response) => {
-        console.log("scores destroy", response);
-        var index = this.scores.indexOf(score);
-        this.scores.splice(index, 1);
-      });
-      this.$router.push({
-          path: `/`,
-        });
-      },
-      scoreDestroyModal: function (score) {
-        this.currentScore = score;
-      },
     },
   };
 </script>
