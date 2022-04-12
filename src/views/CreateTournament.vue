@@ -168,6 +168,7 @@ export default {
         .catch((error) => {
           console.log("tournaments create error", error.response);
         });
+        location.reload();
     },
     tournamentDestroy: function (tournament) {
       axios.delete("/tournaments/" + tournament.id).then((response) => {
