@@ -141,6 +141,7 @@ export default {
         var index = this.scores.indexOf(score);
         this.scores.splice(index, 1);
       });
+      location.reload();
     },
     scoreDestroyModal: function (score) {
       this.currentScore = score;
