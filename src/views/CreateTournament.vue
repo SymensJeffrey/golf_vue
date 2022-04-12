@@ -176,6 +176,7 @@ export default {
         var index = this.tournaments.indexOf(tournament);
         this.tournaments.splice(index, 1);
       });
+      location.reload();
     },
     tournamentDestroyModal: function (tournament) {
       this.currentTournament = tournament;
