@@ -10,7 +10,7 @@
         <ul>
           <li v-for="error in errors" v-bind:key="error">{{ error }}</li>
         </ul>
-        <p>Name: <input type="text" v-model="newScoreParams.name" /></p>
+        <p>Name: <input @keydown.space.prevent type="text" v-model="newScoreParams.name" /></p>
         <p>Token: <input type="text" v-model="newScoreParams.token" /></p>
         <button
           class="btn btn-secondary btn-xl rounded-pill mt-5"
