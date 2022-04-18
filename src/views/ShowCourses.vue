@@ -163,6 +163,12 @@
             </div>
           </div>
         </div>
+        <button
+          class="btn btn-secondary btn-s rounded-pill mt-2 me-3"
+          v-on:click="pushBackToPreviousPage()"
+          >
+            Return
+        </button>
       </div>
     </div>
   </div>
@@ -204,6 +210,9 @@ import axios from "axios"
             console.log("courses show", response);
             this.course = response.data;
         }); 
+      },
+      pushBackToPreviousPage() {
+          this.$router.go(-1);
       },
     },
   };
