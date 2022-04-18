@@ -13,6 +13,7 @@ import CreateCourse from "../views/CreateCourse.vue";
 import IndexCourses from "../views/IndexCourses.vue";
 import ShowScores from "../views/ShowScores.vue";
 import IndexUsers from "../views/IndexUsers.vue";
+import ForgotPassword from "../views/ForgotPassword.vue";
 
 Vue.use(VueRouter);
 
@@ -57,6 +58,11 @@ const routes = [
     path: "/users",
     name: "indexusers",
     component: IndexUsers,
+  },
+  {
+    path: "/forgot_password",
+    name: "forgotpassword",
+    component: ForgotPassword,
   },
 ];
 
