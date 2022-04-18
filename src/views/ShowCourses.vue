@@ -1,6 +1,7 @@
 <template>
   <div class="home">
       <br>
+      <br>
     <div>
       <h1>{{ course.name }}</h1>
     </div>
