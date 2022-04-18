@@ -23,6 +23,11 @@
           <h5 class="card-title">Name: {{ course.name }}</h5>
           <p class="card-text">{{ course.city }}</p>
         </div>
+        <button
+          class="btn btn-secondary btn-l rounded-pill mt-2 me-3"
+        >
+          View Course
+        </button>
       </div>
     </div>
   </div>
