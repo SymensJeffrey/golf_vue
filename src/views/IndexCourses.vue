@@ -22,13 +22,13 @@
         <div class="card-body">
           <h5 class="card-title">Name: {{ course.name }}</h5>
           <p class="card-text">{{ course.city }}</p>
+          <button
+            class="btn btn-secondary btn-l rounded-pill mt-2 me-3"
+            v-on:click="courseShow(course)"
+          >
+            View Course
+          </button>
         </div>
-        <button
-          class="btn btn-secondary btn-l rounded-pill mt-2 me-3"
-          v-on:click="courseShow(course)"
-        >
-          View Course
-        </button>
       </div>
     </div>
   </div>
@@ -41,6 +41,10 @@
 }
 .card {
   width: 275px;
+}
+.btn-l{
+  width: 150px;
+  height: 35px;
 }
 </style>
 
