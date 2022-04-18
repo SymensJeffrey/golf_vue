@@ -488,6 +488,7 @@ import axios from "axios";
           .then((response) => {
             console.log("scores update", response);
             this.currentScore = {};
+            location.reload();
           })
           .catch((error) => {
             console.log("scores update error", error.response);
