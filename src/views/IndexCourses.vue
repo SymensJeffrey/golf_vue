@@ -25,6 +25,7 @@
         </div>
         <button
           class="btn btn-secondary btn-l rounded-pill mt-2 me-3"
+          v-on:click="courseShow(course)"
         >
           View Course
         </button>
@@ -81,7 +82,12 @@ export default {
       },
       pushToCreateCourse() {
         this.$router.push("/course/new");
-      }
+      },
+      courseShow(course) {
+      this.$router.push({
+        path: `/courses/${course.id}`,
+      });
+    },
     }
 };
 </script>
