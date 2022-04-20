@@ -15,6 +15,7 @@ import ShowScores from "../views/ShowScores.vue";
 import IndexUsers from "../views/IndexUsers.vue";
 import ForgotPassword from "../views/ForgotPassword.vue";
 import ShowCourses from "../views/ShowCourses.vue";
+import UpdatePassword from "../views/UpdatePassword.vue";
 
 Vue.use(VueRouter);
 
@@ -69,6 +70,11 @@ const routes = [
     path: "/courses/:id",
     name: "showcourses",
     component: ShowCourses,
+  },
+  {
+    path: "/user/password_reset",
+    name: "updatepassword",
+    component: UpdatePassword,
   },
 ];
 
