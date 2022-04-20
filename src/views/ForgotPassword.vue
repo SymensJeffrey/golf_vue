@@ -841,7 +841,6 @@ import axios from 'axios'
   export default {
     data: function () {
       return {
-        message: "Forgot Password",
         forgotPasswordParams: {},
         errors: [],
       };
