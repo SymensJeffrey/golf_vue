@@ -25,6 +25,7 @@
                     ><i class="zmdi zmdi-account material-icons-name"></i
                   ></label>
                   <input
+                    v-model="forgotPasswordParams.email"
                     type="text"
                     name="your_name"
                     id="your_name"
@@ -836,13 +837,24 @@ label.valid:after {
 
 
 <script>
+import axios from 'axios'
   export default {
     data: function () {
       return {
         message: "Forgot Password",
+        forgotPasswordParams: {},
+        errors: [],
       };
     },
     created: function () {},
-    methods: {},
+    methods: {
+      submit: function () {
+        axios
+          .post("/passwords/reset", this.forgotPasswordParams)
+          .then((response) => {
+          console.log("Password Reset Email Sent", response);
+          });
+      },
+    },
   };
 </script>
