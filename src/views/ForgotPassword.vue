@@ -17,10 +17,8 @@
                 id="login-form"
                 v-on:submit.prevent="submit()"
               >
-                <ul>
-                  <li v-for="error in errors" v-bind:key="error">{{ error }}</li>
-                </ul>
-                <div class="form-group">
+                <p>{{ successMessage }}</p>
+                <div class="form-group mt-3">
                   <label for="your_name"
                     ><i class="zmdi zmdi-account material-icons-name"></i
                   ></label>
@@ -842,7 +840,7 @@ import axios from 'axios'
     data: function () {
       return {
         forgotPasswordParams: {},
-        errors: [],
+        successMessage: "",
       };
     },
     created: function () {},
@@ -853,6 +851,7 @@ import axios from 'axios'
           .then((response) => {
           console.log("Password Reset Email Sent", response);
           });
+          this.successMessage = "A password reset email has been sent to the account below"
       },
     },
   };
