@@ -867,6 +867,12 @@ export default {
           this.$router.push("/");
           location.reload();
         })
+        .catch((error) => {
+          console.log(error.response);
+          this.errors = ["Invalid email or password."];
+          this.email = "";
+          this.password = "";
+        });
     },
   },
 };
