@@ -9,7 +9,7 @@
             </figure>
             <a href="/signup" class="signup-image-link">Create an account</a>
             <br>
-            <a href="/forgot_password" class="signup-image-link">Forgot Password</a>
+            <!-- <a href="/forgot_password" class="signup-image-link">Forgot Password</a> -->
           </div>
           <div class="signin-form">
             <h2 class="form-title">Login</h2>
