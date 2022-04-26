@@ -42,7 +42,7 @@
                 />
               </div>
               <div class="form-group">
-                <label for="your_passconfim"><i class="zmdi zmdi-lock"></i></label>
+                <label for="your_passconfirm"><i class="zmdi zmdi-lock"></i></label>
                 <input
                   v-model="editPasswordParams.confirmNewPassword"
                   type="password"
@@ -853,6 +853,7 @@ label.valid:after {
 </style>
 
 <script>
+import axios from 'axios'
   export default {
     data: function () {
       return {
@@ -862,6 +863,20 @@ label.valid:after {
       };
     },
     created: function () {},
-    methods: {},
+    methods: {
+      scoreUpdate: function (user) {
+        var editPasswordParams = user;
+        axios
+          .patch("/users/" + user.id, editPasswordParams)
+          .then((response) => {
+            console.log("users update", response);
+            this.currentUser = {};
+            location.reload();
+          })
+          .catch((error) => {
+            console.log("Password update error", error.response);
+          });
+      },
+    },
   };
 </script>
