@@ -34,7 +34,7 @@
               <div class="form-group">
                 <label for="your_pass"><i class="zmdi zmdi-lock"></i></label>
                 <input
-                  v-model="editPasswordParams.newPassword"
+                  v-model="editPasswordParams.password"
                   type="password"
                   name="your_pass"
                   id="your_pass"
@@ -44,7 +44,7 @@
               <div class="form-group">
                 <label for="your_passconfirm"><i class="zmdi zmdi-lock"></i></label>
                 <input
-                  v-model="editPasswordParams.confirmNewPassword"
+                  v-model="editPasswordParams.password_confirmation"
                   type="password"
                   name="your_passconfirm"
                   id="your_passconfirm"
@@ -56,7 +56,7 @@
                   type="submit"
                   id="signup"
                   class="form-submit"
-                  value="Submit"
+                  value="Update"
                 />
               </div>
             </form>
@@ -864,14 +864,11 @@ import axios from 'axios'
     },
     created: function () {},
     methods: {
-      scoreUpdate: function (user) {
-        var editPasswordParams = user;
+      submit: function () {
         axios
-          .patch("/users/" + user.id, editPasswordParams)
+          .patch("/passwords/update", this.editPasswordParams)
           .then((response) => {
-            console.log("users update", response);
-            this.currentUser = {};
-            location.reload();
+            console.log("password update", response);
           })
           .catch((error) => {
             console.log("Password update error", error.response);
