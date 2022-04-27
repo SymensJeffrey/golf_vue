@@ -24,7 +24,7 @@
                   ><i class="zmdi zmdi-account material-icons-name"></i
                 ></label>
                 <input
-                  v-model="editPasswordParams.token"
+                  v-model="editPasswordParams.reset_password_token"
                   type="text"
                   name="your_name"
                   id="your_name"
