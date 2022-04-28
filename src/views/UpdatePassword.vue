@@ -50,6 +50,7 @@
                   id="your_passconfirm"
                   placeholder="Password Confirmation"
                 />
+                <p class="mt-4">{{successMessage}}</p>
               </div>
               <div class="form-group form-button">
                 <input
@@ -857,7 +858,7 @@ import axios from 'axios'
   export default {
     data: function () {
       return {
-        message: "Password Reset",
+        successMessage: "",
         editPasswordParams: {},
         errors: [],
       };
@@ -869,6 +870,8 @@ import axios from 'axios'
           .patch("/passwords/update", this.editPasswordParams)
           .then((response) => {
             console.log("password update", response);
+            this.editPasswordParams = {};
+            this.successMessage = "Password has been updated"
           })
           .catch((error) => {
             console.log("Password update error", error.response);
