@@ -291,12 +291,17 @@ export default {
     return {
       message: "Leaderboard",
       tournament: {},
+      
     };
   },
   created: function () {
     axios.get("/tournaments/" + this.$route.params.id).then((response) => {
       console.log("tournaments show", response);
       this.tournament = response.data;
+      let scoresSorted = this.tournament.scores
+      scoresSorted.sort((a,b) => {
+        return a.total - b.total
+      });
     });
   },
   methods: {
