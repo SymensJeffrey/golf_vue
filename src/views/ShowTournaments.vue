@@ -4,12 +4,10 @@
     <br />
     <h1>{{ message }}</h1>
     <br />
+    <h5 class="mb-3">{{tournament.course.name}}</h5>
     <!-- Scorecard -->
     <div class="container">
-      <div class="row justify-content-center no-border">
-        <div class="row justify-content-center mb-1 bold-text">
-          {{ tournament.course.name }}
-        </div>
+      <div class="row flex-nowrap justify-content-center no-border">
         <!-- Hole list -->
         <div class="col-1">
           <div
@@ -278,9 +276,7 @@
   font-weight: 600;
 }
 .container {
-  flex-wrap: nowrap;
-  width: max-content;
-  height: auto;
+  display: grid;
 }
 </style>
 
