@@ -245,9 +245,10 @@
         </div>
       </div>
     </div>
-    <div v-if="this.score.status == 'active'">
+    <div>
       <p>
       <button
+        v-if="this.score.status == 'active'"
         class="btn btn-secondary btn-l rounded-pill mt-2 me-3"
         data-bs-toggle="modal"
         data-bs-target="#score-update"
@@ -256,6 +257,7 @@
         Add Score
       </button>
       <button
+        v-if="this.score.status == 'active'"
         class="btn btn-secondary btn-l rounded-pill mt-2 me-3"
         v-on:click="tournamentShow(score)"
       >
@@ -269,6 +271,7 @@
         Return
       </button>
       <button
+        v-if="this.score.status == 'active'"
         class="btn btn-secondary btn-l rounded-pill mt-2 me-3"
         data-bs-toggle="modal"
         data-bs-target="#score-finish"
