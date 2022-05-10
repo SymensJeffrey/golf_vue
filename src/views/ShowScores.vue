@@ -8,6 +8,7 @@
         <div class="row justify-content-center mb-1 bold-text">
           {{ score.course.name }}
         </div>
+      <h5>{{score.to_par}}</h5>
         <div class="row justify-content-center mb-1 bold-text">
         </div>
         <!-- Hole list -->
@@ -486,6 +487,15 @@ import axios from "axios";
       },
       scoreUpdate: function (score) {
         let editScoreParams = score;
+        let i = 1
+        let toPar = 0
+        while(i < 19){
+          if((score['hole' + i]) > 0){
+            toPar = (score['hole' + i]) - (score.course['hole' + i +'_par']) 
+          }
+          i += 1
+        }
+        this.score.to_par = String(toPar)
         axios
           .patch("/scores/" + score.id, editScoreParams)
           .then((response) => {
