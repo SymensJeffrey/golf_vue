@@ -485,7 +485,7 @@ import axios from "axios";
         }); 
       },
       scoreUpdate: function (score) {
-        var editScoreParams = score;
+        let editScoreParams = score;
         axios
           .patch("/scores/" + score.id, editScoreParams)
           .then((response) => {
