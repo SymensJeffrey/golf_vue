@@ -495,6 +495,9 @@ import axios from "axios";
           }
           i += 1
         }
+        if (toPar == 0){
+          toPar = "E"
+        }
         this.score.to_par = String(toPar)
         axios
           .patch("/scores/" + score.id, editScoreParams)
