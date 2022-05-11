@@ -497,8 +497,10 @@ import axios from "axios";
           }
           i += 1
         }
-        if (toPar == 0){
+        if(toPar === 0){
           toPar = "E"
+        } else if(toPar > 0) {
+          toPar = "+" + toPar
         }
         this.score.to_par = String(toPar)
         this.score.through = through
