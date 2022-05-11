@@ -4,8 +4,35 @@
     <br />
     <h1>{{ message }}</h1>
     <br />
+    <div class="container justify-content-center">
+      <div class="row">
+        <div class="col">
+          Name
+        </div>
+        <div class="col">
+          Score
+        </div>
+        <div class="col">
+          Through
+        </div>
+      </div>
+      <div class="row" v-for="score in tournament.scores" v-bind:key="score.id">
+        <div class="col border-top border-end border-dark">
+          {{score.name}}
+        </div>
+        <div class="col-1 border-top border-end border-dark">
+          {{score.to_par}}
+        </div>
+        <div class="col-1 border-top  border-dark">
+          {{}}
+        </div>
+      </div>
+    </div>
+    <br>
+    <br>
     <h5 class="mb-3">{{tournament.course.name}}</h5>
-    <!-- Scorecard -->
+    <!-- Leaderboard -->
+    <!-- Full Scorecard -->
     <div class="container">
       <div class="row flex-nowrap justify-content-center no-border">
         <!-- Hole list -->
