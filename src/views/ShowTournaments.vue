@@ -5,7 +5,7 @@
     <h1>{{ message }}</h1>
     <br />
     <div class="container justify-content-center">
-      <div class="row">
+      <div class="row bold-text">
         <div class="col">
           Name
         </div>
@@ -24,7 +24,7 @@
           {{score.to_par}}
         </div>
         <div class="col-1 border-top  border-dark">
-          {{}}
+          {{score.through}}
         </div>
       </div>
     </div>
