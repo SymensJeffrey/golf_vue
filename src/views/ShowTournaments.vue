@@ -323,7 +323,7 @@ export default {
       this.tournament = response.data;
       let scoresSorted = this.tournament.scores
       scoresSorted.sort((a,b) => {
-        return a.total - b.total
+        return a.to_par - b.to_par
       });
     });
   },
