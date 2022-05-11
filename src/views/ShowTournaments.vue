@@ -21,7 +21,9 @@
           {{score.name}}
         </div>
         <div class="col-1 border-top border-end border-dark">
-          {{score.to_par}}
+          <div :class="{positive: score.to_par > 0, negative: score.to_par <= 0, even: score.to_par == 0}">
+            {{score.to_par}}
+          </div>
         </div>
         <div class="col-1 border-top  border-dark">
           {{score.through}}
@@ -307,6 +309,16 @@
 }
 .big-text {
   font-size: 130%;
+}
+.positive {
+  color: rgb(0, 47, 128);
+}
+
+.negative {
+  color: rgb(195, 0, 0);
+}
+.even {
+  color: none
 }
 </style>
 
