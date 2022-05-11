@@ -492,7 +492,7 @@ import axios from "axios";
         let through = 0
         while(i < 19){
           if((score['hole' + i]) > 0){
-            toPar = (score['hole' + i]) - (score.course['hole' + i +'_par'])
+            toPar += (score['hole' + i]) - (score.course['hole' + i +'_par'])
             through += 1 
           }
           i += 1
