@@ -8,7 +8,7 @@
         <div class="row justify-content-center mb-1 bold-text">
           {{ score.course.name }}
         </div>
-      <h5>{{score.to_par}}</h5>
+      <h5>{{score.name}}: {{score.to_par}}</h5>
         <div class="row justify-content-center mb-1 bold-text">
         </div>
         <!-- Hole list -->
