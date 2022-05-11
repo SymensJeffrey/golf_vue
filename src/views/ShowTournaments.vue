@@ -4,15 +4,15 @@
     <br />
     <h1>{{ message }}</h1>
     <br />
-    <div class="container justify-content-center">
+    <div class="container justify-content-center big-text">
       <div class="row bold-text">
         <div class="col">
           Name
         </div>
-        <div class="col">
+        <div class="col-1">
           Score
         </div>
-        <div class="col">
+        <div class="col-1">
           Through
         </div>
       </div>
@@ -304,6 +304,9 @@
 }
 .container {
   display: grid;
+}
+.big-text {
+  font-size: 130%;
 }
 </style>
 
