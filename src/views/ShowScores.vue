@@ -262,11 +262,11 @@
         class="btn btn-secondary btn-l rounded-pill mt-2 me-3"
         v-on:click="tournamentShow(score)"
       >
-        View Leaderboard
+        Leaderboard
       </button>
       </p>
       <button
-      class="btn btn-secondary btn-s rounded-pill mt-2 me-3"
+      class="btn btn-secondary btn-l rounded-pill mt-2 me-3"
       v-on:click="pushBackToProfile()"
       >
         Return
@@ -439,6 +439,9 @@ option[value=""][disabled] {
 option {
   color: black;
   text-align: center;
+}
+.btn-l {
+  width: 130px;
 }
 </style>
 
