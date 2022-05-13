@@ -276,7 +276,7 @@
     </div>
     <br />
     <button
-      class="btn btn-secondary btn-s rounded-pill"
+      class="btn btn-secondary btn-l rounded-pill"
       v-on:click="pushBackToScore()"
     >
       Return
@@ -319,6 +319,9 @@
 }
 .even {
   color: none
+}
+.btn-l{
+  width: 130px;
 }
 </style>
 
