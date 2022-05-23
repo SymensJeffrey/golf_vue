@@ -500,13 +500,16 @@ import axios from "axios";
           }
           i += 1
         }
+        if(through == 18){
+          through = "F"
+        }
         if(toPar === 0){
           toPar = "E"
         } else if(toPar > 0) {
           toPar = "+" + toPar
         }
         this.score.to_par = String(toPar)
-        this.score.through = through
+        this.score.through = String(through)
         axios
           .patch("/scores/" + score.id, editScoreParams)
           .then((response) => {
