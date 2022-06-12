@@ -28,6 +28,13 @@
           >
             View Course
           </button>
+          <button
+            class="btn btn-secondary btn-l rounded-pill mt-2 me-3"
+            v-on:click="courseDestroy(course)"
+            v-if="isAdmin()"
+          >
+            Delete
+          </button>
         </div>
       </div>
     </div>
@@ -88,10 +95,18 @@ export default {
         this.$router.push("/course/new");
       },
       courseShow(course) {
-      this.$router.push({
+        this.$router.push({
         path: `/courses/${course.id}`,
-      });
-    },
+        });
+      },
+      courseDestroy: function (course) {
+        axios.delete("/courses/" + course.id).then((response) => {
+          console.log("courses destroy", response);
+          var index = this.courses.indexOf(course);
+          this.courses.splice(index, 1);
+        });
+        location.reload();
+      },
     }
 };
 </script>
