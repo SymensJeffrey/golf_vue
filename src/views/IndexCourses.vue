@@ -20,7 +20,7 @@
         v-bind:key="course.id"
       >
         <div class="card-body">
-          <h5 class="card-title">Name: {{ course.name }}</h5>
+          <h5 class="card-title">{{ course.name }}</h5>
           <p class="card-text">{{ course.city }}</p>
           <button
             class="btn btn-secondary btn-l rounded-pill mt-2 me-3"
