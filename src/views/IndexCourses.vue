@@ -104,8 +104,8 @@ export default {
           console.log("courses destroy", response);
           var index = this.courses.indexOf(course);
           this.courses.splice(index, 1);
+          location.reload();
         });
-        location.reload();
       },
     }
 };
