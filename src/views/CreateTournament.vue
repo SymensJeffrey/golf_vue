@@ -175,8 +175,8 @@ export default {
         console.log("tournaments destroy", response);
         var index = this.tournaments.indexOf(tournament);
         this.tournaments.splice(index, 1);
+        location.reload();
       });
-      location.reload();
     },
     tournamentDestroyModal: function (tournament) {
       this.currentTournament = tournament;
