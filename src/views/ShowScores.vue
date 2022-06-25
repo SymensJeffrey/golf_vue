@@ -175,73 +175,73 @@
             Score
           </div>
           <div class="row justify-content-center border border-dark">
-            {{ score.hole1 }}
+            <div :class="{zero: score.hole1 == 0}">{{ score.hole1 }}</div>
           </div>
           <div class="row justify-content-center border border-dark">
-            {{ score.hole2 }}
+            <div :class="{zero: score.hole2 == 0}">{{ score.hole2 }}</div>
           </div>
           <div class="row justify-content-center border border-dark">
-            {{ score.hole3 }}
+            <div :class="{zero: score.hole3 == 0}">{{ score.hole3 }}</div>
           </div>
           <div class="row justify-content-center border border-dark">
-            {{ score.hole4 }}
+            <div :class="{zero: score.hole4 == 0}">{{ score.hole4 }}</div>
           </div>
           <div class="row justify-content-center border border-dark">
-            {{ score.hole5 }}
+            <div :class="{zero: score.hole5 == 0}">{{ score.hole5 }}</div>
           </div>
           <div class="row justify-content-center border border-dark">
-            {{ score.hole6 }}
+            <div :class="{zero: score.hole6 == 0}">{{ score.hole6 }}</div>
           </div>
           <div class="row justify-content-center border border-dark">
-            {{ score.hole7 }}
+            <div :class="{zero: score.hole7 == 0}">{{ score.hole7 }}</div>
           </div>
           <div class="row justify-content-center border border-dark">
-            {{ score.hole8 }}
+            <div :class="{zero: score.hole8 == 0}">{{ score.hole8 }}</div>
           </div>
           <div class="row justify-content-center border border-dark">
-            {{ score.hole9 }}
+            <div :class="{zero: score.hole9 == 0}">{{ score.hole9 }}</div>
           </div>
           <div
             class="row justify-content-center border border-dark row-fill-green bold-text"
           >
-            {{ score.front }}
+            <div :class="{zero: score.front == 0}">{{ score.front }}</div>
           </div>
           <div class="row justify-content-center border border-dark">
-            {{ score.hole10 }}
+            <div :class="{zero: score.hole10 == 0}">{{ score.hole10 }}</div>
           </div>
           <div class="row justify-content-center border border-dark">
-            {{ score.hole11 }}
+            <div :class="{zero: score.hole11 == 0}">{{ score.hole11 }}</div>
           </div>
           <div class="row justify-content-center border border-dark">
-            {{ score.hole12 }}
+            <div :class="{zero: score.hole12 == 0}">{{ score.hole12 }}</div>
           </div>
           <div class="row justify-content-center border border-dark">
-            {{ score.hole13 }}
+            <div :class="{zero: score.hole13 == 0}">{{ score.hole13 }}</div>
           </div>
           <div class="row justify-content-center border border-dark">
-            {{ score.hole14 }}
+            <div :class="{zero: score.hole14 == 0}">{{ score.hole14 }}</div>
           </div>
           <div class="row justify-content-center border border-dark">
-            {{ score.hole15 }}
+            <div :class="{zero: score.hole15 == 0}">{{ score.hole15 }}</div>
           </div>
           <div class="row justify-content-center border border-dark">
-            {{ score.hole16 }}
+            <div :class="{zero: score.hole16 == 0}">{{ score.hole16 }}</div>
           </div>
           <div class="row justify-content-center border border-dark">
-            {{ score.hole17 }}
+            <div :class="{zero: score.hole17 == 0}">{{ score.hole17 }}</div>
           </div>
           <div class="row justify-content-center border border-dark">
-            {{ score.hole18 }}
+            <div :class="{zero: score.hole18 == 0}">{{ score.hole18 }}</div>
           </div>
           <div
             class="row justify-content-center border border-dark row-fill-green bold-text"
           >
-            {{ score.back }}
+            <div :class="{zero: score.back == 0}">{{ score.back }}</div>
           </div>
           <div
             class="row justify-content-center border border-dark row-fill-green bold-text"
           >
-            {{ score.total }}
+            <div :class="{zero: score.total == 0}">{{ score.total }}</div>
           </div>
         </div>
       </div>
@@ -442,6 +442,9 @@ option {
 }
 .btn-l {
   width: 130px;
+}
+.zero {
+  opacity: 0%;
 }
 </style>
 
