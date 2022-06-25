@@ -13,7 +13,7 @@
         <p>Name: <input maxlength="12" type="text" v-model="newScoreParams.name" placeholder="Max 12 Characters"/></p>
         <p>Token: <input type="text" v-model="newScoreParams.token" /></p>
         <button
-          class="btn btn-secondary btn-xl rounded-pill mt-5"
+          class="btn btn-secondary btn-l rounded-pill mt-5"
           v-on:click="scoresCreate()"
         >
           Create
@@ -23,7 +23,12 @@
   </div>
 </template>
 
-<style scoped></style>
+<style scoped>
+.btn-l{
+  width: 150px;
+  height: 35px;
+}
+</style>
 
 <script>
 import axios from "axios";
