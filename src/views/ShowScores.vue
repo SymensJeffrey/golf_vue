@@ -540,6 +540,15 @@ import axios from "axios";
       Default: function () {},
       scoreUpdateModal: function (score) {
         this.currentScore = score;
+        var i = 1
+        while (i < 19){
+          console.log(score['hole'+i])
+          if(score['hole'+i]==0){
+            this.selected = 'hole'+i
+            break
+          }
+          i+=1
+        }
       },
       scoreFinishModal: function (score) {
         this.currentScore = score;
