@@ -1,13 +1,14 @@
 <template>
   <div class="home">
-    <br>
-    <h1> Welcome Back {{user.name}} </h1>
-    <br> 
+    <br />
+    <h1>Welcome Back {{ user.name }}</h1>
+    <br />
     <h4>{{ message }}</h4>
     <div class="center-cards row">
       <div
         class="card margin-bottom shadow-lg p-3 mb-5 bg-white rounded"
-        v-for="score in inactiveScores" v-bind:key="score.id"
+        v-for="score in inactiveScores"
+        v-bind:key="score.id"
       >
         <div class="card-body">
           <h5 class="card-title">Score: {{ score.total }}</h5>
@@ -103,7 +104,7 @@
   overflow: scroll;
   width: 100px;
 }
-.btn-l{
+.btn-l {
   width: 150px;
   height: 35px;
 }

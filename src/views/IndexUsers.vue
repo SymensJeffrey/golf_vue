@@ -1,31 +1,32 @@
 <template>
   <div class="home">
-    <br>
+    <br />
     <h1>{{ message }}</h1>
-    <br>
+    <br />
     <div class="row bottom-border">
-        <div class="col-8">
-            <h6>Email</h6>
-        </div>
-        <div class="col">
-           <h6>Role</h6>
-        </div>
-    </div>
-    <div  class="row mb-2" v-for="user in users" v-bind:key="user.id">
-      <div class="col-8 m-1">
-        {{user.email}}
+      <div class="col-8">
+        <h6>Email</h6>
       </div>
       <div class="col">
-          <a href="" v-on:click="userUpdateModal(user)" data-bs-toggle="modal" data-bs-target="#user-update">{{user.role}}</a>
+        <h6>Role</h6>
+      </div>
+    </div>
+    <div class="row mb-2" v-for="user in users" v-bind:key="user.id">
+      <div class="col-8 m-1">
+        {{ user.email }}
+      </div>
+      <div class="col">
+        <a
+          href=""
+          v-on:click="userUpdateModal(user)"
+          data-bs-toggle="modal"
+          data-bs-target="#user-update"
+          >{{ user.role }}</a
+        >
       </div>
     </div>
     <!-- User Update Modal -->
-    <div
-      class="modal fade"
-      id="user-update"
-      tabindex="-1"
-      aria-hidden="true"
-    >
+    <div class="modal fade" id="user-update" tabindex="-1" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
@@ -38,7 +39,7 @@
             ></button>
           </div>
           <div class="modal-body">
-            <h6>Update User Role for {{currentUser.email}}</h6>
+            <h6>Update User Role for {{ currentUser.email }}</h6>
             <v-select
               class="dropdown"
               :options="roles"
@@ -64,13 +65,13 @@
 </template>
 
 <style scoped>
-.bottom-border{
+.bottom-border {
   border-style: solid;
   border-color: rgb(58, 58, 58);
   border-top: 3px;
   margin-bottom: 5px;
 }
-.dropdown{
+.dropdown {
   width: 40%;
   margin-left: auto;
   margin-right: auto;
@@ -78,38 +79,34 @@
 </style>
 
 <script>
-import axios from "axios"
-  export default {
-    data: function () {
-      return {
-        message: "User Role Management",
-        users: [],
-        currentUser: {},
-        user: {},
-        editUserParams: {},
-        roles:[
-          {role: "user"},
-          {role: "admin"},
-          {role: "master"}
-        ]
-      };
-    },
-    created: function () {
-        this.usersIndex();
-    },
-    methods: {
-      usersIndex() {
-          axios.get("/users").then((response) => {
-          console.log("users index", response);
-          this.users = response.data;
+import axios from "axios";
+export default {
+  data: function () {
+    return {
+      message: "User Role Management",
+      users: [],
+      currentUser: {},
+      user: {},
+      editUserParams: {},
+      roles: [{ role: "user" }, { role: "admin" }, { role: "master" }],
+    };
+  },
+  created: function () {
+    this.usersIndex();
+  },
+  methods: {
+    usersIndex() {
+      axios.get("/users").then((response) => {
+        console.log("users index", response);
+        this.users = response.data;
       });
-      },
-      userUpdateModal(user) {
-        this.currentUser = user;
-      },
-      userUpdate: function (user) {
+    },
+    userUpdateModal(user) {
+      this.currentUser = user;
+    },
+    userUpdate: function (user) {
       var editUserParams = user;
-      console.log(editUserParams)
+      console.log(editUserParams);
       axios
         .patch("/users/" + user.id, this.editUserParams)
         .then((response) => {
@@ -119,7 +116,7 @@ import axios from "axios"
         .catch((error) => {
           console.log("users update error", error.response);
         });
-      },
     },
-  };
+  },
+};
 </script>

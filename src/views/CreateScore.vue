@@ -10,7 +10,15 @@
         <ul>
           <li v-for="error in errors" v-bind:key="error">{{ error }}</li>
         </ul>
-        <p>Name: <input maxlength="12" type="text" v-model="newScoreParams.name" placeholder="Max 12 Characters"/></p>
+        <p>
+          Name:
+          <input
+            maxlength="12"
+            type="text"
+            v-model="newScoreParams.name"
+            placeholder="Max 12 Characters"
+          />
+        </p>
         <p>Token: <input type="text" v-model="newScoreParams.token" /></p>
         <button
           class="btn btn-secondary btn-l rounded-pill mt-5"
@@ -24,7 +32,7 @@
 </template>
 
 <style scoped>
-.btn-l{
+.btn-l {
   width: 150px;
   height: 35px;
 }

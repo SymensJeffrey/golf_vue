@@ -128,7 +128,7 @@ export default {
       message: "Add a Course",
       errors: [],
       newCourseParams: {},
-      user: {}
+      user: {},
     };
   },
   created: function () {
@@ -149,15 +149,15 @@ export default {
         });
     },
     userShow: function () {
-        axios.get(`/users/${localStorage.user_id}`).then((response) => {
+      axios.get(`/users/${localStorage.user_id}`).then((response) => {
         this.user = response.data;
-        });
+      });
     },
     isAdmin() {
-      if(this.user.role == "admin" || this.user.role == "master"){
-        return true 
+      if (this.user.role == "admin" || this.user.role == "master") {
+        return true;
       } else {
-        return false
+        return false;
       }
     },
   },

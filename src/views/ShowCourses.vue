@@ -1,13 +1,12 @@
 <template>
   <div class="home">
-      <br>
-      <br>
+    <br />
+    <br />
     <div>
       <h1>{{ course.name }}</h1>
       <div class="container">
         <div class="row justify-content-center no-border">
-          <div class="row justify-content-center mb-1 bold-text">
-          </div>
+          <div class="row justify-content-center mb-1 bold-text"></div>
           <!-- Hole list -->
           <div class="col-1">
             <div
@@ -166,8 +165,8 @@
         <button
           class="btn btn-secondary btn-s rounded-pill mt-2 me-3"
           v-on:click="pushBackToPreviousPage()"
-          >
-            Return
+        >
+          Return
         </button>
       </div>
     </div>
@@ -194,26 +193,26 @@
 </style>
 
 <script>
-import axios from "axios"
-  export default {
-    data: function () {
-      return {
-        course: {},
-      };
+import axios from "axios";
+export default {
+  data: function () {
+    return {
+      course: {},
+    };
+  },
+  created: function () {
+    this.courseShow();
+  },
+  methods: {
+    courseShow() {
+      axios.get("/courses/" + this.$route.params.id).then((response) => {
+        console.log("courses show", response);
+        this.course = response.data;
+      });
     },
-    created: function () {
-      this.courseShow();
+    pushBackToPreviousPage() {
+      this.$router.go(-1);
     },
-    methods: {
-      courseShow() {
-        axios.get("/courses/" + this.$route.params.id).then((response) => {
-            console.log("courses show", response);
-            this.course = response.data;
-        }); 
-      },
-      pushBackToPreviousPage() {
-          this.$router.go(-1);
-      },
-    },
-  };
+  },
+};
 </script>

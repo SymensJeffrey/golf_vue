@@ -6,7 +6,10 @@
           <div class="signin-content">
             <div class="signin-image">
               <figure>
-                <img src="../images/ForgotPassword-image.jpg" alt="sing up image" />
+                <img
+                  src="../images/ForgotPassword-image.jpg"
+                  alt="sing up image"
+                />
               </figure>
             </div>
             <div class="signin-form">
@@ -833,26 +836,26 @@ label.valid:after {
 /*# sourceMappingURL=style.css.map */
 </style>
 
-
 <script>
-import axios from 'axios'
-  export default {
-    data: function () {
-      return {
-        forgotPasswordParams: {},
-        successMessage: "",
-      };
-    },
-    created: function () {},
-    methods: {
-      submit: function () {
-        axios
-          .post("/passwords/reset", this.forgotPasswordParams)
-          .then((response) => {
+import axios from "axios";
+export default {
+  data: function () {
+    return {
+      forgotPasswordParams: {},
+      successMessage: "",
+    };
+  },
+  created: function () {},
+  methods: {
+    submit: function () {
+      axios
+        .post("/passwords/reset", this.forgotPasswordParams)
+        .then((response) => {
           console.log("Password Reset Email Sent", response);
-          });
-          this.successMessage = "A password reset email has been sent to the account below"
-      },
+        });
+      this.successMessage =
+        "A password reset email has been sent to the account below";
     },
-  };
+  },
+};
 </script>

@@ -32,7 +32,9 @@
               >
             </li>
             <li class="nav-item">
-              <a class="nav-link" v-if="isLoggedIn()" href="/courses">Courses</a>
+              <a class="nav-link" v-if="isLoggedIn()" href="/courses"
+                >Courses</a
+              >
             </li>
             <li class="nav-item">
               <a class="nav-link" v-if="isLoggedIn()" href="/user">Profile</a>
@@ -99,14 +101,14 @@ export default {
       });
     },
     isMaster: function () {
-      if (this.user){
-        if(this.user.role == "master"){
-          return true 
+      if (this.user) {
+        if (this.user.role == "master") {
+          return true;
         } else {
-          return false
+          return false;
         }
       } else {
-        return false
+        return false;
       }
     },
   },

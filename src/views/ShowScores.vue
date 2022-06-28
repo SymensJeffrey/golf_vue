@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <br>
+    <br />
     <h1>Scorecard</h1>
     <!-- Scorecard -->
     <div class="container">
@@ -8,9 +8,8 @@
         <div class="row justify-content-center mb-1 bold-text">
           {{ score.course.name }}
         </div>
-      <h5>{{score.name}}: {{score.to_par}}</h5>
-        <div class="row justify-content-center mb-1 bold-text">
-        </div>
+        <h5>{{ score.name }}: {{ score.to_par }}</h5>
+        <div class="row justify-content-center mb-1 bold-text"></div>
         <!-- Hole list -->
         <div class="col-1">
           <div
@@ -166,108 +165,106 @@
           </div>
         </div>
         <!-- Array of Scores in the tournament -->
-        <div
-          class="col-1"
-        >
+        <div class="col-1">
           <div
             class="row justify-content-center border border-dark row-fill-green bold-text"
           >
             Score
           </div>
           <div class="row justify-content-center border border-dark">
-            <div :class="{zero: score.hole1 == 0}">{{ score.hole1 }}</div>
+            <div :class="{ zero: score.hole1 == 0 }">{{ score.hole1 }}</div>
           </div>
           <div class="row justify-content-center border border-dark">
-            <div :class="{zero: score.hole2 == 0}">{{ score.hole2 }}</div>
+            <div :class="{ zero: score.hole2 == 0 }">{{ score.hole2 }}</div>
           </div>
           <div class="row justify-content-center border border-dark">
-            <div :class="{zero: score.hole3 == 0}">{{ score.hole3 }}</div>
+            <div :class="{ zero: score.hole3 == 0 }">{{ score.hole3 }}</div>
           </div>
           <div class="row justify-content-center border border-dark">
-            <div :class="{zero: score.hole4 == 0}">{{ score.hole4 }}</div>
+            <div :class="{ zero: score.hole4 == 0 }">{{ score.hole4 }}</div>
           </div>
           <div class="row justify-content-center border border-dark">
-            <div :class="{zero: score.hole5 == 0}">{{ score.hole5 }}</div>
+            <div :class="{ zero: score.hole5 == 0 }">{{ score.hole5 }}</div>
           </div>
           <div class="row justify-content-center border border-dark">
-            <div :class="{zero: score.hole6 == 0}">{{ score.hole6 }}</div>
+            <div :class="{ zero: score.hole6 == 0 }">{{ score.hole6 }}</div>
           </div>
           <div class="row justify-content-center border border-dark">
-            <div :class="{zero: score.hole7 == 0}">{{ score.hole7 }}</div>
+            <div :class="{ zero: score.hole7 == 0 }">{{ score.hole7 }}</div>
           </div>
           <div class="row justify-content-center border border-dark">
-            <div :class="{zero: score.hole8 == 0}">{{ score.hole8 }}</div>
+            <div :class="{ zero: score.hole8 == 0 }">{{ score.hole8 }}</div>
           </div>
           <div class="row justify-content-center border border-dark">
-            <div :class="{zero: score.hole9 == 0}">{{ score.hole9 }}</div>
+            <div :class="{ zero: score.hole9 == 0 }">{{ score.hole9 }}</div>
           </div>
           <div
             class="row justify-content-center border border-dark row-fill-green bold-text"
           >
-            <div :class="{zero: score.front == 0}">{{ score.front }}</div>
+            <div :class="{ zero: score.front == 0 }">{{ score.front }}</div>
           </div>
           <div class="row justify-content-center border border-dark">
-            <div :class="{zero: score.hole10 == 0}">{{ score.hole10 }}</div>
+            <div :class="{ zero: score.hole10 == 0 }">{{ score.hole10 }}</div>
           </div>
           <div class="row justify-content-center border border-dark">
-            <div :class="{zero: score.hole11 == 0}">{{ score.hole11 }}</div>
+            <div :class="{ zero: score.hole11 == 0 }">{{ score.hole11 }}</div>
           </div>
           <div class="row justify-content-center border border-dark">
-            <div :class="{zero: score.hole12 == 0}">{{ score.hole12 }}</div>
+            <div :class="{ zero: score.hole12 == 0 }">{{ score.hole12 }}</div>
           </div>
           <div class="row justify-content-center border border-dark">
-            <div :class="{zero: score.hole13 == 0}">{{ score.hole13 }}</div>
+            <div :class="{ zero: score.hole13 == 0 }">{{ score.hole13 }}</div>
           </div>
           <div class="row justify-content-center border border-dark">
-            <div :class="{zero: score.hole14 == 0}">{{ score.hole14 }}</div>
+            <div :class="{ zero: score.hole14 == 0 }">{{ score.hole14 }}</div>
           </div>
           <div class="row justify-content-center border border-dark">
-            <div :class="{zero: score.hole15 == 0}">{{ score.hole15 }}</div>
+            <div :class="{ zero: score.hole15 == 0 }">{{ score.hole15 }}</div>
           </div>
           <div class="row justify-content-center border border-dark">
-            <div :class="{zero: score.hole16 == 0}">{{ score.hole16 }}</div>
+            <div :class="{ zero: score.hole16 == 0 }">{{ score.hole16 }}</div>
           </div>
           <div class="row justify-content-center border border-dark">
-            <div :class="{zero: score.hole17 == 0}">{{ score.hole17 }}</div>
+            <div :class="{ zero: score.hole17 == 0 }">{{ score.hole17 }}</div>
           </div>
           <div class="row justify-content-center border border-dark">
-            <div :class="{zero: score.hole18 == 0}">{{ score.hole18 }}</div>
+            <div :class="{ zero: score.hole18 == 0 }">{{ score.hole18 }}</div>
           </div>
           <div
             class="row justify-content-center border border-dark row-fill-green bold-text"
           >
-            <div :class="{zero: score.back == 0}">{{ score.back }}</div>
+            <div :class="{ zero: score.back == 0 }">{{ score.back }}</div>
           </div>
           <div
             class="row justify-content-center border border-dark row-fill-green bold-text"
           >
-            <div :class="{zero: score.total == 0}">{{ score.total }}</div>
+            <div :class="{ zero: score.total == 0 }">{{ score.total }}</div>
           </div>
         </div>
       </div>
     </div>
     <div>
       <p>
-      <button
-        v-if="this.score.status == 'active'"
-        class="btn btn-secondary btn-l rounded-pill mt-2 me-3"
-        data-bs-toggle="modal"
-        data-bs-target="#score-update"
-        v-on:click="scoreUpdateModal(score)"
-      >
-        Add Score
-      </button>
-      <button
-        v-if="this.score.status == 'active'"
-        class="btn btn-secondary btn-l rounded-pill mt-2 me-3"
-        v-on:click="tournamentShow(score)"
-      >
-        Leaderboard
-      </button>
+        <button
+          v-if="this.score.status == 'active'"
+          class="btn btn-secondary btn-l rounded-pill mt-2 me-3"
+          data-bs-toggle="modal"
+          data-bs-target="#score-update"
+          v-on:click="scoreUpdateModal(score)"
+        >
+          Add Score
+        </button>
+        <button
+          v-if="this.score.status == 'active'"
+          class="btn btn-secondary btn-l rounded-pill mt-2 me-3"
+          v-on:click="tournamentShow(score)"
+        >
+          Leaderboard
+        </button>
       </p>
       <button
-      class="btn btn-secondary btn-l rounded-pill mt-2 me-3"
-      v-on:click="pushBackToProfile()"
+        class="btn btn-secondary btn-l rounded-pill mt-2 me-3"
+        v-on:click="pushBackToProfile()"
       >
         Return
       </button>
@@ -281,8 +278,7 @@
         Finish Round
       </button>
     </div>
-    <p>
-    </p>
+    <p></p>
     <!-- Score Update Modal -->
     <div
       class="modal fade"
@@ -450,11 +446,11 @@ option {
 
 <script>
 import axios from "axios";
-  export default {
-    data: function () {
-      return {
-        score: {},
-        options: [
+export default {
+  data: function () {
+    return {
+      score: {},
+      options: [
         { text: "Hole 1", value: "hole1" },
         { text: "Hole 2", value: "hole2" },
         { text: "Hole 3", value: "hole3" },
@@ -476,88 +472,88 @@ import axios from "axios";
       ],
       selected: "",
       currentScore: {},
-      };
+    };
+  },
+  created: function () {
+    this.scoreShow();
+  },
+  methods: {
+    pushBackToProfile() {
+      this.$router.go(-1);
     },
-    created: function () {
-        this.scoreShow();
+    scoreShow() {
+      axios.get("/scores/" + this.$route.params.id).then((response) => {
+        console.log("scores show", response);
+        this.score = response.data;
+      });
     },
-    methods: {
-      pushBackToProfile() {
-          this.$router.go(-1);
-      },
-      scoreShow() {
-        axios.get("/scores/" + this.$route.params.id).then((response) => {
-            console.log("scores show", response);
-            this.score = response.data;
-        }); 
-      },
-      scoreUpdate: function (score) {
-        let editScoreParams = score;
-        let i = 1
-        let toPar = 0
-        let through = 0
-        while(i < 19){
-          if((score['hole' + i]) > 0){
-            toPar += (score['hole' + i]) - (score.course['hole' + i +'_par'])
-            through += 1 
-          }
-          i += 1
+    scoreUpdate: function (score) {
+      let editScoreParams = score;
+      let i = 1;
+      let toPar = 0;
+      let through = 0;
+      while (i < 19) {
+        if (score["hole" + i] > 0) {
+          toPar += score["hole" + i] - score.course["hole" + i + "_par"];
+          through += 1;
         }
-        if(through == 18){
-          through = "F"
-        }
-        if(toPar === 0){
-          toPar = "E"
-        } else if(toPar > 0) {
-          toPar = "+" + toPar
-        }
-        this.score.to_par = String(toPar)
-        this.score.through = String(through)
-        axios
-          .patch("/scores/" + score.id, editScoreParams)
-          .then((response) => {
-            console.log("scores update", response);
-            this.currentScore = {};
-            location.reload();
-          })
-          .catch((error) => {
-            console.log("scores update error", error.response);
-          });
-      },
-      scoreFinish: function (score) {
-        var editScoreParams = score;
-        score.status = 'inactive'
-        axios
-          .patch("/scores/" + score.id, editScoreParams)
-          .then((response) => {
-            console.log("scores update", response);
-            this.currentScore = {};
-          })
-          .catch((error) => {
-            console.log("scores update error", error.response);
-          });
-      },
-      Default: function () {},
-      scoreUpdateModal: function (score) {
-        this.currentScore = score;
-        var i = 1
-        while (i < 19){
-          console.log(score['hole'+i])
-          if(score['hole'+i]==0){
-            this.selected = 'hole'+i
-            break
-          }
-          i+=1
-        }
-      },
-      scoreFinishModal: function (score) {
-        this.currentScore = score;
-      },
-      tournamentShow(score) {
-        this.$router.push({
-          path: `/tournament/${score.tournament_id}`,
+        i += 1;
+      }
+      if (through == 18) {
+        through = "F";
+      }
+      if (toPar === 0) {
+        toPar = "E";
+      } else if (toPar > 0) {
+        toPar = "+" + toPar;
+      }
+      this.score.to_par = String(toPar);
+      this.score.through = String(through);
+      axios
+        .patch("/scores/" + score.id, editScoreParams)
+        .then((response) => {
+          console.log("scores update", response);
+          this.currentScore = {};
+          location.reload();
+        })
+        .catch((error) => {
+          console.log("scores update error", error.response);
         });
-      },
     },
-  };
+    scoreFinish: function (score) {
+      var editScoreParams = score;
+      score.status = "inactive";
+      axios
+        .patch("/scores/" + score.id, editScoreParams)
+        .then((response) => {
+          console.log("scores update", response);
+          this.currentScore = {};
+        })
+        .catch((error) => {
+          console.log("scores update error", error.response);
+        });
+    },
+    Default: function () {},
+    scoreUpdateModal: function (score) {
+      this.currentScore = score;
+      var i = 1;
+      while (i < 19) {
+        console.log(score["hole" + i]);
+        if (score["hole" + i] == 0) {
+          this.selected = "hole" + i;
+          break;
+        }
+        i += 1;
+      }
+    },
+    scoreFinishModal: function (score) {
+      this.currentScore = score;
+    },
+    tournamentShow(score) {
+      this.$router.push({
+        path: `/tournament/${score.tournament_id}`,
+      });
+    },
+  },
+};
 </script>

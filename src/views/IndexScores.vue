@@ -10,7 +10,8 @@
     <div class="center-cards row">
       <div
         class="card margin-bottom shadow-lg p-3 mb-5 bg-white rounded"
-        v-for="score in activeScores" v-bind:key="score.id"
+        v-for="score in activeScores"
+        v-bind:key="score.id"
       >
         <div class="card-body">
           <h5 class="card-title">Score: {{ score.total }}</h5>
@@ -105,7 +106,7 @@
 .margin-top {
   margin-top: 8%;
 }
-.btn-l{
+.btn-l {
   width: 150px;
   height: 35px;
 }

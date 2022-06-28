@@ -42,7 +42,9 @@
                 />
               </div>
               <div class="form-group">
-                <label for="your_passconfirm"><i class="zmdi zmdi-lock"></i></label>
+                <label for="your_passconfirm"
+                  ><i class="zmdi zmdi-lock"></i
+                ></label>
                 <input
                   v-model="editPasswordParams.password_confirmation"
                   type="password"
@@ -50,7 +52,7 @@
                   id="your_passconfirm"
                   placeholder="Password Confirmation"
                 />
-                <p class="mt-4">{{successMessage}}</p>
+                <p class="mt-4">{{ successMessage }}</p>
               </div>
               <div class="form-group form-button">
                 <input
@@ -854,29 +856,29 @@ label.valid:after {
 </style>
 
 <script>
-import axios from 'axios'
-  export default {
-    data: function () {
-      return {
-        successMessage: "",
-        editPasswordParams: {},
-        errors: [],
-      };
+import axios from "axios";
+export default {
+  data: function () {
+    return {
+      successMessage: "",
+      editPasswordParams: {},
+      errors: [],
+    };
+  },
+  created: function () {},
+  methods: {
+    submit: function () {
+      axios
+        .patch("/passwords/update", this.editPasswordParams)
+        .then((response) => {
+          console.log("password update", response);
+          this.editPasswordParams = {};
+          this.successMessage = "Password has been updated";
+        })
+        .catch((error) => {
+          console.log("Password update error", error.response);
+        });
     },
-    created: function () {},
-    methods: {
-      submit: function () {
-        axios
-          .patch("/passwords/update", this.editPasswordParams)
-          .then((response) => {
-            console.log("password update", response);
-            this.editPasswordParams = {};
-            this.successMessage = "Password has been updated"
-          })
-          .catch((error) => {
-            console.log("Password update error", error.response);
-          });
-      },
-    },
-  };
+  },
+};
 </script>

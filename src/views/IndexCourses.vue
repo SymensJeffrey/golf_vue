@@ -1,9 +1,9 @@
 <template>
   <div class="home">
-    <br> 
+    <br />
     <h1>{{ message }}</h1>
     <div>
-        <p><input placeholder="Search" v-model="searchTerm"></p>
+      <p><input placeholder="Search" v-model="searchTerm" /></p>
     </div>
     <div v-if="isAdmin()">
       <button
@@ -49,7 +49,7 @@
 .card {
   width: 275px;
 }
-.btn-l{
+.btn-l {
   width: 150px;
   height: 35px;
 }
@@ -57,56 +57,56 @@
 
 <script>
 import axios from "axios";
-import Vue2Filters from 'vue2-filters'
+import Vue2Filters from "vue2-filters";
 export default {
-    mixins: [Vue2Filters.mixin],
-    data: function () {
-      return {
-        message: "Courses",
-        courses: [],
-        searchTerm: "",
-        user: {}
-      };
-    },
-    created: function () {
-        this.coursesIndex();
-        this.userShow();
-    },
-    methods: {
-      coursesIndex() {
-        axios.get("/courses").then((response) => {
+  mixins: [Vue2Filters.mixin],
+  data: function () {
+    return {
+      message: "Courses",
+      courses: [],
+      searchTerm: "",
+      user: {},
+    };
+  },
+  created: function () {
+    this.coursesIndex();
+    this.userShow();
+  },
+  methods: {
+    coursesIndex() {
+      axios.get("/courses").then((response) => {
         console.log("courses index", response);
         this.courses = response.data;
-        });
-      },
-      userShow: function () {
-        axios.get(`/users/${localStorage.user_id}`).then((response) => {
+      });
+    },
+    userShow: function () {
+      axios.get(`/users/${localStorage.user_id}`).then((response) => {
         this.user = response.data;
-        });
-      },
-      isAdmin() {
-        if(this.user.role == "admin" || this.user.role == "master"){
-          return true 
-        } else {
-          return false
-        }
-      },
-      pushToCreateCourse() {
-        this.$router.push("/course/new");
-      },
-      courseShow(course) {
-        this.$router.push({
+      });
+    },
+    isAdmin() {
+      if (this.user.role == "admin" || this.user.role == "master") {
+        return true;
+      } else {
+        return false;
+      }
+    },
+    pushToCreateCourse() {
+      this.$router.push("/course/new");
+    },
+    courseShow(course) {
+      this.$router.push({
         path: `/courses/${course.id}`,
-        });
-      },
-      courseDestroy: function (course) {
-        axios.delete("/courses/" + course.id).then((response) => {
-          console.log("courses destroy", response);
-          var index = this.courses.indexOf(course);
-          this.courses.splice(index, 1);
-          location.reload();
-        });
-      },
-    }
+      });
+    },
+    courseDestroy: function (course) {
+      axios.delete("/courses/" + course.id).then((response) => {
+        console.log("courses destroy", response);
+        var index = this.courses.indexOf(course);
+        this.courses.splice(index, 1);
+        location.reload();
+      });
+    },
+  },
 };
 </script>

@@ -8,7 +8,7 @@
           class="register-form"
           id="register-form"
         >
-        <div class="form-group">
+          <div class="form-group">
             <label for="email"><i class="zmdi zmdi-email"></i></label>
             <input
               v-model="newUserParams.name"
