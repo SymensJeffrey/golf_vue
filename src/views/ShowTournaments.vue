@@ -18,7 +18,7 @@
           <div
             :class="{
               positive: score.to_par > 0,
-              negative: score.to_par <= 0,
+              negative: score.to_par < 0,
               even: score.to_par == 0,
             }"
           >
