@@ -203,31 +203,31 @@
             {{ score.name }}
           </div>
           <div class="row justify-content-center border border-dark">
-            <div :class="{ zero: score.hole1 == 0 }">{{ score.hole1 }}</div>
+            <div :class="{ zero: score.hole1 == 0 , birdie: score.hole1 < score.course.hole1_par, bogey: score.hole1 > score.course.hole1_par}">{{ score.hole1 }}</div>
           </div>
           <div class="row justify-content-center border border-dark">
-            <div :class="{ zero: score.hole2 == 0 }">{{ score.hole2 }}</div>
+            <div :class="{ zero: score.hole2 == 0 , birdie: score.hole2 < score.course.hole2_par, bogey: score.hole2 > score.course.hole2_par}">{{ score.hole2 }}</div>
           </div>
           <div class="row justify-content-center border border-dark">
-            <div :class="{ zero: score.hole3 == 0 }">{{ score.hole3 }}</div>
+            <div :class="{ zero: score.hole3 == 0 , birdie: score.hole3 < score.course.hole3_par, bogey: score.hole3 > score.course.hole3_par}">{{ score.hole3 }}</div>
           </div>
           <div class="row justify-content-center border border-dark">
-            <div :class="{ zero: score.hole4 == 0 }">{{ score.hole4 }}</div>
+            <div :class="{ zero: score.hole4 == 0 , birdie: score.hole4 < score.course.hole4_par, bogey: score.hole4 > score.course.hole4_par}">{{ score.hole4 }}</div>
           </div>
           <div class="row justify-content-center border border-dark">
-            <div :class="{ zero: score.hole5 == 0 }">{{ score.hole5 }}</div>
+            <div :class="{ zero: score.hole5 == 0 , birdie: score.hole5 < score.course.hole5_par, bogey: score.hole5 > score.course.hole5_par}">{{ score.hole5 }}</div>
           </div>
           <div class="row justify-content-center border border-dark">
-            <div :class="{ zero: score.hole6 == 0 }">{{ score.hole6 }}</div>
+            <div :class="{ zero: score.hole6 == 0 , birdie: score.hole6 < score.course.hole6_par, bogey: score.hole6 > score.course.hole6_par}">{{ score.hole6 }}</div>
           </div>
           <div class="row justify-content-center border border-dark">
-            <div :class="{ zero: score.hole7 == 0 }">{{ score.hole7 }}</div>
+            <div :class="{ zero: score.hole7 == 0 , birdie: score.hole7 < score.course.hole7_par, bogey: score.hole7 > score.course.hole7_par}">{{ score.hole7 }}</div>
           </div>
           <div class="row justify-content-center border border-dark">
-            <div :class="{ zero: score.hole8 == 0 }">{{ score.hole8 }}</div>
+            <div :class="{ zero: score.hole8 == 0 , birdie: score.hole8 < score.course.hole8_par, bogey: score.hole8 > score.course.hole8_par}">{{ score.hole8 }}</div>
           </div>
           <div class="row justify-content-center border border-dark">
-            <div :class="{ zero: score.hole9 == 0 }">{{ score.hole9 }}</div>
+            <div :class="{ zero: score.hole9 == 0 , birdie: score.hole9 < score.course.hole9_par, bogey: score.hole9 > score.course.hole9_par}">{{ score.hole9 }}</div>
           </div>
           <div
             class="row justify-content-center border border-dark row-fill-green bold-text"
@@ -235,31 +235,31 @@
             <div :class="{ zero: score.front == 0 }">{{ score.front }}</div>
           </div>
           <div class="row justify-content-center border border-dark">
-            <div :class="{ zero: score.hole10 == 0 }">{{ score.hole10 }}</div>
+            <div :class="{ zero: score.hole10 == 0, birdie: score.hole10 < score.course.hole10_par, bogey: score.hole10 > score.course.hole10_par }">{{ score.hole10 }}</div>
           </div>
           <div class="row justify-content-center border border-dark">
-            <div :class="{ zero: score.hole11 == 0 }">{{ score.hole11 }}</div>
+            <div :class="{ zero: score.hole11 == 0, birdie: score.hole11 < score.course.hole11_par, bogey: score.hole11 > score.course.hole11_par }">{{ score.hole11 }}</div>
           </div>
           <div class="row justify-content-center border border-dark">
-            <div :class="{ zero: score.hole12 == 0 }">{{ score.hole12 }}</div>
+            <div :class="{ zero: score.hole12 == 0, birdie: score.hole12 < score.course.hole12_par, bogey: score.hole12 > score.course.hole12_par }">{{ score.hole12 }}</div>
           </div>
           <div class="row justify-content-center border border-dark">
-            <div :class="{ zero: score.hole13 == 0 }">{{ score.hole13 }}</div>
+            <div :class="{ zero: score.hole13 == 0, birdie: score.hole13 < score.course.hole13_par, bogey: score.hole13 > score.course.hole13_par }">{{ score.hole13 }}</div>
           </div>
           <div class="row justify-content-center border border-dark">
-            <div :class="{ zero: score.hole14 == 0 }">{{ score.hole14 }}</div>
+            <div :class="{ zero: score.hole14 == 0, birdie: score.hole14 < score.course.hole14_par, bogey: score.hole14 > score.course.hole14_par }">{{ score.hole14 }}</div>
           </div>
           <div class="row justify-content-center border border-dark">
-            <div :class="{ zero: score.hole15 == 0 }">{{ score.hole15 }}</div>
+            <div :class="{ zero: score.hole15 == 0, birdie: score.hole15 < score.course.hole15_par, bogey: score.hole15 > score.course.hole15_par }">{{ score.hole15 }}</div>
           </div>
           <div class="row justify-content-center border border-dark">
-            <div :class="{ zero: score.hole16 == 0 }">{{ score.hole16 }}</div>
+            <div :class="{ zero: score.hole16 == 0, birdie: score.hole16 < score.course.hole16_par, bogey: score.hole16 > score.course.hole16_par }">{{ score.hole16 }}</div>
           </div>
           <div class="row justify-content-center border border-dark">
-            <div :class="{ zero: score.hole17 == 0 }">{{ score.hole17 }}</div>
+            <div :class="{ zero: score.hole17 == 0, birdie: score.hole17 < score.course.hole17_par, bogey: score.hole17 > score.course.hole17_par }">{{ score.hole17 }}</div>
           </div>
           <div class="row justify-content-center border border-dark">
-            <div :class="{ zero: score.hole18 == 0 }">{{ score.hole18 }}</div>
+            <div :class="{ zero: score.hole18 == 0, birdie: score.hole18 < score.course.hole18_par, bogey: score.hole18 > score.course.hole18_par }">{{ score.hole18 }}</div>
           </div>
           <div
             class="row justify-content-center border border-dark row-fill-green bold-text"
@@ -325,6 +325,28 @@
 }
 .zero {
   opacity: 0%;
+}
+.birdie {
+  color: rgb(255, 0, 0);
+  border-radius: 50%;
+  width: 22px;
+  height: 22px;
+  margin: 1px;
+  border: 1px solid rgb(255, 0, 0);
+  display: flex;
+  align-items: center; 
+  justify-content: center;
+}
+.bogey {
+  color: rgb(0, 47, 255);
+  border-radius: 0%;
+  width: 22px;
+  height: 22px;
+  margin: 1px;
+  border: 1px solid rgb(0, 47, 255);
+  display: flex;
+  align-items: center; 
+  justify-content: center;
 }
 </style>
 
