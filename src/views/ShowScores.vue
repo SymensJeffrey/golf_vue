@@ -172,7 +172,7 @@
             Score
           </div>
           <div class="row justify-content-center border border-dark">
-            <div :class="{ zero: score.hole1 == 0, birdie: score.hole1 < score.course.hole1_par }">{{ score.hole1 }}</div>
+            <div :class="{ zero: score.hole1 == 0, birdie: score.hole1 < score.course.hole1_par, bogey: score.hole1 > score.course.hole1_par }">{{ score.hole1 }}</div>
           </div>
           <div class="row justify-content-center border border-dark">
             <div :class="{ zero: score.hole2 == 0 }">{{ score.hole2 }}</div>
@@ -445,9 +445,21 @@ option {
 .birdie {
   color: rgb(255, 0, 0);
   border-radius: 50%;
-  width: 24px;
-  height: 24px;
+  width: 22px;
+  height: 22px;
+  margin: 1px;
   border: 1px solid rgb(255, 0, 0);
+  display: flex;
+  align-items: center; 
+  justify-content: center;
+}
+.bogey {
+  color: rgb(0, 47, 255);
+  border-radius: 0%;
+  width: 22px;
+  height: 22px;
+  margin: 1px;
+  border: 1px solid rgb(0, 47, 255);
   display: flex;
   align-items: center; 
   justify-content: center;
