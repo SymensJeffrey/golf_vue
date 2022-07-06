@@ -348,6 +348,9 @@
   align-items: center; 
   justify-content: center;
 }
+.container {
+  padding: 40px;
+}
 </style>
 
 <script>
