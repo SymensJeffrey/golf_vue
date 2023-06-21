@@ -36,22 +36,28 @@
                   placeholder="Email"
                 />
               </div>
-              <div class="form-group">
+              <div class="form-group" style="position: relative;">
                 <label for="your_pass"><i class="zmdi zmdi-lock"></i></label>
                 <input
                   v-model="newSessionParams.password"
-                  type="password"
+                  :type="passwordFieldType"
                   name="your_pass"
                   id="your_pass"
                   placeholder="Password"
                 />
+                <label class="eye-label">
+                <button class="eye" v-on:click="switchVisibility()" v-on:click.prevent="Default()">
+                  <p v-show="eyeIcon"><i class="fa fa-eye"></i></p>
+                  <p v-show="!eyeIcon"><i class="fa fa-eye-slash"></i></p>
+                </button>
+              </label>
               </div>
               <div class="form-group form-button">
                 <input
-                  type="submit"
-                  id="signup"
-                  class="form-submit"
-                  value="Submit"
+                type="submit"
+                id="signup"
+                class="form-submit"
+                value="Submit"
                 />
               </div>
             </form>
@@ -802,15 +808,6 @@ label.valid:after {
   .signin-image {
     width: auto;
   }
-
-  .social-login {
-    justify-content: center;
-    -moz-justify-content: center;
-    -webkit-justify-content: center;
-    -o-justify-content: center;
-    -ms-justify-content: center;
-  }
-
   .form-button {
     text-align: center;
   }
@@ -831,18 +828,13 @@ label.valid:after {
   }
 }
 @media screen and (max-width: 400px) {
-  .social-login {
-    flex-direction: column;
-    -moz-flex-direction: column;
-    -webkit-flex-direction: column;
-    -o-flex-direction: column;
-    -ms-flex-direction: column;
-  }
-
-  .social-label {
-    margin-right: 0px;
-    margin-bottom: 10px;
-  }
+}
+.eye {
+  background: none;
+  border: none;
+}
+.eye-label {
+  text-align: end; right: 0 !important;
 }
 
 /*# sourceMappingURL=style.css.map */
@@ -856,7 +848,11 @@ export default {
     return {
       newSessionParams: {},
       errors: [],
-    };
+      password: "",
+      passwordFieldType: "password",
+      eyeIcon: true,
+      show:false
+};
   },
   methods: {
     submit: function () {
@@ -876,6 +872,11 @@ export default {
           this.password = "";
         });
     },
+    Default: function () {},
+    switchVisibility() {
+      this.passwordFieldType = this.passwordFieldType === "password" ? "text" : "password";
+      this.eyeIcon = !this.eyeIcon
+    }
   },
 };
 </script>
