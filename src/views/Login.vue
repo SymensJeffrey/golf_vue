@@ -38,19 +38,19 @@
               </div>
               <div class="form-group" style="position: relative;">
                 <label for="your_pass"><i class="zmdi zmdi-lock"></i></label>
-                <input
-                  v-model="newSessionParams.password"
-                  :type="passwordFieldType"
-                  name="your_pass"
-                  id="your_pass"
-                  placeholder="Password"
-                />
-                <label class="eye-label">
-                <button class="eye" v-on:click="switchVisibility()" v-on:click.prevent="Default()">
-                  <p v-show="eyeIcon"><i class="fa fa-eye"></i></p>
-                  <p v-show="!eyeIcon"><i class="fa fa-eye-slash"></i></p>
-                </button>
-              </label>
+                <div class="password-wrapper">
+                  <input
+                    v-model="newSessionParams.password"
+                    :type="passwordFieldType"
+                    name="your_pass"
+                    id="your_pass"
+                    placeholder="Password"
+                  />
+                  <button class="eye" v-on:click="switchVisibility()" v-on:click.prevent="Default()">
+                    <p v-show="eyeIcon"><i class="fa fa-eye"></i></p>
+                    <p v-show="!eyeIcon"><i class="fa fa-eye-slash"></i></p>
+                  </button>
+                </div>
               </div>
               <div class="form-group form-button">
                 <input
@@ -833,8 +833,8 @@ label.valid:after {
   background: none;
   border: none;
 }
-.eye-label {
-  text-align: end; right: 0 !important;
+.password-wrapper {
+  display: flex;
 }
 
 /*# sourceMappingURL=style.css.map */
