@@ -5,16 +5,16 @@
     <h1>{{ message }}</h1>
     <br />
     <div class="container justify-content-center big-text">
-      <div class="row bold-text">
-        <div class="col">Name</div>
-        <div class="col-1">Score</div>
-        <div class="col-1">Through</div>
+      <div class="row bold-text flex-nowrap">
+        <div class="col flex-nowrap">Name</div>
+        <div class="col-1 flex-nowrap">Score</div>
+        <div class="col-1 flex-nowrap">Through</div>
       </div>
-      <div class="row" v-for="score in tournament.scores" v-bind:key="score.id">
-        <div class="col border-top border-end border-dark">
+      <div class="row flex-nowrap" v-for="score in tournament.scores" v-bind:key="score.id">
+        <div class="col border-top border-end border-dark flex-nowrap">
           {{ score.name }}
         </div>
-        <div class="col-1 border-top border-end border-dark">
+        <div class="col-1 border-top border-end border-dark flex-nowrap">
           <div
             :class="{
               positive: score.to_par > 0,
@@ -25,7 +25,7 @@
             {{ score.to_par }}
           </div>
         </div>
-        <div class="col-1 border-top border-dark">
+        <div class="col-1 border-top border-dark flex-nowrap">
           {{ score.through }}
         </div>
       </div>
